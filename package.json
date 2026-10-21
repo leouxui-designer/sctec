@@ -1,0 +1,13 @@
+{
+  "name": "sctec-portal-talentos",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Cópia local independente do protótipo SCTEC Portal de Talentos",
+  "scripts": {
+    "dev": "node server.cjs",
+    "test": "node --test",
+    "check": "node --check server.cjs && node --check viewer.js && node --check js/main.js && node scripts/validate-manifest.cjs",
+    "build": "npm run check",
+    "build:staging": "node scripts/build-staging.cjs"
+  }
+}

@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel da Empresa - Portal de Talentos | SCTEC</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/painel.css">
+</head>
+<body style="padding-top: 80px;">
+
+  <!-- Navbar área logada (fixa) -->
+  <nav class="navbar navbar--painel" id="navbar-painel">
+    <div class="navbar__inner">
+      <a href="../index.html" class="navbar__brand">SCTEC</a>
+      <div class="navbar-painel__right">
+        <span class="navbar-painel__company-name">TechCorp Soluções Ltda.</span>
+        <div class="navbar-painel__avatar" id="avatar-toggle" onclick="toggleAvatarMenu()">TC</div>
+        <!-- Dropdown menu (mobile + desktop) -->
+        <div class="avatar-menu" id="avatar-menu">
+          <div class="avatar-menu__header">
+            <strong>TechCorp Soluções</strong>
+            <span>Parceiro ativo</span>
+          </div>
+          <a href="painel-empresa.html" class="avatar-menu__link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+            Dashboard
+          </a>
+          <a href="painel-candidatos.html" class="avatar-menu__link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            Buscar Talentos
+          </a>
+          <a href="painel-perfil.html" class="avatar-menu__link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Perfil da Empresa
+          </a>
+          <div class="avatar-menu__divider"></div>
+          <a href="login.html" class="avatar-menu__link avatar-menu__link--logout">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            Sair
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="painel">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar__header">
+        <div class="sidebar__company">TechCorp Soluções</div>
+        <div class="sidebar__plan">Parceiro ativo</div>
+      </div>
+      <nav class="sidebar__nav">
+        <a href="painel-empresa.html" class="sidebar__link sidebar__link--active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          Dashboard
+        </a>
+        <a href="painel-candidatos.html" class="sidebar__link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          Buscar Talentos
+        </a>
+        <a href="painel-perfil.html" class="sidebar__link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Perfil da Empresa
+        </a>
+      </nav>
+      <div class="sidebar__footer">
+        <a href="login.html" class="sidebar__logout">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Sair
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="painel__main">
+      <div class="painel__header">
+        <div>
+          <h1 class="painel__title">Dashboard</h1>
+          <p class="painel__subtitle">Explore o banco de talentos formados pelo SCTEC</p>
+        </div>
+        <a href="painel-candidatos.html" class="btn btn--primary">Buscar Talentos</a>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-card__label">Talentos disponíveis</div>
+          <div class="stat-card__value">1.247</div>
+          <div class="stat-card__change">Formados pelo programa</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__label">Perfis salvos</div>
+          <div class="stat-card__value">9</div>
+          <div class="stat-card__change">Sua lista de interesse</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__label">Trilhas cobertas</div>
+          <div class="stat-card__value">3</div>
+          <div class="stat-card__change">Carreira Tech, IA para DEVs, IA na Prática</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__label">Portais de vagas</div>
+          <div class="stat-card__value">2</div>
+          <div class="stat-card__change"><a href="painel-perfil.html" style="color: var(--color-primary); font-weight: 500;">Gerenciar links →</a></div>
+        </div>
+      </div>
+
+      <!-- Atalhos da vitrine -->
+      <div class="dashboard-cards">
+        <a href="painel-candidatos.html" class="dashboard-card">
+          <div class="dashboard-card__icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          </div>
+          <div class="dashboard-card__body">
+            <h3 class="dashboard-card__title">Buscar Talentos</h3>
+            <p class="dashboard-card__text">Filtre alunos por habilidades, trilha, cidade e nível. Acesse perfis completos e entre em contato.</p>
+          </div>
+          <svg class="dashboard-card__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="painel-perfil.html" class="dashboard-card">
+          <div class="dashboard-card__icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="dashboard-card__body">
+            <h3 class="dashboard-card__title">Perfil da Empresa</h3>
+            <p class="dashboard-card__text">Mantenha suas tecnologias em destaque e cadastre os links dos seus portais de vagas.</p>
+          </div>
+          <svg class="dashboard-card__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Talentos em destaque -->
+      <div class="panel-table">
+        <div class="panel-table__header">
+          <h2 class="panel-table__title">Talentos em destaque</h2>
+          <a href="painel-candidatos.html" class="btn btn--ghost btn--sm">Ver todos</a>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Talento</th>
+              <th>Trilha</th>
+              <th>Principais skills</th>
+              <th>Cidade</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Ana Beatriz Souza</strong></td>
+              <td>IA para DEVs</td>
+              <td>React, TypeScript, Node.js</td>
+              <td>Florianópolis</td>
+              <td>
+                <a href="aluno-perfil-publico.html" class="btn btn--ghost btn--sm">Ver perfil</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Carlos Eduardo Lima</strong></td>
+              <td>Carreira Tech</td>
+              <td>Python, SQL, Power BI</td>
+              <td>Joinville</td>
+              <td>
+                <a href="aluno-perfil-publico.html" class="btn btn--ghost btn--sm">Ver perfil</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Mariana Costa</strong></td>
+              <td>IA para DEVs</td>
+              <td>Java, Spring, PostgreSQL</td>
+              <td>Blumenau</td>
+              <td>
+                <a href="aluno-perfil-publico.html" class="btn btn--ghost btn--sm">Ver perfil</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+  </div>
+
+  <script>
+    function toggleAvatarMenu() {
+      const menu = document.getElementById('avatar-menu');
+      menu.classList.toggle('avatar-menu--open');
+    }
+    // Fechar ao clicar fora
+    document.addEventListener('click', (e) => {
+      const menu = document.getElementById('avatar-menu');
+      const toggle = document.getElementById('avatar-toggle');
+      if (menu && !menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.remove('avatar-menu--open');
+      }
+    });
+  </script>
+</body>
+</html>

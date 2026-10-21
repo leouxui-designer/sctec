@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCTEC - Programa de Tecnologia | Governo de Santa Catarina</title>
+  <meta name="description" content="Trilhas de aprendizagem em Inteligência Artificial e Tecnologia. Programa gratuito do Governo de SC.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+  <!-- Govbar -->
+  <div id="govbar-placeholder" data-component="components/govbar.html"></div>
+
+  <!-- Navbar -->
+  <div id="navbar-placeholder" class="navbar-wrapper" data-component="components/navbar.html"></div>
+
+  <!-- ===========================
+       HERO - Start CTA
+       =========================== -->
+  <section class="hero-home" id="inicio">
+    <div class="hero-home__bg"></div>
+    <div class="hero-home__content container">
+      <h1 class="hero-home__title">
+        Trilhas de Aprendizagem em<br>Inteligência Artificial e Tecnologia
+      </h1>
+      <p class="hero-home__subtitle">
+        Uma jornada de aprendizagem em Inteligência Artificial e formação em tecnologia. 
+        O Programa SCTEC é uma iniciativa do Estado de Santa Catarina, por meio da Secretaria 
+        de Estado da Ciência, Tecnologia e Inovação (SCTI), executada pelo SENAI/SC, com oferta 
+        de cursos na área de tecnologia.
+      </p>
+      <div class="hero-home__actions">
+        <a href="#trilhas" class="btn btn--primary btn--lg">Conhecer as trilhas</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       BANNER - Destaque
+       =========================== -->
+  <section class="banner" id="banner">
+    <div class="banner__carousel">
+      <div class="banner__slide banner__slide--active">
+        <div class="container">
+          <div class="banner__content">
+            <span class="badge badge--green">Novidade</span>
+            <h2 class="banner__title">Inscrições Abertas - IA na Prática</h2>
+            <p class="banner__text">Aprenda a usar Inteligência Artificial no seu dia a dia. Curso gratuito com certificado SENAI.</p>
+            <a href="#" class="btn btn--primary">Inscreva-se agora</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="banner__nav">
+      <button class="banner__nav-btn banner__nav-btn--prev" aria-label="Anterior">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="banner__nav-btn banner__nav-btn--next" aria-label="Próximo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===========================
+       ABOUT - Conheça o Programa
+       =========================== -->
+  <section class="about section" id="sobre">
+    <div class="container">
+      <div class="about__header">
+        <h2 class="about__title">Conheça o Programa SCTEC</h2>
+        <p class="about__subtitle">
+          O Programa oferece cursos de tecnologia e Inteligência Artificial voltados ao desenvolvimento 
+          de conhecimentos e competências para diferentes públicos.
+        </p>
+      </div>
+
+      <div class="about__cards">
+        <!-- Card 1 - Sobre o programa (vermelho/rosa, full-width) -->
+        <div class="about-card-hero about-card-hero--red">
+          <div class="about-card-hero__image">
+            <div class="about-card-hero__screen"></div>
+          </div>
+          <div class="about-card-hero__content">
+            <h3 class="about-card-hero__title">Sobre o programa</h3>
+            <p class="about-card-hero__text">
+              O SCTEC é um programa do Estado de Santa Catarina, por meio da Secretaria de Estado da Ciência, 
+              Tecnologia e Inovação (SCTI), executado em parceria com o SENAI/SC. O Programa oferece cursos 
+              nas áreas de Inteligência Artificial e tecnologia, contribuindo para o desenvolvimento de 
+              conhecimentos e competências voltados à formação tecnológica.
+            </p>
+          </div>
+        </div>
+
+        <!-- Row: Card 2 + Card 3 -->
+        <div class="about__row">
+          <!-- Card 2 - Trilhas de aprendizagem (verde/azul, largo) -->
+          <div class="about-card-hero about-card-hero--teal">
+            <div class="about-card-hero__content">
+              <h3 class="about-card-hero__title">Trilhas de aprendizagem</h3>
+              <p class="about-card-hero__text">
+                No SCTEC, os participantes têm acesso a uma das três trilhas de aprendizagem, de acordo 
+                com seu perfil e seus interesses: Carreira Tech, IA na Prática e IA para DEVs. Cada trilha 
+                reúne cursos organizados em diferentes níveis de aprendizagem, abrangendo desde conteúdos 
+                introdutórios até formações especializadas nas áreas de tecnologia e Inteligência Artificial.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3 - Arrow/imagem (glassmorphism, estreito) -->
+          <div class="about-card-hero about-card-hero--glass">
+            <div class="about-card-hero__arrow">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       TRILHAS - CTA Cards
+       =========================== -->
+  <section class="trilhas section--dark" id="trilhas">
+    <div class="container">
+      <div class="trilhas__header">
+        <h2 class="trilhas__title">Conheça as 3 trilhas do SCTEC</h2>
+        <p class="trilhas__subtitle">Trilhas de aprendizagem gratuitas e certificadas para diferentes perfis e níveis de conhecimento.</p>
+      </div>
+
+      <div class="trilhas__grid">
+        <!-- Card 1 - Carreira Tech -->
+        <div class="trilha-card">
+          <div class="trilha-card__header">
+            <h3 class="trilha-card__title">Carreira Tech</h3>
+            <div class="trilha-card__icon-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+          </div>
+          <p class="trilha-card__description">
+            Para quem deseja conhecer diferentes áreas da tecnologia. Explore três áreas de formação, 
+            identifique aquela com maior afinidade e desenvolva conhecimentos para sua trajetória profissional.
+          </p>
+          <div class="trilha-card__tags">
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg> Início da Carreira</span>
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Até 518h</span>
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Certificado SENAI</span>
+          </div>
+          <a href="#" class="btn btn--primary w-full">Conheça o Carreira Tech</a>
+        </div>
+
+        <!-- Card 2 - IA para DEVs -->
+        <div class="trilha-card">
+          <div class="trilha-card__header">
+            <h3 class="trilha-card__title">IA para DEVs</h3>
+            <div class="trilha-card__icon-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+          </div>
+          <p class="trilha-card__description">
+            Para desenvolvedores que desejam ampliar seus conhecimentos. Aborda a aplicação 
+            da Inteligência Artificial no desenvolvimento de software.
+          </p>
+          <div class="trilha-card__tags">
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg> Formação Especializada</span>
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 180h</span>
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Certificado SENAI</span>
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 10l5 5-5 5"/><path d="M4 4v7a4 4 0 004 4h12"/></svg> Aulas ao vivo</span>
+          </div>
+          <a href="#" class="btn btn--primary w-full">Conheça o IA para DEVs</a>
+        </div>
+
+        <!-- Card 3 - IA na Prática -->
+        <div class="trilha-card">
+          <div class="trilha-card__header">
+            <h3 class="trilha-card__title">IA na Prática</h3>
+            <div class="trilha-card__icon-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a4 4 0 014 4c0 1.5-.8 2.8-2 3.5v1h-4v-1c-1.2-.7-2-2-2-3.5a4 4 0 014-4z"/><path d="M10 14.5h4"/><path d="M10 17h4"/><path d="M10 19.5h4"/><circle cx="12" cy="22" r="1"/></svg>
+            </div>
+          </div>
+          <p class="trilha-card__description">
+            Para qualquer pessoa interessada em conhecer e utilizar recursos de Inteligência 
+            Artificial no dia a dia. Aborda aplicações voltadas às atividades pessoais e profissionais.
+          </p>
+          <div class="trilha-card__tags">
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg> Produtividade Diária</span>
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 54h</span>
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Certificado SENAI</span>
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg> No seu ritmo</span>
+          </div>
+          <a href="#" class="btn btn--primary w-full">Conheça o IA na Prática</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-placeholder" data-component="components/footer.html"></div>
+
+  <!-- JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>

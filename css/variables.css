@@ -1,0 +1,96 @@
+/* ============================================
+   SCTEC Design System - CSS Variables
+   Extraídas do Figma (SCTEC - Web/Mobile)
+   ============================================ */
+
+:root {
+  /* === Cores === */
+  --color-primary: #2CA942;
+  --color-primary-light: #55B13A;
+  --color-primary-dark: #52B934;
+  --color-primary-gradient: linear-gradient(136deg, #2CA942 16%, #55B13A 55%, #52B934 87%);
+
+  --color-secondary: #7AB934;
+  --color-dark: #141414;
+  --color-dark-bg: #303030;
+
+  --color-text-default: #000000;
+  --color-text-secondary: rgba(0, 0, 0, 0.8);
+  --color-text-tertiary: #454545;
+  --color-text-muted: #6B7280;
+  --color-text-invert: #FFFFFF;
+
+  --color-bg-white: #FFFFFF;
+  --color-bg-light: #F8F9FB;
+  --color-bg-dark: #303030;
+
+  --color-border-default: rgba(0, 0, 0, 0.1);
+  --color-border-highlight: #7AB934;
+
+  --color-fill-opacity-white-70: rgba(255, 255, 255, 0.7);
+
+  /* === Tipografia === */
+  --font-header: 'Montserrat', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+
+  /* Header sizes */
+  --header-h1-size: 96px;
+  --header-h1-line-height: 88px;
+  --header-h2-size: 48px;
+  --header-h2-line-height: 56px;
+  --header-h3-size: 36px;
+  --header-h3-line-height: 44px;
+  --header-h4-size: 31.3px;
+  --header-h4-line-height: 48px;
+  --header-h5-size: 25px;
+  --header-h5-line-height: 40px;
+  --header-h6-size: 20px;
+  --header-h6-line-height: 28px;
+
+  /* Body sizes */
+  --body-large: 18px;
+  --body-default: 16px;
+  --body-small: 14px;
+  --body-xs: 12px;
+
+  /* Button */
+  --button-size: 16px;
+  --button-line-height: 16px;
+  --button-radius-full: 80px;
+  --button-radius-default: 8px;
+
+  /* === Espaçamento === */
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+  --spacing-20: 20px;
+  --spacing-24: 24px;
+  --spacing-28: 28px;
+  --spacing-32: 32px;
+  --spacing-40: 40px;
+  --spacing-48: 48px;
+  --spacing-56: 56px;
+  --spacing-64: 64px;
+  --spacing-80: 80px;
+  --spacing-96: 96px;
+  --spacing-120: 120px;
+
+  /* === Layout === */
+  --container-max: 1200px;
+  --page-width: 1440px;
+  --navbar-height: 80px;
+  --govbar-height: 40px;
+
+  /* === Efeitos === */
+  --shadow-navbar: 0px 1.2px 15px rgba(69, 42, 124, 0.1);
+  --shadow-card: 0px 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-card-hover: 0px 8px 24px rgba(0, 0, 0, 0.12);
+  --blur-navbar: 12px;
+
+  /* === Transições === */
+  --transition-fast: 150ms ease;
+  --transition-default: 250ms ease;
+  --transition-slow: 400ms ease;
+}

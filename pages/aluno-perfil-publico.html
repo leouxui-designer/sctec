@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil do Talento | SCTEC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/painel.css">
+  <link rel="stylesheet" href="../css/mobile-nav.css">
+</head>
+<body style="padding-top: 80px;">
+
+  <nav class="navbar navbar--painel">
+    <div class="navbar__inner">
+      <a href="../index.html" class="navbar__brand">SCTEC</a>
+      <div class="navbar-painel__right">
+        <span class="navbar-painel__company-name">TechCorp Soluções Ltda.</span>
+        <div class="navbar-painel__avatar" id="avatar-toggle" onclick="toggleAvatarMenu()">TC</div>
+        <div class="avatar-menu" id="avatar-menu">
+          <div class="avatar-menu__header"><strong>TechCorp Soluções</strong><span>Parceiro ativo</span></div>
+          <a href="painel-candidatos.html" class="avatar-menu__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>Buscar Talentos</a>
+          <a href="painel-perfil.html" class="avatar-menu__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Perfil da Empresa</a>
+          <div class="avatar-menu__divider"></div>
+          <a href="login.html" class="avatar-menu__link avatar-menu__link--logout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Sair</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="painel">
+    <aside class="sidebar">
+      <div class="sidebar__header">
+        <div class="sidebar__company">TechCorp Soluções</div>
+        <div class="sidebar__plan">Parceiro ativo</div>
+      </div>
+      <nav class="sidebar__nav">
+        <a href="painel-candidatos.html" class="sidebar__link sidebar__link--active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>Buscar Talentos</a>
+        <a href="painel-perfil.html" class="sidebar__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Perfil da Empresa</a>
+      </nav>
+      <div class="sidebar__footer">
+        <a href="login.html" class="sidebar__logout"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Sair</a>
+      </div>
+    </aside>
+
+    <main class="painel__main">
+      <div style="margin-bottom: 20px;">
+        <a href="painel-candidatos.html" style="font-size: 14px; color: var(--color-primary); font-weight: 500;">← Voltar para a busca</a>
+      </div>
+
+      <!-- Hero do perfil (vitrine) -->
+      <div class="vitrine-hero">
+        <div class="vitrine-hero__avatar">JS</div>
+        <div class="vitrine-hero__info">
+          <h1 class="vitrine-hero__name">João Silva</h1>
+          <div class="vitrine-hero__meta">
+            <span class="vitrine-hero__meta-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Florianópolis, SC
+            </span>
+            <a href="mailto:joao.silva@email.com" class="vitrine-hero__meta-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              joao.silva@email.com
+            </a>
+            <span class="vitrine-hero__meta-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+              (48) 99123-4567
+            </span>
+          </div>
+          <div class="vitrine-hero__links">
+            <a href="#" class="portfolio-link portfolio-link--sm">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+              <span>GitHub</span>
+            </a>
+            <a href="#" class="portfolio-link portfolio-link--sm">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="#" class="portfolio-link portfolio-link--sm">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+              <span>Portfólio</span>
+            </a>
+            <a href="#video-pitch" class="portfolio-link portfolio-link--sm portfolio-link--pitch">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+              <span>Assistir vídeo de apresentação</span>
+            </a>
+            <a href="#" class="portfolio-link portfolio-link--sm">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              <span>Currículo PDF</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1. Sobre -->
+      <div class="perfil-section">
+        <div class="perfil-section__header">
+          <h2 class="perfil-section__title">Sobre</h2>
+        </div>
+        <p style="font-size: 15px; line-height: 1.7; color: var(--color-text-secondary);">Desenvolvedor front-end formado pelo programa SCTEC. Apaixonado por interfaces responsivas e boas práticas de código. Buscando minha primeira oportunidade profissional na área.</p>
+      </div>
+
+      <!-- 2. Vídeo de apresentação (destaque) -->
+      <div class="perfil-section" id="video-pitch">
+        <div class="perfil-section__header">
+          <h2 class="perfil-section__title">Vídeo de apresentação</h2>
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; aspect-ratio: 16/9; max-width: 560px; background: #000;">
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Vídeo de apresentação de João Silva" frameborder="0" allowfullscreen style="border: none;"></iframe>
+        </div>
+      </div>
+
+      <!-- 3. Habilidades -->
+      <div class="perfil-section">
+        <div class="perfil-section__header">
+          <h2 class="perfil-section__title">Habilidades &amp; Tecnologias</h2>
+        </div>
+        <div class="tag-cloud">
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">TypeScript</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">Git</span>
+          <span class="tech-tag">PostgreSQL</span>
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">REST APIs</span>
+        </div>
+      </div>
+
+      <!-- 4. Experiência profissional -->
+      <div class="perfil-section">
+        <div class="perfil-section__header">
+          <h2 class="perfil-section__title">Experiência profissional</h2>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div style="padding: 16px; background: var(--color-bg-light); border-radius: 8px;">
+            <strong style="font-size: 15px;">Estagiário de Desenvolvimento</strong>
+            <p style="font-size: 13px; color: var(--color-text-muted); margin-top: 2px;">StartupSC • Mar 2026 - Atual</p>
+            <p style="font-size: 13px; color: var(--color-text-secondary); margin-top: 8px;">Desenvolvimento de features no front-end com React e TypeScript. Participação em code reviews e dailys.</p>
+          </div>
+          <div style="padding: 16px; background: var(--color-bg-light); border-radius: 8px;">
+            <strong style="font-size: 15px;">Freelancer Web</strong>
+            <p style="font-size: 13px; color: var(--color-text-muted); margin-top: 2px;">Autônomo • Jan 2025 - Fev 2026</p>
+            <p style="font-size: 13px; color: var(--color-text-secondary); margin-top: 8px;">Criação de sites e landing pages para pequenos negócios usando HTML, CSS e JavaScript.</p>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    function showToast(msg) {
+      var t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('toast--visible');
+      setTimeout(function() { t.classList.remove('toast--visible'); }, 3000);
+    }
+    function toggleAvatarMenu() {
+      document.getElementById('avatar-menu').classList.toggle('avatar-menu--open');
+    }
+    document.addEventListener('click', (e) => {
+      const menu = document.getElementById('avatar-menu');
+      const toggle = document.getElementById('avatar-toggle');
+      if (menu && !menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.remove('avatar-menu--open');
+      }
+    });
+  </script>
+  <script src="../js/profile-navigation.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+/* Shell ACATE — baseado no shell compartilhado do Portal, com identidade própria. */
+.acate-page {
+  --font-body: "SCTEC Admin Roboto", sans-serif;
+  --font-header: "SCTEC Admin Montserrat", sans-serif;
+  padding-top: 80px;
+  color: #171717;
+  background: #f8f9fb;
+  font-family: var(--font-body);
+}
+.acate-page [hidden] { display: none !important; }
+.acate-page .sr-only { position: absolute !important; width: 1px !important; height: 1px !important; margin: -1px !important; padding: 0 !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }
+.acate-page :is(a, button, input, select):focus-visible { outline: 3px solid #7ab934; outline-offset: 3px; }
+
+.acate-header { height: 80px; padding: 0; border: 0; background: #fff; box-shadow: 0 1.197px 14.958px rgba(69, 42, 124, .1); }
+.acate-header .navbar__inner { width: 100%; max-width: none; height: 80px; padding: 16px 24px; }
+.acate-header__brand { display: flex; flex-direction: column; align-items: flex-start; gap: 0; color: #171717; line-height: 1; text-decoration: none; }
+.acate-header__brand strong { font-family: var(--font-header); font-size: 31px; font-weight: 800; line-height: 34px; letter-spacing: -.6px; }
+.acate-header__brand span { font-family: var(--font-body); font-size: 13px; font-weight: 600; line-height: 16px; }
+.acate-header .navbar-painel__right { gap: 16px; }
+.acate-header__identity { color: #454545; font-size: 14px; line-height: 20px; }
+.acate-header .navbar-painel__avatar { display: flex; width: 48px; height: 48px; flex: 0 0 48px; align-items: center; justify-content: center; padding: 0; border: 0; border-radius: 50%; color: #466822; background: #f1f7e9; font-size: 14px; font-weight: 700; }
+.acate-header .avatar-menu[hidden] { display: none; }
+
+.acate-sidebar { width: 256px; padding: 0; background: #22292B; }
+.acate-sidebar .sidebar__header { height: 73px; margin: 0; padding: 20px 16px 16px; border-color: rgba(255, 255, 255, .1); }
+.acate-sidebar .sidebar__company { margin: 0; font-family: var(--font-header); font-size: 16px; line-height: 20px; }
+.acate-sidebar .sidebar__nav { gap: 4px; padding: 16px 8px; }
+.acate-sidebar .sidebar__link { height: 48px; flex-shrink: 0; gap: 8px; padding: 12px 8px; border-radius: 6px; color: #b4b7b8; font-size: 14px; font-weight: 700; }
+.acate-sidebar .sidebar__link img { width: 24px; height: 24px; opacity: .8; filter: brightness(0) invert(.78); }
+.acate-sidebar .sidebar__link--active { color: #7ab934; background: rgba(122, 185, 52, .12); }
+.acate-sidebar .sidebar__link--active img { opacity: 1; filter: invert(53%) sepia(63%) saturate(516%) hue-rotate(42deg) brightness(96%); }
+.acate-sidebar .sidebar__footer { padding: 8px 16px 24px; border-color: rgba(255, 255, 255, .1); }
+.acate-sidebar .sidebar__logout { height: 48px; gap: 8px; color: #b4b7b8; font-size: 14px; font-weight: 700; }
+.acate-sidebar .sidebar__logout img { width: 24px; height: 24px; filter: brightness(0) invert(.78); }
+.acate-page .painel__main { min-width: 0; margin-left: 256px; background: #f8f9fb; }
+
+@media (max-width: 768px) {
+  .acate-header .navbar__inner { padding-inline: 16px; }
+  .acate-header__brand strong { font-size: 25px; line-height: 28px; }
+  .acate-header__brand span { font-size: 11px; line-height: 14px; }
+  .acate-header__identity { display: none; }
+  .acate-sidebar { position: static; width: 100%; height: auto; padding: 0; }
+  .acate-page .painel { flex-direction: column; }
+  .acate-sidebar .sidebar__header, .acate-sidebar .sidebar__footer { display: none; }
+  .acate-sidebar .sidebar__nav { flex-direction: row; overflow-x: auto; padding: 8px; }
+  .acate-page .painel__main { margin-left: 0; }
+}

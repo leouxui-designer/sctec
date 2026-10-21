@@ -1,0 +1,378 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil da Empresa - Portal de Talentos | SCTEC</title>
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/painel.css">
+  <link rel="stylesheet" href="../css/company-header.css">
+  <link rel="stylesheet" href="../css/company-profile.css">
+  <link rel="stylesheet" href="../css/profile-status.css">
+  <link rel="stylesheet" href="../css/mobile-nav.css">
+</head>
+<body class="company-profile-page" style="padding-top: 80px;">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar--painel company-header" id="navbar-painel">
+    <div class="navbar__inner">
+      <a href="painel-candidatos.html" class="navbar__brand company-header__brand" aria-label="SCTEC Portal de Talentos — Buscar Talentos"><strong>SCTEC</strong><span>Portal de Talentos</span></a>
+      <div class="navbar-painel__right">
+        <span class="navbar-painel__company-name">TechCorp Soluções Ltda.</span>
+        <button class="navbar-painel__avatar" id="avatar-toggle" type="button" aria-label="Abrir menu da empresa" aria-expanded="false" aria-controls="avatar-menu">TC</button>
+        <div class="avatar-menu" id="avatar-menu" aria-hidden="true">
+          <div class="avatar-menu__header"><strong>TechCorp Soluções</strong><span>Parceiro ativo</span></div>
+          <a href="painel-candidatos.html" class="avatar-menu__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>Buscar Talentos</a>
+          <a href="painel-perfil.html" class="avatar-menu__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Perfil da Empresa</a>
+          <div class="avatar-menu__divider"></div>
+          <a href="login.html" class="avatar-menu__link avatar-menu__link--logout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Sair</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="painel">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar__header">
+        <div class="sidebar__company">TechCorp Soluções</div>
+        <div class="sidebar__plan">Parceiro ativo</div>
+      </div>
+      <nav class="sidebar__nav">
+        <a href="painel-candidatos.html" class="sidebar__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>Buscar Talentos</a>
+        <a href="painel-perfil.html" class="sidebar__link sidebar__link--active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Perfil da Empresa</a>
+      </nav>
+      <div class="sidebar__footer">
+        <a href="login.html" class="sidebar__logout"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Sair</a>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="painel__main company-profile-legacy" hidden>
+      <div class="painel__header">
+        <div>
+          <h1 class="painel__title">Perfil da Empresa</h1>
+          <p class="painel__subtitle">Mantenha suas informações, tecnologias e portais de vagas atualizados</p>
+        </div>
+      </div>
+
+      <!-- Logo e informações básicas -->
+      <div class="perfil-section">
+        <div class="perfil-section__header">
+          <h2 class="perfil-section__title">Logo da empresa</h2>
+        </div>
+        <div style="display: flex; align-items: center; gap: 20px;">
+          <div style="position: relative; cursor: pointer;" onclick="document.getElementById('logo-upload').click()">
+            <div id="logo-preview" style="width: 72px; height: 72px; border-radius: 16px; background: var(--color-primary); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 24px; color: white; overflow: hidden;">TC</div>
+            <div style="position: absolute; bottom: -2px; right: -2px; width: 22px; height: 22px; border-radius: 50%; background: var(--color-primary); display: flex; align-items: center; justify-content: center; border: 2px solid white;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            </div>
+            <input type="file" id="logo-upload" accept="image/*" style="display:none;" onchange="previewLogo(this)">
+          </div>
+          <div>
+            <p class="perfil-logo-info__name">TechCorp Soluções Ltda.</p>
+            <p class="perfil-logo-info__cnpj">CNPJ: 12.345.678/0001-90</p>
+            <span class="status status--active">Parceiro ativo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form dados da empresa -->
+      <form class="perfil-form" onsubmit="event.preventDefault(); showToast('Perfil atualizado com sucesso!');">
+        <!-- Dados da empresa (header/identidade) -->
+        <div class="perfil-section">
+          <div class="perfil-section__header">
+            <h2 class="perfil-section__title">Dados da empresa</h2>
+          </div>
+          <div class="perfil-form__grid">
+            <div class="form-group">
+              <label class="form-group__label">Nome fantasia</label>
+              <input type="text" class="form-group__input" value="TechCorp Soluções">
+            </div>
+            <div class="form-group">
+              <label class="form-group__label">Razão social</label>
+              <input type="text" class="form-group__input" value="TechCorp Soluções em Tecnologia Ltda.">
+            </div>
+            <div class="form-group">
+              <label class="form-group__label">CNPJ</label>
+              <input type="text" class="form-group__input" value="12.345.678/0001-90" disabled style="opacity: 0.6;">
+            </div>
+            <div class="form-group">
+              <label class="form-group__label">Segmento de atuação</label>
+              <input type="text" class="form-group__input" value="Software House">
+            </div>
+            <div class="form-group">
+              <label class="form-group__label">Porte</label>
+              <select class="form-group__input">
+                <option>Startup</option>
+                <option>Pequena empresa</option>
+                <option selected>Média empresa</option>
+                <option>Grande empresa</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-group__label">Cidade</label>
+              <input type="text" class="form-group__input" value="Florianópolis, SC">
+            </div>
+            <div class="form-group">
+              <label class="form-group__label">Site</label>
+              <input type="url" class="form-group__input" value="https://techcorp.com.br">
+            </div>
+            <div class="form-group">
+              <label class="form-group__label">LinkedIn</label>
+              <input type="url" class="form-group__input" value="https://linkedin.com/company/techcorp">
+            </div>
+          </div>
+        </div>
+
+        <!-- 1. Sobre a empresa -->
+        <div class="perfil-section">
+          <div class="perfil-section__header">
+            <h2 class="perfil-section__title">Sobre a empresa</h2>
+          </div>
+          <div class="form-group">
+            <label class="form-group__label">Descrição</label>
+            <textarea class="form-group__input" rows="4" style="resize: vertical;">Somos uma empresa de tecnologia focada em soluções inovadoras para o mercado B2B. Atuamos com desenvolvimento de software, análise de dados e inteligência artificial aplicada a negócios.</textarea>
+          </div>
+        </div>
+
+        <!-- 2. Nossos Portais de Vagas -->
+        <div class="perfil-section">
+          <div class="perfil-section__header">
+            <h2 class="perfil-section__title">Nossos Portais de Vagas</h2>
+          </div>
+          <p style="font-size: 13px; color: var(--color-text-muted); margin-bottom: 16px;">Cadastre os links dos seus canais de recrutamento. Os talentos serão direcionados para eles.</p>
+          <div class="portais-list" id="portais-list">
+            <div class="portal-item">
+              <div class="portal-item__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+              </div>
+              <div class="portal-item__body">
+                <span class="portal-item__label">Gupy</span>
+                <a href="https://techcorp.gupy.io" class="portal-item__url" target="_blank" rel="noopener">https://techcorp.gupy.io</a>
+              </div>
+              <button type="button" class="action-icon" title="Remover" onclick="this.closest('.portal-item').remove()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></button>
+            </div>
+            <div class="portal-item">
+              <div class="portal-item__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              </div>
+              <div class="portal-item__body">
+                <span class="portal-item__label">Página de Carreiras</span>
+                <a href="https://techcorp.com.br/carreiras" class="portal-item__url" target="_blank" rel="noopener">https://techcorp.com.br/carreiras</a>
+              </div>
+              <button type="button" class="action-icon" title="Remover" onclick="this.closest('.portal-item').remove()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></button>
+            </div>
+          </div>
+          <div class="portal-adder">
+            <input type="text" id="portal-label" class="form-group__input" placeholder="Nome do portal (ex: LinkedIn, Kenoby)">
+            <input type="url" id="portal-url" class="form-group__input" placeholder="https://...">
+            <button type="button" class="btn btn--outline btn--sm" onclick="addPortal()">Adicionar link</button>
+          </div>
+        </div>
+
+        <!-- 3. Tecnologias que utilizamos -->
+        <div class="perfil-section">
+          <div class="perfil-section__header">
+            <h2 class="perfil-section__title">Tecnologias que utilizamos</h2>
+          </div>
+          <p style="font-size: 13px; color: var(--color-text-muted); margin-bottom: 16px;">Essas tags ajudam os talentos a encontrar sua empresa na busca.</p>
+          <div class="tag-cloud" id="tech-list">
+            <span class="tech-tag tech-tag--editable">JavaScript <button type="button" onclick="this.parentElement.remove()" aria-label="Remover JavaScript">&times;</button></span>
+            <span class="tech-tag tech-tag--editable">React <button type="button" onclick="this.parentElement.remove()" aria-label="Remover React">&times;</button></span>
+            <span class="tech-tag tech-tag--editable">Node.js <button type="button" onclick="this.parentElement.remove()" aria-label="Remover Node.js">&times;</button></span>
+            <span class="tech-tag tech-tag--editable">TypeScript <button type="button" onclick="this.parentElement.remove()" aria-label="Remover TypeScript">&times;</button></span>
+            <span class="tech-tag tech-tag--editable">Python <button type="button" onclick="this.parentElement.remove()" aria-label="Remover Python">&times;</button></span>
+          </div>
+          <div class="tag-adder">
+            <input type="text" id="tech-input" class="form-group__input" placeholder="Adicionar tecnologia (ex: Go, .NET, AWS)" onkeydown="if(event.key==='Enter'){event.preventDefault();addTech();}">
+            <button type="button" class="btn btn--outline btn--sm" onclick="addTech()">Adicionar</button>
+          </div>
+        </div>
+
+        <!-- 4. Contato do responsável -->
+        <div class="perfil-section">
+          <div class="perfil-section__header">
+            <h2 class="perfil-section__title">Contato do responsável</h2>
+          </div>
+          <div class="perfil-form__grid">
+            <div class="form-group">
+              <label class="form-group__label">Nome</label>
+              <input type="text" class="form-group__input" value="Carlos Eduardo">
+            </div>
+            <div class="form-group">
+              <label class="form-group__label">Cargo</label>
+              <input type="text" class="form-group__input" value="CTO">
+            </div>
+            <div class="form-group">
+              <label class="form-group__label">E-mail</label>
+              <input type="email" class="form-group__input" value="carlos@techcorp.com.br">
+            </div>
+            <div class="form-group">
+              <label class="form-group__label">Telefone/WhatsApp</label>
+              <input type="tel" class="form-group__input" value="(48) 99999-1234">
+            </div>
+          </div>
+        </div>
+
+        <div class="perfil-actions">
+          <button type="submit" class="btn btn--primary">Salvar alterações</button>
+          <button type="button" class="btn btn--ghost">Cancelar</button>
+        </div>
+      </form>
+    </main>
+
+    <main class="painel__main company-profile-main">
+      <header class="company-profile-titlebar">
+        <div><h1>Perfil da Empresa</h1><p>Mantenha suas informações, tecnologias e portais de vagas atualizados</p></div>
+        <div class="company-profile-titlebar__actions">
+          <label class="company-profile-status"><input type="checkbox" checked aria-label="Perfil ativo"><span class="company-profile-status__track" aria-hidden="true"></span><span>Perfil Ativo</span></label>
+          <button class="profile-button profile-button--ghost" id="cp-preview" type="button"><img src="../assets/admin-figma/TablerIconsEye.svg" alt="" width="16" height="16">Visualizar perfil</button>
+        </div>
+      </header>
+
+      <form id="cp-form" novalidate>
+        <div class="company-profile-top-grid">
+          <section class="profile-card profile-logo-card" aria-labelledby="cp-logo-title">
+            <h2 id="cp-logo-title">Logo</h2>
+            <div class="profile-logo-preview" id="cp-logo-preview"><img src="../assets/company-profile/logo-3.png" srcset="../assets/company-profile/logo-4.png 256w, ../assets/company-profile/logo-3.png 500w" sizes="174px" alt="Logo da TechCorp Soluções Ltda."></div>
+            <input id="cp-logo-input" type="file" accept="image/png,image/jpeg" hidden>
+            <button class="profile-button profile-button--primary profile-logo-action" id="cp-logo-change" type="button">Alterar logo</button>
+            <button class="profile-button profile-button--ghost profile-logo-action" id="cp-logo-remove" type="button">Remover</button>
+            <p class="profile-logo-help">JPG ou PNG, até 5 MB</p>
+          </section>
+
+          <section class="profile-card profile-company-data" aria-labelledby="cp-company-data-title">
+            <h2 id="cp-company-data-title">Dados da empresa</h2>
+            <div class="profile-form-grid">
+              <label class="profile-field"><span>Nome fantasia <b>*</b></span><input value="TechCorp" disabled></label>
+              <label class="profile-field"><span>Razão social <b>*</b></span><input value="TechCorp Soluções Ltda." disabled></label>
+              <label class="profile-field"><span>CNPJ <b>*</b></span><input value="45.123.456/0001-89" disabled></label>
+              <label class="profile-field"><span>Segmento de atuação <b>*</b></span><input value="Tecnologia e SaaS" disabled></label>
+              <div class="profile-field"><span>Porte <b>*</b></span><div class="profile-select" data-profile-select="size"><button type="button" aria-haspopup="listbox" aria-expanded="false"><span data-select-value>Média empresa (50 a 99)</span><img src="../assets/admin-figma/TablerIconsChevronDown.svg" alt="" width="24" height="24"></button><div class="profile-select__menu" role="listbox" hidden><button type="button" role="option" data-value="Microempresa (até 9)">Microempresa (até 9)</button><button type="button" role="option" data-value="Pequena empresa (10 a 49)">Pequena empresa (10 a 49)</button><button type="button" role="option" aria-selected="true" data-value="Média empresa (50 a 99)">Média empresa (50 a 99)</button><button type="button" role="option" data-value="Grande empresa (100 ou mais)">Grande empresa (100 ou mais)</button></div></div></div>
+              <div class="profile-field"><span>Cidade <b>*</b></span><div class="profile-select" data-profile-select="city"><button type="button" aria-haspopup="listbox" aria-expanded="false"><span data-select-value>Florianópolis</span><img src="../assets/admin-figma/TablerIconsChevronDown.svg" alt="" width="24" height="24"></button><div class="profile-select__menu" role="listbox" hidden><button type="button" role="option" aria-selected="true" data-value="Florianópolis">Florianópolis</button><button type="button" role="option" data-value="Joinville">Joinville</button><button type="button" role="option" data-value="Blumenau">Blumenau</button><button type="button" role="option" data-value="Chapecó">Chapecó</button><button type="button" role="option" data-value="Criciúma">Criciúma</button><button type="button" role="option" data-value="Itajaí">Itajaí</button></div></div></div>
+            </div>
+          </section>
+        </div>
+
+        <section class="profile-card" aria-labelledby="cp-contact-title">
+          <div class="profile-card__header"><h2 id="cp-contact-title">Contato do responsável</h2><button class="profile-button profile-button--small profile-button--ghost" id="cp-add-contact" type="button"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Adicionar responsável</button></div>
+          <div class="profile-form-grid">
+            <label class="profile-field"><span>Nome do responsável <b>*</b></span><input id="cp-contact-name" value="Rafael Mendes" required></label>
+            <label class="profile-field"><span>Cargo <b>*</b></span><input id="cp-contact-role" value="CTO" required></label>
+            <label class="profile-field"><span>E-mail corporativo <b>*</b></span><input id="cp-contact-email" type="email" value="rafael.mendes@techcorp.com.br" required></label>
+            <label class="profile-field"><span>Telefone/Whatsapp <b>*</b></span><input id="cp-contact-phone" type="tel" value="(11) 98765-4321" required></label>
+          </div>
+        </section>
+
+        <section class="profile-card" aria-labelledby="cp-about-title"><div class="profile-card__heading"><h2 id="cp-about-title">Sobre a empresa</h2><p>Por favor, forneça informações sobre a empresa, incluindo sua área de atuação, valores e objetivos.</p></div><label class="sr-only" for="cp-about">Descrição da empresa</label><textarea class="profile-about" id="cp-about"></textarea></section>
+
+        <section class="profile-card" aria-labelledby="cp-skills-title">
+          <div class="profile-card__heading"><h2 id="cp-skills-title">Competências Técnicas que buscamos</h2><p>Essas tags ajudam os talentos a encontrar sua empresa na busca. Selecione as que sua empresa já tem ou busca.</p></div>
+          <label class="profile-skill-search"><span class="sr-only">Buscar competência por nome</span><input id="cp-skill-search" type="search" placeholder="Buscar por nome"><img src="../assets/admin-figma/LucideIconsSearch.svg" alt="" width="24" height="24"></label>
+          <div class="profile-skills" id="cp-skills" aria-label="Competências disponíveis"></div>
+          <div class="profile-support"><span>A sua tag não está aqui?</span><button type="button" id="cp-support">Entre em contato com o suporte</button></div>
+        </section>
+
+        <section class="profile-card" aria-labelledby="cp-channels-title">
+          <div class="profile-card__header profile-card__header--description"><div><h2 id="cp-channels-title">Onde acompanhar nossas vagas</h2><p>Adicione pelo menos um canal onde os candidatos possam encontrar suas vagas ou acompanhar oportunidades da empresa. Esse preenchimento é obrigatório para publicar o perfil na busca.</p></div><button class="profile-button profile-button--small profile-button--ghost" id="cp-add-channel" type="button"><img src="../assets/admin-figma/LucideIconsPlus.svg" alt="" width="16" height="16">Adicionar canal</button></div>
+          <div class="profile-channel-editor" id="cp-channel-editor" hidden><label class="profile-field"><span>Nome do canal</span><input id="cp-channel-name" placeholder="Ex.: LinkedIn"></label><label class="profile-field"><span>Endereço</span><input id="cp-channel-url" type="url" placeholder="https://..."></label><div><button class="profile-button profile-button--ghost" id="cp-channel-cancel" type="button">Cancelar</button><button class="profile-button profile-button--primary" id="cp-channel-save" type="button">Salvar canal</button></div></div>
+          <div class="profile-channels" id="cp-channels"></div>
+        </section>
+
+        <section class="profile-card profile-publication" aria-labelledby="cp-publication-title"><h2 id="cp-publication-title">Publicação do perfil da empresa</h2><p>Ao salvar e publicar o perfil, você confirma que as informações cadastradas poderão ser exibidas aos candidatos da plataforma para fins de divulgação da empresa e de oportunidades profissionais. Você poderá atualizar ou solicitar a remoção dessas informações conforme as regras da plataforma e a legislação aplicável.</p></section>
+        <footer class="profile-actions"><button class="profile-button profile-button--outline" id="cp-cancel" type="button">Cancelar</button><button class="profile-button profile-button--primary" type="submit">Salvar alterações e publicar perfil</button></footer>
+      </form>
+    </main>
+  </div>
+
+  <dialog class="profile-preview-dialog" id="cp-preview-dialog" aria-labelledby="cp-preview-title"><div class="profile-preview-dialog__card"><div class="profile-preview-dialog__header"><h2 id="cp-preview-title">Prévia do perfil da empresa</h2><button id="cp-preview-close" type="button" aria-label="Fechar prévia"><img src="../assets/admin-figma/RequestClose.svg" alt="" width="20" height="20"></button></div><div id="cp-preview-content"></div></div></dialog>
+
+  <script type="application/json" id="legacy-company-profile-code">
+    function addTech() {
+      const input = document.getElementById('tech-input');
+      const value = input.value.trim();
+      if (!value) return;
+      const list = document.getElementById('tech-list');
+      const existing = Array.from(list.querySelectorAll('.tech-tag')).map(t => t.childNodes[0].textContent.trim().toLowerCase());
+      if (existing.includes(value.toLowerCase())) { input.value = ''; return; }
+      const tag = document.createElement('span');
+      tag.className = 'tech-tag tech-tag--editable';
+      tag.textContent = value + ' ';
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.setAttribute('aria-label', 'Remover ' + value);
+      btn.innerHTML = '&times;';
+      btn.onclick = function() { this.parentElement.remove(); };
+      tag.appendChild(btn);
+      list.appendChild(tag);
+      input.value = '';
+    }
+
+    function addPortal() {
+      const label = document.getElementById('portal-label').value.trim();
+      const url = document.getElementById('portal-url').value.trim();
+      if (!label || !url) { showToast('Preencha o nome e o link do portal.'); return; }
+      const list = document.getElementById('portais-list');
+      const item = document.createElement('div');
+      item.className = 'portal-item';
+      item.innerHTML =
+        '<div class="portal-item__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg></div>' +
+        '<div class="portal-item__body"><span class="portal-item__label"></span><a class="portal-item__url" target="_blank" rel="noopener"></a></div>' +
+        '<button type="button" class="action-icon" title="Remover"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></button>';
+      item.querySelector('.portal-item__label').textContent = label;
+      const link = item.querySelector('.portal-item__url');
+      link.textContent = url;
+      link.href = url;
+      item.querySelector('.action-icon').onclick = function() { this.closest('.portal-item').remove(); };
+      list.appendChild(item);
+      document.getElementById('portal-label').value = '';
+      document.getElementById('portal-url').value = '';
+      showToast('Portal adicionado.');
+    }
+
+    function previewLogo(input) {
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const preview = document.getElementById('logo-preview');
+          preview.innerHTML = '';
+          preview.style.background = 'none';
+          const img = document.createElement('img');
+          img.src = e.target.result;
+          img.style.cssText = 'width:100%;height:100%;object-fit:cover;';
+          preview.appendChild(img);
+          showToast('Logo atualizada.');
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('toast--visible');
+      setTimeout(() => t.classList.remove('toast--visible'), 3000);
+    }
+    function toggleAvatarMenu() {
+      document.getElementById('avatar-menu').classList.toggle('avatar-menu--open');
+    }
+    document.addEventListener('click', (e) => {
+      const menu = document.getElementById('avatar-menu');
+      const toggle = document.getElementById('avatar-toggle');
+      if (menu && !menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.remove('avatar-menu--open');
+      }
+    });
+  </script>
+
+  <div class="toast" id="toast"></div>
+  <script src="../js/company-header.js"></script>
+  <script src="../js/company-profile.js"></script>
+  <script src="../js/profile-status.js" defer></script>
+  <script src="../js/profile-navigation.js" defer></script>
+</body>
+</html>

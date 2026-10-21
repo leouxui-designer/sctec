@@ -1,0 +1,101 @@
+/*
+  Importação de estudantes: tela de resultados (Figma 101248:19004, tabela 101949:25355).
+  Tabela editável: toda célula de dado é editável no próprio local (js/admin-student-import-results.js).
+  Larguras de coluna, alturas (cabeçalho 42, linha 65) e padding de 24 px seguem o Figma.
+  Cores de texto de erro e dos ícones usam tons mais escuros que o Figma onde o contraste exigia (AA).
+*/
+.admin-students__main.is-import-results { background: #fff; }
+.admin-students__main.is-import-results > :not(#student-import-results) { display: none !important; }
+
+.student-import-results { color: #171717; }
+.student-import-results > h1 { margin: 0 0 24px; font-family: var(--font-body); font-size: 30px; font-weight: 700; line-height: 30px; letter-spacing: -.75px; }
+.student-import-results__notice { margin: 0 0 24px; padding: 10px 12px; border-radius: 10px; color: #4a5d31; background: #f1f8ea; font-size: 13px; line-height: 20px; }
+
+/* Botão "Voltar para Banco de Talentos" (Figma 101248:19006). */
+.student-import-results__back { display: inline-flex; align-items: center; gap: 6px; height: 32px; margin: 0 0 24px; padding: 0 10px; border-radius: 10px; color: #669e2e; font-size: 14px; font-weight: 500; line-height: 20px; cursor: pointer; transition: background-color 180ms ease; }
+.student-import-results__back:hover { background: #f1f8ea; }
+.student-import-results__back img { width: 16px; height: 16px; }
+
+/* Cartão "Dados Importados" e abas Todos / Com erro (Figma 101250:20158, 101250:20317). */
+.student-import-results__card { overflow: hidden; border: 1px solid #d4d4d4; border-radius: 14px; background: #fff; }
+.student-import-results__card > header { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 80px; padding: 16px; }
+.student-import-results__card h2 { margin: 0; font-family: var(--font-body); font-size: 20px; font-weight: 700; line-height: 28px; letter-spacing: -.6px; }
+.student-import-results__tabs { display: flex; align-items: center; gap: 8px; padding: 4px; border-radius: 10px; background: #f8f9fb; }
+.student-import-results__tabs button { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 8px 12px; border-radius: 8px; color: #171717; font-size: 14px; font-weight: 600; line-height: 20px; cursor: pointer; transition: background-color 180ms ease, box-shadow 180ms ease; }
+.student-import-results__tabs button:hover { background: #ffffff99; }
+.student-import-results__tabs button[aria-pressed="true"] { background: #fff; box-shadow: 0 1px 2px #0000001a, 0 1px 3px #0000001a; }
+.student-import-results__tabs span { min-width: 20px; padding: 2px 8px; border-radius: 26px; background: #0000000a; color: #404040; font-size: 14px; font-weight: 500; line-height: 20px; text-align: center; }
+.student-import-results__tab-errors span { background: #e62c2d0d; color: #b91c1c; }
+
+/* Tabela: rolagem horizontal dentro do cartão, colunas de largura fixa. */
+/* position: relative contém os textos .sr-only (absolutos) dos cabeçalhos; sem isso eles ampliam a rolagem da página. */
+.student-import-results__table-wrap { position: relative; overflow: auto; }
+.student-import-grid { width: 2671px; table-layout: fixed; border-collapse: collapse; }
+.student-import-grid col:nth-child(1) { width: 190px; }
+.student-import-grid col:nth-child(2) { width: 144px; }
+.student-import-grid col:nth-child(3) { width: 235px; }
+.student-import-grid col:nth-child(4) { width: 170px; }
+.student-import-grid col:nth-child(5) { width: 188px; }
+.student-import-grid col:nth-child(6) { width: 166px; }
+.student-import-grid col:nth-child(7) { width: 118px; }
+.student-import-grid col:nth-child(n+8):nth-child(-n+13) { width: 228px; }
+.student-import-grid col:nth-child(14) { width: 92px; }
+.student-import-grid th, .student-import-grid td { padding: 0; border-bottom: 1px solid #d4d4d4; text-align: left; vertical-align: middle; }
+.student-import-grid thead th { height: 42px; padding: 0 24px; background: #f8f9fb; color: #171717; font-size: 12px; font-weight: 700; line-height: 16px; text-transform: uppercase; white-space: nowrap; }
+.student-import-grid thead th img { display: inline-block; margin-left: 4px; vertical-align: middle; }
+
+/* Células de dado: editáveis em qualquer estado (válido ou com erro). */
+.student-import-cell { position: relative; height: 65px; background: #fff; color: #171717; font-size: 14px; font-weight: 400; line-height: 20px; cursor: pointer; transition: background-color 150ms ease, box-shadow 150ms ease; }
+.student-import-cell__inner { display: flex; align-items: center; min-height: 64px; padding: 0 24px; }
+.student-import-cell__value { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; flex: 1 1 0; min-width: 0; overflow: hidden; overflow-wrap: anywhere; }
+.student-import-cell:hover { background: #f6faf1; box-shadow: inset 0 0 0 1px #c5dba8; }
+.student-import-cell:focus-visible, .student-import-row-edit:focus-visible { outline: 3px solid #7ab934; outline-offset: -3px; }
+
+/* Erro: fundo e texto vermelhos, ícone de alerta (não depende só da cor) e descrição em balão. */
+.student-import-cell.is-error { background: #e62c2d0d; }
+.student-import-cell.is-error .student-import-cell__value { color: #b91c1c; }
+.student-import-cell.is-error:hover { background: #fde8e8; box-shadow: inset 0 0 0 1px #f0a8a9; }
+.student-import-cell__icon { flex: 0 0 20px; width: 20px; height: 20px; }
+.student-import-cell__tip { position: absolute; left: 12px; bottom: calc(100% - 4px); z-index: 30; width: max-content; max-width: 260px; padding: 8px 10px; border: 1px solid #e62c2d; border-radius: 8px; background: #fff; box-shadow: 0 4px 12px #0002; color: #9f1f20; font-size: 12px; font-weight: 500; line-height: 16px; text-align: left; visibility: hidden; }
+.student-import-cell.is-error:hover .student-import-cell__tip, .student-import-cell.is-error:focus .student-import-cell__tip, .student-import-cell.is-error:focus-within .student-import-cell__tip { visibility: visible; }
+
+/* Edição no local: o controle ocupa a célula sem alterar larguras nem alturas de linha. */
+.student-import-cell.is-editing { background: #fff; box-shadow: inset 0 0 0 1px #669e2e; cursor: default; }
+.student-import-cell.is-editing.is-error { box-shadow: inset 0 0 0 1px #e62c2d; }
+.student-import-cell__editor { display: flex; align-items: center; min-height: 64px; padding: 0 12px; }
+.student-import-cell__control { box-sizing: border-box; width: 100%; height: 36px; padding: 0 12px; border: 1px solid #669e2e; border-radius: 8px; outline: 0; background: #fff; color: #171717; font-family: inherit; font-size: 14px; line-height: 20px; }
+.student-import-grid .student-import-cell__control:focus-visible { outline: 3px solid #7ab934; outline-offset: 1px; }
+.student-import-cell__control[aria-invalid="true"] { border-color: #e62c2d; }
+
+select.student-import-cell__control { padding: 0 8px; }
+
+/* Coluna Ações: lápis "Editar" leva à edição da primeira célula da linha. */
+.student-import-grid td.student-import-actions { padding: 0 24px; cursor: default; }
+.student-import-row-edit { width: 36px; height: 36px; border-radius: 10px; }
+.student-import-row-edit:hover { background: #f6faf1; }
+
+.student-import-results__empty { padding: 48px 24px; color: #737373; text-align: center; line-height: 24px; }
+.student-import-results__actions { display: flex; justify-content: flex-end; gap: 16px; min-height: 68px; padding: 16px; }
+
+/* Confirmação simulada (padrão do diálogo de sucesso do cadastro manual). */
+.student-import-success { position: fixed; inset: 0; width: min(420px, calc(100vw - 32px)); margin: auto; padding: 28px; border: 1px solid #d4d4d4; border-radius: 14px; color: #171717; background: #fff; text-align: center; }
+.student-import-success::backdrop { background: #0006; }
+.student-import-success__icon { display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; margin: 0 auto 16px; border-radius: 50%; background: #effaf3; }
+.student-import-success h2 { font-family: var(--font-header); font-size: 20px; }
+.student-import-success p { margin: 12px 0 24px; color: #737373; line-height: 24px; }
+.student-import-success button { min-height: 36px; padding: 0 12px; border-radius: 10px; color: #fff; background: var(--color-primary-gradient); font-weight: 500; cursor: pointer; }
+.student-import-success button:focus-visible { outline: 3px solid #7ab934; outline-offset: 3px; }
+
+.student-import-results__back:focus-visible, .student-import-results__tabs button:focus-visible, .student-import-results .pagination__btn:focus-visible { outline: 3px solid #7ab934; outline-offset: 3px; }
+
+@media (max-width: 600px) {
+  .student-import-results > h1 { font-size: 26px; line-height: 30px; }
+  .student-import-results__card > header { align-items: flex-start; flex-direction: column; }
+  .student-import-results__tabs { width: 100%; }
+  .student-import-results__tabs button { flex: 1; }
+  .student-import-results__actions { flex-direction: column-reverse; padding-inline: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .student-import-cell, .student-import-results__back, .student-import-results__tabs button, .student-import-action, .student-import-action > span:first-child { transition: none; }
+}

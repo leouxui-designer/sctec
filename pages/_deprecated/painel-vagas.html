@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minhas Vagas - Portal de Talentos | SCTEC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/painel.css">
+</head>
+<body style="padding-top: 80px;">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar--painel" id="navbar-painel">
+    <div class="navbar__inner">
+      <a href="../index.html" class="navbar__brand">SCTEC</a>
+      <div class="navbar-painel__right">
+        <span class="navbar-painel__company-name">TechCorp Soluções Ltda.</span>
+        <div class="navbar-painel__avatar" id="avatar-toggle" onclick="toggleAvatarMenu()">TC</div>
+        <div class="avatar-menu" id="avatar-menu">
+          <div class="avatar-menu__header"><strong>TechCorp Soluções</strong><span>Parceiro ativo</span></div>
+          <a href="painel-empresa.html" class="avatar-menu__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Dashboard</a>
+          <a href="painel-vagas.html" class="avatar-menu__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>Minhas Vagas</a>
+          <a href="painel-candidatos.html" class="avatar-menu__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Banco de Talentos</a>
+          <a href="painel-perfil.html" class="avatar-menu__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/>"/></svg>Perfil da Empresa</a>
+          <div class="avatar-menu__divider"></div>
+          <a href="login.html" class="avatar-menu__link avatar-menu__link--logout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Sair</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="painel">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar__header">
+        <div class="sidebar__company">TechCorp Soluções</div>
+        <div class="sidebar__plan">Parceiro ativo</div>
+      </div>
+      <nav class="sidebar__nav">
+        <a href="painel-empresa.html" class="sidebar__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Dashboard</a>
+        <a href="painel-vagas.html" class="sidebar__link sidebar__link--active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>Minhas Vagas</a>
+        <a href="painel-candidatos.html" class="sidebar__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>Banco de Talentos</a>
+        <a href="painel-perfil.html" class="sidebar__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/>"/></svg>Perfil da Empresa</a>
+      </nav>
+      <div class="sidebar__footer">
+        <a href="login.html" class="sidebar__logout"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Sair</a>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="painel__main">
+      <div class="painel__header">
+        <div>
+          <h1 class="painel__title">Minhas Vagas</h1>
+          <p class="painel__subtitle">Gerencie suas vagas de emprego publicadas</p>
+        </div>
+        <a href="painel-vaga-cadastro.html" class="btn btn--primary">+ Nova Vaga</a>
+      </div>
+
+      <!-- Filtros -->
+      <div class="painel-filters">
+        <select class="painel-filter__select">
+          <option>Todas as áreas</option>
+          <option>Desenvolvimento de Software</option>
+          <option>Análise de Dados</option>
+          <option>Inteligência Artificial</option>
+        </select>
+        <select class="painel-filter__select">
+          <option>Todos os status</option>
+          <option>Ativa</option>
+          <option>Inativa</option>
+          <option>Inativa</option>
+        </select>
+      </div>
+
+      <!-- Tabela de vagas -->
+      <div class="panel-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Título da Vaga</th>
+              <th>Área</th>
+              <th>Modalidade</th>
+              <th>Candidatos</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Desenvolvedor Front-end Júnior</strong><br><small style="color: var(--color-text-muted);">Publicada em 10/08/2026</small></td>
+              <td>Desenvolvimento de Software</td>
+              <td>Remoto</td>
+              <td>12</td>
+              <td><span class="status status--active">Ativa</span></td>
+              <td>
+                <div class="action-group">
+                  <a href="painel-vaga-candidatos.html" class="action-icon" title="Ver candidatos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></a>
+                  <a href="painel-vaga-editar.html" class="action-icon" title="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+                  <label class="toggle" title="Inativar"><input type="checkbox" checked onchange="showToast('Status alterado.')"><span class="toggle__slider"></span></label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Analista de Dados Pleno</strong><br><small style="color: var(--color-text-muted);">Publicada em 05/08/2026</small></td>
+              <td>Análise de Dados</td>
+              <td>Híbrido</td>
+              <td>8</td>
+              <td><span class="status status--active">Ativa</span></td>
+              <td>
+                <div class="action-group">
+                  <a href="painel-vaga-candidatos.html" class="action-icon" title="Ver candidatos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></a>
+                  <a href="painel-vaga-editar.html" class="action-icon" title="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+                  <label class="toggle" title="Inativar"><input type="checkbox" checked onchange="showToast('Status alterado.')"><span class="toggle__slider"></span></label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Estagiário de Machine Learning</strong><br><small style="color: var(--color-text-muted);">Publicada em 01/08/2026</small></td>
+              <td>Inteligência Artificial</td>
+              <td>Presencial</td>
+              <td>4</td>
+              <td><span class="status status--active">Ativa</span></td>
+              <td>
+                <div class="action-group">
+                  <a href="painel-vaga-candidatos.html" class="action-icon" title="Ver candidatos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></a>
+                  <a href="painel-vaga-editar.html" class="action-icon" title="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+                  <label class="toggle" title="Inativar"><input type="checkbox" checked onchange="showToast('Status alterado.')"><span class="toggle__slider"></span></label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Desenvolvedor Back-end Sênior</strong><br><small style="color: var(--color-text-muted);">Publicada em 28/07/2026</small></td>
+              <td>Desenvolvimento de Software</td>
+              <td>Remoto</td>
+              <td>21</td>
+              <td><span class="status status--active">Ativa</span></td>
+              <td>
+                <div class="action-group">
+                  <a href="painel-vaga-candidatos.html" class="action-icon" title="Ver candidatos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></a>
+                  <a href="painel-vaga-editar.html" class="action-icon" title="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+                  <label class="toggle" title="Inativar"><input type="checkbox" checked onchange="showToast('Status alterado.')"><span class="toggle__slider"></span></label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>UX Designer Pleno</strong><br><small style="color: var(--color-text-muted);">Publicada em 25/07/2026</small></td>
+              <td>Desenvolvimento de Software</td>
+              <td>Híbrido</td>
+              <td>6</td>
+              <td><span class="status status--active">Ativa</span></td>
+              <td>
+                <div class="action-group">
+                  <a href="painel-vaga-candidatos.html" class="action-icon" title="Ver candidatos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></a>
+                  <a href="painel-vaga-editar.html" class="action-icon" title="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+                  <label class="toggle" title="Inativar"><input type="checkbox" checked onchange="showToast('Status alterado.')"><span class="toggle__slider"></span></label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Data Engineer</strong><br><small style="color: var(--color-text-muted);">Publicada em 20/07/2026</small></td>
+              <td>Análise de Dados</td>
+              <td>Remoto</td>
+              <td>9</td>
+              <td><span class="status status--active">Ativa</span></td>
+              <td>
+                <div class="action-group">
+                  <a href="painel-vaga-candidatos.html" class="action-icon" title="Ver candidatos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></a>
+                  <a href="painel-vaga-editar.html" class="action-icon" title="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+                  <label class="toggle" title="Inativar"><input type="checkbox" checked onchange="showToast('Status alterado.')"><span class="toggle__slider"></span></label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Cientista de Dados Júnior</strong><br><small style="color: var(--color-text-muted);">Publicada em 18/07/2026</small></td>
+              <td>Análise de Dados</td>
+              <td>Presencial</td>
+              <td>15</td>
+              <td><span class="status status--closed">Inativa</span></td>
+              <td>
+                <div class="action-group">
+                  <a href="painel-vaga-candidatos.html" class="action-icon" title="Ver candidatos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></a>
+                  <a href="painel-vaga-editar.html" class="action-icon" title="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+                  <label class="toggle" title="Ativar"><input type="checkbox" onchange="showToast('Status alterado.')"><span class="toggle__slider"></span></label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>DevOps Engineer</strong><br><small style="color: var(--color-text-muted);">Publicada em 15/07/2026</small></td>
+              <td>Desenvolvimento de Software</td>
+              <td>Remoto</td>
+              <td>3</td>
+              <td><span class="status status--closed">Inativa</span></td>
+              <td>
+                <div class="action-group">
+                  <a href="painel-vaga-candidatos.html" class="action-icon" title="Ver candidatos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></a>
+                  <a href="painel-vaga-editar.html" class="action-icon" title="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+                  <label class="toggle" title="Ativar"><input type="checkbox" onchange="showToast('Status alterado.')"><span class="toggle__slider"></span></label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Engenheiro de IA</strong><br><small style="color: var(--color-text-muted);">Publicada em 10/07/2026</small></td>
+              <td>Inteligência Artificial</td>
+              <td>Híbrido</td>
+              <td>7</td>
+              <td><span class="status status--closed">Inativa</span></td>
+              <td>
+                <div class="action-group">
+                  <a href="painel-vaga-candidatos.html" class="action-icon" title="Ver candidatos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></a>
+                  <a href="painel-vaga-editar.html" class="action-icon" title="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+                  <label class="toggle" title="Ativar"><input type="checkbox" onchange="showToast('Status alterado.')"><span class="toggle__slider"></span></label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Analista de BI</strong><br><small style="color: var(--color-text-muted);">Publicada em 05/07/2026</small></td>
+              <td>Análise de Dados</td>
+              <td>Remoto</td>
+              <td>11</td>
+              <td><span class="status status--closed">Inativa</span></td>
+              <td>
+                <div class="action-group">
+                  <a href="painel-vaga-candidatos.html" class="action-icon" title="Ver candidatos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></a>
+                  <a href="painel-vaga-editar.html" class="action-icon" title="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+                  <label class="toggle" title="Ativar"><input type="checkbox" onchange="showToast('Status alterado.')"><span class="toggle__slider"></span></label>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pagination">
+        <button class="pagination__btn pagination__btn--arrow" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button class="pagination__btn pagination__btn--active">1</button>
+        <button class="pagination__btn">2</button>
+        <button class="pagination__btn">3</button>
+        <span class="pagination__info">de 5</span>
+        <button class="pagination__btn pagination__btn--arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
+    </main>
+  </div>
+
+  <script>
+        function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('toast--visible');
+      setTimeout(() => t.classList.remove('toast--visible'), 3000);
+    }
+    function toggleAvatarMenu() {
+      document.getElementById('avatar-menu').classList.toggle('avatar-menu--open');
+    }
+    document.addEventListener('click', (e) => {
+      const menu = document.getElementById('avatar-menu');
+      const toggle = document.getElementById('avatar-toggle');
+      if (menu && !menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.remove('avatar-menu--open');
+      }
+    });
+  </script>
+
+  <div class="toast" id="toast"></div>
+</body>
+</html>

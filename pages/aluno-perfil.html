@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Perfil - Portal de Talentos | SCTEC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/painel.css">
+  <link rel="stylesheet" href="../css/student-profile.css">
+  <link rel="stylesheet" href="../css/profile-status.css">
+  <link rel="stylesheet" href="../css/company-search-talents.css">
+  <link rel="stylesheet" href="../css/mobile-nav.css">
+</head>
+<body class="student-profile-page">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar--painel">
+    <div class="navbar__inner">
+      <a href="../index.html" class="navbar__brand student-navbar__brand" aria-label="SCTEC Portal de Talentos"><strong>SCTEC</strong><span>Portal de Talentos</span></a>
+      <div class="navbar-painel__right">
+        <span class="navbar-painel__company-name">João Silva</span>
+        <button type="button" class="navbar-painel__avatar" id="avatar-toggle" aria-expanded="false" aria-controls="avatar-menu" aria-label="Abrir menu do aluno">JS</button>
+        <div class="avatar-menu" id="avatar-menu">
+          <div class="avatar-menu__header"><strong>João Silva</strong><span>Estudante</span></div>
+          <a href="aluno-empresas.html" class="avatar-menu__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>Buscar Empresas</a>
+          <a href="aluno-perfil.html" class="avatar-menu__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Meu Perfil</a>
+          <div class="avatar-menu__divider"></div>
+          <a href="login.html" class="avatar-menu__link avatar-menu__link--logout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Sair</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="painel">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar__header">
+        <div class="sidebar__company">João Silva</div>
+        <div class="sidebar__plan">Estudante</div>
+      </div>
+      <nav class="sidebar__nav">
+        <a href="aluno-empresas.html" class="sidebar__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>Buscar Empresas</a>
+        <a href="aluno-perfil.html" class="sidebar__link sidebar__link--active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Meu Perfil</a>
+      </nav>
+      <div class="sidebar__footer">
+        <a href="login.html" class="sidebar__logout"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Sair</a>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="student-profile-main">
+      <header class="profile-page-header">
+        <div class="profile-page-header__copy">
+          <h1>Meu Perfil</h1>
+          <p>Edite suas informações e visualize como as empresas veem seu perfil</p>
+        </div>
+        <div class="profile-page-header__actions">
+          <label class="profile-status">
+            <input type="checkbox" checked aria-label="Perfil ativo">
+            <span class="profile-status__track" aria-hidden="true"></span>
+            <span>Perfil Ativo</span>
+          </label>
+          <a href="aluno-perfil-publico.html" class="profile-preview-link" id="profile-preview-link" aria-haspopup="dialog">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+            Visualizar meu perfil
+          </a>
+        </div>
+      </header>
+
+      <div class="profile-layout">
+        <aside class="profile-progress" aria-labelledby="profile-progress-title">
+          <div>
+            <h2 id="profile-progress-title">Progresso do cadastro</h2>
+            <p class="profile-progress__intro">Quanto mais completo seu perfil, mais chances de ser visto pelas empresas.</p>
+            <div class="profile-progress__bar-row">
+              <div class="profile-progress__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><span></span></div>
+              <strong class="profile-progress__percent">100%</strong>
+            </div>
+          </div>
+          <ul class="profile-progress__list">
+            <li><span class="profile-progress__check"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg></span>Foto de perfil</li>
+            <li><span class="profile-progress__check"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg></span>Dados pessoais</li>
+            <li><span class="profile-progress__check"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg></span>Resumo profissional</li>
+            <li><span class="profile-progress__check"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg></span>Competências Técnicas</li>
+            <li><span class="profile-progress__check"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg></span>Formações e Certificados</li>
+            <li><span class="profile-progress__check"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg></span>Experiência profissional</li>
+            <li><span class="profile-progress__check"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg></span>Idiomas</li>
+            <li><span class="profile-progress__check"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg></span>Links e currículo</li>
+            <li><span class="profile-progress__check"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg></span>Vídeo de apresentação</li>
+          </ul>
+        </aside>
+
+        <form class="student-profile-form">
+          <div class="profile-top-grid">
+            <section class="profile-card profile-photo-card" aria-labelledby="profile-photo-title">
+              <div class="profile-card__header"><div class="profile-card__heading"><h2 id="profile-photo-title">Foto de perfil</h2></div></div>
+              <div class="profile-photo-card__body">
+                <button type="button" class="profile-photo-preview" id="avatar-preview" aria-label="Alterar foto de perfil">
+                  <img src="../assets/student-profile/avatar.png" alt="Foto de perfil de João Silva">
+                </button>
+                <input type="file" id="avatar-upload" accept="image/png,image/jpeg" hidden>
+                <div class="profile-photo-card__actions">
+                  <button type="button" class="profile-button profile-button--primary">Alterar foto</button>
+                  <button type="button" class="profile-button">Remover</button>
+                  <p class="profile-photo-card__help">JPG ou PNG, até 5 MB</p>
+                </div>
+              </div>
+            </section>
+
+            <section class="profile-card profile-personal-card" aria-labelledby="profile-personal-title">
+              <div class="profile-card__header"><div class="profile-card__heading"><h2 id="profile-personal-title">Dados pessoais</h2></div></div>
+              <div class="profile-fields">
+                <div class="profile-field profile-field--wide"><label for="profile-name">Nome completo <span>*</span></label><input class="profile-input" id="profile-name" type="text" value="João Silva" required></div>
+                <div class="profile-field"><label for="profile-phone">Telefone/WhatsApp <span>*</span></label><input class="profile-input" id="profile-phone" type="tel" value="(48) 99123-4567" required></div>
+                <div class="profile-field"><label for="profile-city">Cidade <span>*</span></label><select class="profile-input" id="profile-city" required><option selected>Florianópolis</option><option>Criciúma</option><option>Joinville</option><option>Blumenau</option><option>Chapecó</option></select></div>
+                <div class="profile-field"><label for="profile-email">E-mail pessoal <span>*</span></label><input class="profile-input" id="profile-email" type="email" value="joao.silva@email.com" required></div>
+                <div class="profile-field"><label for="profile-cpf">CPF <span>*</span></label><input class="profile-input" id="profile-cpf" type="text" value="012.345.678-90" disabled></div>
+                <div class="profile-field"><label for="profile-birth">Data de nascimento <span>*</span></label><input class="profile-input" id="profile-birth" type="text" value="02/11/2010" required></div>
+              </div>
+            </section>
+          </div>
+
+          <section class="profile-card" aria-labelledby="profile-summary-title">
+            <div class="profile-card__header"><div class="profile-card__heading"><h2 id="profile-summary-title">Resumo profissional</h2><p class="profile-card__description">Apresente um pouco sobre você, seus conhecimentos, experiências ou projetos e conte que tipo de oportunidade está buscando.</p></div></div>
+            <textarea class="profile-textarea">Desenvolvedor front-end em formação pelo programa SCTEC. Apaixonado por interfaces responsivas e boas práticas de código. Buscando minha primeira oportunidade profissional na área.</textarea>
+          </section>
+
+          <section class="profile-card" aria-labelledby="profile-skills-title">
+            <div class="profile-card__header">
+              <div class="profile-card__heading"><h2 id="profile-skills-title">Suas Competências Técnicas</h2><p class="profile-card__description">Selecione até 10 conhecimentos e tecnologias que você domina ou está aprendendo. Escolha os que melhor representam suas habilidades.</p></div>
+              <span class="profile-skills-counter">5/10</span>
+            </div>
+            <button type="button" class="profile-skill-trigger" aria-haspopup="dialog" aria-controls="modal-skills"><span>Buscar por nome</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></button>
+            <div class="profile-skill-groups">
+              <div class="profile-selected-skills" id="skills-list">
+                <span class="profile-skill-badge">React <button type="button" aria-label="Remover React">×</button></span>
+                <span class="profile-skill-badge">TypeScript <button type="button" aria-label="Remover TypeScript">×</button></span>
+                <span class="profile-skill-badge">Node.js <button type="button" aria-label="Remover Node.js">×</button></span>
+                <span class="profile-skill-badge">Git <button type="button" aria-label="Remover Git">×</button></span>
+                <span class="profile-skill-badge">PostgreSQL <button type="button" aria-label="Remover PostgreSQL">×</button></span>
+              </div>
+              <div class="profile-skill-catalog" aria-label="Outras competências disponíveis">
+                <span class="profile-skill-badge">Agentes de IA</span><span class="profile-skill-badge">Angular</span><span class="profile-skill-badge">APIs REST</span><span class="profile-skill-badge">AWS</span><span class="profile-skill-badge">Azure</span><span class="profile-skill-badge">Bancos de Dados</span><span class="profile-skill-badge">C#</span><span class="profile-skill-badge">Cibersegurança</span><span class="profile-skill-badge">CI/CD</span><span class="profile-skill-badge">Cloud Computing</span><span class="profile-skill-badge">CSS</span><span class="profile-skill-badge">Cypress</span><span class="profile-skill-badge">Docker</span><span class="profile-skill-badge">Figma</span><span class="profile-skill-badge">Google Cloud</span><span class="profile-skill-badge">HTML</span><span class="profile-skill-badge">Java</span><span class="profile-skill-badge">JavaScript</span><span class="profile-skill-badge">Kotlin</span><span class="profile-skill-badge">Machine Learning</span><span class="profile-skill-badge">Next.js</span><span class="profile-skill-badge">Python</span><span class="profile-skill-badge">SQL</span><span class="profile-skill-badge">UX/UI Design</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="profile-card" aria-labelledby="profile-certificates-title">
+            <div class="profile-card__header">
+              <div class="profile-card__heading"><h2 id="profile-certificates-title">Formações e Certificados</h2><p class="profile-card__description">Adicione sua formação acadêmica e outros cursos ou certificados que ajudam a mostrar seus conhecimentos.</p></div>
+              <button type="button" class="profile-button profile-button--compact" data-open-dialog="modal-cert" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Adicionar</button>
+            </div>
+            <div class="profile-entry-list">
+              <p class="profile-card__subtitle">Certificados</p><div id="cert-list">
+              <article class="profile-entry"><span class="profile-entry__icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="m8.5 12-1 9 4.5-3 4.5 3-1-9"/></svg></span><div class="profile-entry__content"><span class="profile-skill-badge">SCTEC</span><strong>Desenvolvedor Back-End Node • 16h</strong></div></article>
+              <article class="profile-entry"><span class="profile-entry__icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="m8.5 12-1 9 4.5-3 4.5 3-1-9"/></svg></span><div class="profile-entry__content"><span class="profile-skill-badge">SCTEC</span><strong>Desenvolvedor Front-End React • 16h</strong></div></article>
+              <article class="profile-entry" data-title="Primeiros Passos • Introdução a Front-End e Back-End" data-hours="80" data-date="2026-08-10"><span class="profile-entry__icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="m8.5 12-1 9 4.5-3 4.5 3-1-9"/></svg></span><div class="profile-entry__content"><strong>Primeiros Passos • Introdução a Front-End e Back-End • 80h</strong><p class="profile-entry__meta">Emitido em 10/08/2026</p></div><div class="profile-entry__actions"><button type="button" class="profile-icon-button" data-edit aria-label="Editar certificado"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button><button type="button" class="profile-icon-button" data-remove aria-label="Remover certificado"><svg viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg></button></div></article></div>
+            </div>
+          </section>
+
+          <section class="profile-card" aria-labelledby="profile-experience-title">
+            <div class="profile-card__header">
+              <div class="profile-card__heading"><h2 id="profile-experience-title">Experiência Profissional</h2><p class="profile-card__description">Você pode adicionar estágios, empregos, trabalhos temporários, freelancers ou experiências em outras áreas.</p></div>
+              <button type="button" class="profile-button profile-button--compact" data-open-dialog="modal-exp" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Adicionar Experiência</button>
+            </div>
+            <div class="profile-entry-list" id="exp-list">
+              <p class="profile-card__subtitle">Experiências</p>
+              <article class="profile-entry exp-item" data-role="Estagiário de Desenvolvimento" data-company="StartupSC" data-start="2026-03" data-end="" data-desc="Desenvolvimento de features no front-end com React e TypeScript. Participação em code reviews e dailys."><span class="profile-entry__icon"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg></span><div class="profile-entry__content"><strong>Estagiário de Desenvolvimento</strong><p class="profile-entry__meta">StartupSC • Mar 2026 - Atual</p><p class="profile-entry__description">Desenvolvimento de features no front-end com React e TypeScript. Participação em code reviews e dailys.</p></div><div class="profile-entry__actions"><button type="button" class="profile-icon-button" data-edit aria-label="Editar experiência"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button><button type="button" class="profile-icon-button" data-remove aria-label="Remover experiência"><svg viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg></button></div></article>
+            </div>
+          </section>
+
+          <section class="profile-card" aria-labelledby="profile-languages-title">
+            <div class="profile-card__header"><div class="profile-card__heading"><h2 id="profile-languages-title">Idiomas</h2><p class="profile-card__description">Informe os idiomas que você conhece e seu nível em cada um deles. Isso pode ajudar empresas a encontrar seu perfil para diferentes oportunidades.</p></div><button type="button" class="profile-button profile-button--compact" data-open-dialog="modal-lang" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Adicionar Idioma</button></div>
+            <div id="lang-list"><div class="profile-language"><p class="profile-language-title">Inglês</p>
+            <div class="profile-choice-row" role="radiogroup" aria-label="Nível de inglês">
+              <label class="profile-choice"><input type="radio" name="english-level" value="none"><span>Não possuo</span></label>
+              <label class="profile-choice"><input type="radio" name="english-level" value="basic" checked><span>Básico</span></label>
+              <label class="profile-choice"><input type="radio" name="english-level" value="intermediate"><span>Intermediário</span></label>
+              <label class="profile-choice"><input type="radio" name="english-level" value="advanced"><span>Avançado</span></label>
+              <label class="profile-choice"><input type="radio" name="english-level" value="fluent"><span>Fluente</span></label>
+            </div></div></div>
+          </section>
+
+          <section class="profile-card" aria-labelledby="profile-links-title">
+            <div class="profile-card__header"><div class="profile-card__heading"><h2 id="profile-links-title">Links e documentos</h2></div></div>
+            <div class="profile-link-grid">
+              <div class="profile-field"><label for="profile-linkedin">LinkedIn <span>*</span></label><input class="profile-input" id="profile-linkedin" type="url" placeholder="https://linkedin.com/in/seu-perfil"></div>
+              <div class="profile-field"><label for="profile-github">GitHub <span>*</span></label><input class="profile-input" id="profile-github" type="url" value="https://github.com/joaosilva"></div>
+              <div class="profile-field"><label for="profile-portfolio">Portfólio</label><input class="profile-input" id="profile-portfolio" type="url" value="https://joaosilva.dev"></div>
+              <div class="profile-field"><label for="profile-project">Projeto SCTEC</label><input class="profile-input" id="profile-project" type="url" placeholder="https://github.com/seu-projeto"></div>
+              <div class="profile-field"><label>Currículo (PDF)</label><div class="profile-curriculum" id="pdf-dropzone" role="button" tabindex="0" aria-label="Selecionar currículo em PDF"><span id="pdf-empty-label">Selecionar arquivo PDF</span><input type="file" id="pdf-input" accept=".pdf" hidden><div class="dropzone__file" id="pdf-file" style="display:none"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/></svg><span id="pdf-filename">nenhum arquivo</span><button type="button" class="dropzone__remove" aria-label="Remover currículo"><svg viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg></button></div></div></div>
+            </div>
+          </section>
+
+          <section class="profile-card" aria-labelledby="profile-video-title">
+            <div class="profile-card__header"><div class="profile-card__heading"><h2 id="profile-video-title">Vídeo de apresentação</h2><p class="profile-card__description">Grave uma breve apresentação para contar um pouco sobre você, seus interesses e o que busca profissionalmente. O vídeo deve estar configurado como público ou não listado no YouTube ou como público no Vimeo.</p></div></div>
+            <div class="profile-field" style="max-width:360px"><label for="video-url">Vídeo de apresentação</label><input class="profile-input" id="video-url" type="url" value="https://www.youtube.com/watch?v=dQw4w9WgXcQ"></div>
+            <div id="video-preview" class="profile-video-preview" style="display:none"></div>
+          </section>
+
+          <section class="profile-card" aria-labelledby="profile-pcd-title">
+            <div class="profile-card__header"><div class="profile-card__heading"><h2 id="profile-pcd-title">Pessoa com deficiência (PCD)</h2><p class="profile-card__description">Essas informações são sigilosas e ajudam a promover oportunidades inclusivas. Não são visíveis para empresas.</p></div></div>
+            <p class="profile-pcd-question">Você deseja informar se é uma pessoa com deficiência (PCD)?</p>
+            <div class="profile-choice-row" role="radiogroup" aria-label="Informação sobre pessoa com deficiência">
+              <label class="profile-choice profile-choice--radio"><input type="radio" name="pcd" value="private" checked><span>Prefiro não informar</span></label>
+              <label class="profile-choice profile-choice--radio"><input type="radio" name="pcd" value="no"><span>Não</span></label>
+              <label class="profile-choice profile-choice--radio"><input type="radio" name="pcd" value="yes"><span>Sim</span></label>
+            </div>
+          </section>
+
+          <section class="profile-card" aria-labelledby="profile-publication-title">
+            <div class="profile-card__header"><div class="profile-card__heading"><h2 id="profile-publication-title">Publicação do perfil profissional</h2></div></div>
+            <p class="profile-publication-copy">Ao publicar seu perfil, suas informações profissionais ficarão disponíveis para empresas cadastradas na plataforma, que poderão encontrá-lo e entrar em contato sobre oportunidades de trabalho.</p>
+            <label class="profile-publication-check"><input type="checkbox" checked><span>Li e concordo com os <a href="#">Termos de publicação do perfil</a></span></label>
+          </section>
+
+          <footer class="profile-form-actions">
+            <button type="reset" class="profile-button profile-button--outline">Cancelar</button>
+            <button type="submit" class="profile-button profile-button--primary">Salvar alterações</button>
+          </footer>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modais do perfil -->
+  <div class="modal" id="modal-skills">
+    <div class="modal__overlay" data-close-dialog></div>
+    <div class="modal__content profile-dialog profile-dialog--md" role="dialog" aria-modal="true" aria-labelledby="modal-skills-title" tabindex="-1">
+      <div class="modal__header">
+        <h2 class="modal__title" id="modal-skills-title">Selecionar Habilidades</h2>
+        <button type="button" class="modal__close" data-close-dialog aria-label="Fechar">&times;</button>
+      </div>
+      <p class="profile-dialog__hint">Marque as habilidades que você domina. Limite de 10 competências.</p>
+      <fieldset class="profile-dialog__group"><legend>Desenvolvimento</legend><div class="profile-dialog__checks">
+          <label class="profile-check"><input type="checkbox" value="React"> React</label>
+          <label class="profile-check"><input type="checkbox" value="Angular"> Angular</label>
+          <label class="profile-check"><input type="checkbox" value="Vue.js"> Vue.js</label>
+          <label class="profile-check"><input type="checkbox" value="TypeScript"> TypeScript</label>
+          <label class="profile-check"><input type="checkbox" value="JavaScript"> JavaScript</label>
+          <label class="profile-check"><input type="checkbox" value="Node.js"> Node.js</label>
+          <label class="profile-check"><input type="checkbox" value="Python"> Python</label>
+          <label class="profile-check"><input type="checkbox" value="Java"> Java</label>
+          <label class="profile-check"><input type="checkbox" value="C#"> C#</label>
+          <label class="profile-check"><input type="checkbox" value="PHP"> PHP</label>
+          <label class="profile-check"><input type="checkbox" value="Go"> Go</label>
+          <label class="profile-check"><input type="checkbox" value="HTML/CSS"> HTML/CSS</label>
+          <label class="profile-check"><input type="checkbox" value="Next.js"> Next.js</label>
+          <label class="profile-check"><input type="checkbox" value="Tailwind CSS"> Tailwind CSS</label>
+          <label class="profile-check"><input type="checkbox" value="Docker"> Docker</label>
+          <label class="profile-check"><input type="checkbox" value="Git"> Git</label>
+          <label class="profile-check"><input type="checkbox" value="REST APIs"> REST APIs</label>
+          <label class="profile-check"><input type="checkbox" value="GraphQL"> GraphQL</label>
+          <label class="profile-check"><input type="checkbox" value="SQL"> SQL</label>
+          <label class="profile-check"><input type="checkbox" value="PostgreSQL"> PostgreSQL</label>
+          <label class="profile-check"><input type="checkbox" value="MongoDB"> MongoDB</label>
+          <label class="profile-check"><input type="checkbox" value="AWS"> AWS</label>
+          <label class="profile-check"><input type="checkbox" value="Azure"> Azure</label>
+          <label class="profile-check"><input type="checkbox" value="DevOps/CI-CD"> DevOps/CI-CD</label>
+      </div></fieldset>
+      <fieldset class="profile-dialog__group"><legend>Dados e IA</legend><div class="profile-dialog__checks">
+          <label class="profile-check"><input type="checkbox" value="Power BI"> Power BI</label>
+          <label class="profile-check"><input type="checkbox" value="Tableau"> Tableau</label>
+          <label class="profile-check"><input type="checkbox" value="Pandas"> Pandas</label>
+          <label class="profile-check"><input type="checkbox" value="Machine Learning"> Machine Learning</label>
+          <label class="profile-check"><input type="checkbox" value="Deep Learning"> Deep Learning</label>
+          <label class="profile-check"><input type="checkbox" value="TensorFlow"> TensorFlow</label>
+          <label class="profile-check"><input type="checkbox" value="PyTorch"> PyTorch</label>
+          <label class="profile-check"><input type="checkbox" value="NLP"> NLP</label>
+          <label class="profile-check"><input type="checkbox" value="Estatística"> Estatística</label>
+          <label class="profile-check"><input type="checkbox" value="Big Data"> Big Data</label>
+          <label class="profile-check"><input type="checkbox" value="Spark"> Spark</label>
+          <label class="profile-check"><input type="checkbox" value="ETL"> ETL</label>
+          <label class="profile-check"><input type="checkbox" value="R"> R</label>
+      </div></fieldset>
+      <p class="profile-field__error" id="skills-error" role="alert" hidden></p>
+      <div class="profile-dialog__footer"><button type="button" class="profile-button profile-button--outline" data-close-dialog>Cancelar</button><button type="button" class="profile-button profile-button--primary" id="skills-save">Salvar</button></div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-cert">
+    <div class="modal__overlay" data-close-dialog></div>
+    <div class="modal__content profile-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-cert-title" tabindex="-1">
+      <div class="modal__header">
+        <h2 class="modal__title" id="modal-cert-title">Adicionar certificado</h2>
+        <button type="button" class="modal__close" data-close-dialog aria-label="Fechar">&times;</button>
+      </div>
+      <form class="profile-dialog__form" id="cert-form" novalidate>
+        <div class="profile-field"><label for="cert-title">Nome do curso ou certificado <span>*</span></label><input class="profile-input" id="cert-title" required placeholder="Ex.: Fundamentos de Python"><p class="profile-field__error" hidden></p></div>
+        <div class="profile-dialog__row">
+          <div class="profile-field"><label for="cert-hours">Carga horária (h)</label><input class="profile-input" id="cert-hours" type="number" min="1" inputmode="numeric" placeholder="Ex.: 40"></div>
+          <div class="profile-field"><label for="cert-date">Data de emissão</label><input class="profile-input" id="cert-date" type="date"></div>
+        </div>
+      </form>
+      <div class="profile-dialog__footer"><button type="button" class="profile-button profile-button--outline" data-close-dialog>Cancelar</button><button type="button" class="profile-button profile-button--primary" id="cert-save">Salvar</button></div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-exp">
+    <div class="modal__overlay" data-close-dialog></div>
+    <div class="modal__content profile-dialog profile-dialog--md" role="dialog" aria-modal="true" aria-labelledby="modal-exp-title" tabindex="-1">
+      <div class="modal__header">
+        <h2 class="modal__title" id="modal-exp-title">Adicionar experiência</h2>
+        <button type="button" class="modal__close" data-close-dialog aria-label="Fechar">&times;</button>
+      </div>
+      <form class="profile-dialog__form" id="exp-form" novalidate>
+        <div class="profile-dialog__row">
+          <div class="profile-field"><label for="exp-cargo">Cargo <span>*</span></label><input class="profile-input" id="exp-cargo" required placeholder="Ex.: Desenvolvedor Júnior"><p class="profile-field__error" hidden></p></div>
+          <div class="profile-field"><label for="exp-empresa">Empresa <span>*</span></label><input class="profile-input" id="exp-empresa" required placeholder="Nome da empresa"><p class="profile-field__error" hidden></p></div>
+        </div>
+        <div class="profile-dialog__row">
+          <div class="profile-field"><label for="exp-inicio">Início <span>*</span></label><input class="profile-input" id="exp-inicio" type="month" required><p class="profile-field__error" hidden></p></div>
+          <div class="profile-field"><label for="exp-fim">Fim</label><input class="profile-input" id="exp-fim" type="month"><p class="profile-field__error" hidden></p></div>
+        </div>
+        <label class="profile-check"><input type="checkbox" id="exp-atual"> Trabalho aqui atualmente</label>
+        <div class="profile-field"><label for="exp-desc">Descrição</label><textarea class="profile-input profile-textarea" id="exp-desc" rows="3" placeholder="Principais atividades e responsabilidades"></textarea></div>
+      </form>
+      <div class="profile-dialog__footer"><button type="button" class="profile-button profile-button--outline" data-close-dialog>Cancelar</button><button type="button" class="profile-button profile-button--primary" id="exp-save">Salvar</button></div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-lang">
+    <div class="modal__overlay" data-close-dialog></div>
+    <div class="modal__content profile-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-lang-title" tabindex="-1">
+      <div class="modal__header">
+        <h2 class="modal__title" id="modal-lang-title">Adicionar idioma</h2>
+        <button type="button" class="modal__close" data-close-dialog aria-label="Fechar">&times;</button>
+      </div>
+      <form class="profile-dialog__form" id="lang-form" novalidate>
+        <div class="profile-field"><label for="lang-name">Idioma <span>*</span></label>
+          <select class="profile-input" id="lang-name" required><option value="">Selecione</option><option>Espanhol</option><option>Francês</option><option>Alemão</option><option>Italiano</option><option>Mandarim</option><option>Japonês</option><option>Libras</option></select><p class="profile-field__error" hidden></p></div>
+        <fieldset class="profile-dialog__group"><legend>Nível</legend><div class="profile-choice-row">
+          <label class="profile-choice"><input type="radio" name="lang-level" value="Básico" checked><span>Básico</span></label>
+          <label class="profile-choice"><input type="radio" name="lang-level" value="Intermediário"><span>Intermediário</span></label>
+          <label class="profile-choice"><input type="radio" name="lang-level" value="Avançado"><span>Avançado</span></label>
+          <label class="profile-choice"><input type="radio" name="lang-level" value="Fluente"><span>Fluente</span></label>
+        </div></fieldset>
+      </form>
+      <div class="profile-dialog__footer"><button type="button" class="profile-button profile-button--outline" data-close-dialog>Cancelar</button><button type="button" class="profile-button profile-button--primary" id="lang-save">Adicionar</button></div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-confirm">
+    <div class="modal__overlay" data-close-dialog></div>
+    <div class="modal__content profile-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-confirm-title" tabindex="-1">
+      <div class="modal__header">
+        <h2 class="modal__title" id="modal-confirm-title">Remover item?</h2>
+        <button type="button" class="modal__close" data-close-dialog aria-label="Fechar">&times;</button>
+      </div>
+      <p class="profile-dialog__hint" id="confirm-text"></p>
+      <div class="profile-dialog__footer"><button type="button" class="profile-button profile-button--outline" data-close-dialog>Cancelar</button><button type="button" class="profile-button profile-button--danger" id="confirm-ok">Remover</button></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <dialog class="candidate-profile-dialog" id="candidate-profile-dialog" aria-labelledby="candidate-profile-title">
+    <div class="candidate-profile__shell">
+      <header class="candidate-profile__header">
+        <div class="candidate-profile__avatar" id="candidate-profile-avatar" aria-hidden="true"></div>
+        <div class="candidate-profile__identity">
+          <div class="candidate-profile__title-row"><h2 id="candidate-profile-title"></h2><span class="candidate-profile__minor" id="candidate-profile-minor" hidden>Menor</span></div>
+          <p class="candidate-profile__role" id="candidate-profile-role"></p>
+          <p class="candidate-profile__meta" id="candidate-profile-meta"></p>
+          <div class="candidate-profile__contacts" id="candidate-profile-contacts"></div>
+        </div>
+        <button class="candidate-profile__close" id="candidate-profile-close" type="button" aria-label="Fechar perfil do talento"><img src="../assets/admin-figma/RequestClose.svg" alt="" width="20" height="20"></button>
+      </header>
+      <div class="candidate-profile__body" id="candidate-profile-body"></div>
+    </div>
+  </dialog>
+
+  <script src="../js/student-profile.js" defer></script>
+  <script src="../js/profile-status.js" defer></script>
+  <script src="../js/profile-navigation.js" defer></script>
+</body>
+</html>

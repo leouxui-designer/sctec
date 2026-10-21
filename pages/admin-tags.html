@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestão de Tags - Admin | SCTEC</title>
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/painel.css">
+  <link rel="stylesheet" href="../css/admin-tags.css">
+</head>
+<body class="admin-page admin-tags-page" style="padding-top:80px">
+  <nav class="navbar navbar--painel navbar--admin"><div class="navbar__inner"><a href="../index.html" class="navbar__brand"><strong>SCTEC</strong><span>Portal de Talentos</span></a><div class="navbar-painel__right"><div class="admin-identity"><strong>ADMINISTRADOR</strong><span>Equipe SCTEC</span></div><button class="navbar-painel__avatar" id="avatar-toggle" type="button" aria-label="Abrir menu do administrador" aria-expanded="false" aria-controls="avatar-menu">CN</button><div class="avatar-menu" id="avatar-menu" hidden><div class="avatar-menu__header"><strong>Administrador</strong><span>Equipe SCTEC</span></div><a href="admin-alunos.html" class="avatar-menu__link">Banco de Talentos</a><a href="admin-empresas.html" class="avatar-menu__link">Gestão de Empresas</a><a href="admin-usuarios.html" class="avatar-menu__link">Usuários</a><a href="admin-tags.html" class="avatar-menu__link">Gestão de Tags</a><div class="avatar-menu__divider"></div><a href="login.html" class="avatar-menu__link avatar-menu__link--logout">Sair</a></div></div></div></nav>
+  <div class="painel">
+    <aside class="sidebar sidebar--admin"><div class="sidebar__header"><div class="sidebar__company">Administrador</div><div class="sidebar__plan">Equipe SCTEC</div></div><nav class="sidebar__nav" aria-label="Administração"><a href="admin-empresas.html" class="sidebar__link"><img src="../assets/admin-figma/LucideIconsBuilding.svg" alt="" width="24" height="24">Gestão de Empresas</a><a href="admin-alunos.html" class="sidebar__link"><img src="../assets/admin-figma/LucideIconsUsersRound.svg" alt="" width="24" height="24">Banco de Talentos</a><a href="admin-usuarios.html" class="sidebar__link"><img src="../assets/admin-figma/LucideIconsLockKeyhole.svg" alt="" width="24" height="24">Usuários</a><a href="admin-tags.html" class="sidebar__link sidebar__link--active" aria-current="page"><img src="../assets/admin-figma/LucideIconsTag.svg" alt="" width="24" height="24">Gestão de Tags</a></nav><div class="sidebar__footer"><a href="login.html" class="sidebar__logout">Sair</a></div></aside>
+
+    <main class="painel__main admin-tags__main">
+      <header class="admin-tags__header"><h1>Gestão de Tags</h1><p>Gerencie as tags disponíveis para candidatos e empresas na plataforma</p></header>
+      <section class="admin-tags__card" aria-labelledby="technical-tags-title">
+        <header><h2 id="technical-tags-title">Competências Técnicas</h2><button class="admin-tags__add" id="add-tag-open" type="button"><img src="../assets/admin-figma/LucideIconsPlus.svg" alt="" width="16" height="16">Nova Tag de Competência</button></header>
+        <label class="admin-tags__search" for="tag-search"><span class="sr-only">Buscar tag por nome</span><input id="tag-search" type="search" placeholder="Buscar por nome" autocomplete="off"><img src="../assets/admin-figma/LucideIconsSearch.svg" alt="" width="24" height="24"></label>
+        <div class="admin-tags__list" id="tags-list" aria-live="polite"></div>
+        <div class="admin-tags__empty" id="tags-empty" hidden>Nenhuma tag encontrada.</div>
+      </section>
+    </main>
+  </div>
+
+  <dialog class="admin-tag-dialog admin-tag-dialog--add" id="add-tag-dialog" aria-labelledby="add-tag-title" aria-describedby="add-tag-error">
+    <form id="add-tag-form" novalidate>
+      <header><h2 id="add-tag-title">Nova Tag de Competência</h2><button type="button" class="admin-tag-dialog__close" data-close-add aria-label="Fechar"><img src="../assets/admin-figma/RequestClose.svg" alt="" width="20" height="20"></button></header>
+      <div class="admin-tag-dialog__content"><label class="sr-only" for="tag-name">Nome completo</label><input id="tag-name" type="text" placeholder="Ex: Agentes de IA" autocomplete="off" aria-describedby="add-tag-error"><p class="admin-tag-dialog__error" id="add-tag-error" role="alert"></p></div>
+      <footer><button type="button" class="admin-tag-dialog__button admin-tag-dialog__button--secondary" data-close-add>Cancelar</button><button type="submit" class="admin-tag-dialog__button admin-tag-dialog__button--primary">Salvar</button></footer>
+    </form>
+  </dialog>
+
+  <dialog class="admin-tag-dialog admin-tag-dialog--remove" id="remove-tag-dialog" aria-labelledby="remove-tag-title" aria-describedby="remove-tag-description">
+    <header><h2 id="remove-tag-title">Remover tag?</h2><button type="button" class="admin-tag-dialog__close" data-close-remove aria-label="Fechar"><img src="../assets/admin-figma/RequestClose.svg" alt="" width="20" height="20"></button></header>
+    <div class="admin-tag-dialog__content"><p id="remove-tag-description"></p></div>
+    <footer><button type="button" class="admin-tag-dialog__button admin-tag-dialog__button--secondary" data-close-remove>Cancelar</button><button type="button" class="admin-tag-dialog__button admin-tag-dialog__button--danger" id="remove-tag-confirm">Remover tag</button></footer>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="../js/admin-tags.js" defer></script>
+  <script src="../js/admin-shell.js" defer></script>
+  <script src="../js/profile-navigation.js" defer></script>
+</body>
+</html>

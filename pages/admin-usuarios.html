@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestão de Usuários - Admin | SCTEC</title>
+  <link rel="stylesheet" href="../css/variables.css"><link rel="stylesheet" href="../css/reset.css"><link rel="stylesheet" href="../css/layout.css"><link rel="stylesheet" href="../css/components.css"><link rel="stylesheet" href="../css/painel.css"><link rel="stylesheet" href="../css/admin-usuarios.css">
+</head>
+<body class="admin-page admin-users-page" style="padding-top:80px">
+  <nav class="navbar navbar--painel navbar--admin"><div class="navbar__inner"><a href="../index.html" class="navbar__brand"><strong>SCTEC</strong><span>Portal de Talentos</span></a><div class="navbar-painel__right"><div class="admin-identity"><strong>ADMINISTRADOR</strong><span>Equipe SCTEC</span></div><button class="navbar-painel__avatar" id="avatar-toggle" type="button" aria-label="Abrir menu do administrador" aria-expanded="false" aria-controls="avatar-menu">CN</button><div class="avatar-menu" id="avatar-menu" hidden><div class="avatar-menu__header"><strong>Administrador</strong><span>Equipe SCTEC</span></div><a href="admin-alunos.html" class="avatar-menu__link">Banco de Talentos</a><a href="admin-empresas.html" class="avatar-menu__link">Gestão de Empresas</a><a href="admin-usuarios.html" class="avatar-menu__link">Usuários</a><div class="avatar-menu__divider"></div><a href="login.html" class="avatar-menu__link avatar-menu__link--logout">Sair</a></div></div></div></nav>
+  <div class="painel">
+    <aside class="sidebar sidebar--admin"><div class="sidebar__header"><div class="sidebar__company">Administrador</div><div class="sidebar__plan">Equipe SCTEC</div></div><nav class="sidebar__nav" aria-label="Administração"><a href="admin-empresas.html" class="sidebar__link"><img src="../assets/admin-figma/LucideIconsBuilding.svg" alt="" width="24" height="24">Gestão de Empresas</a><a href="admin-alunos.html" class="sidebar__link"><img src="../assets/admin-figma/LucideIconsUsersRound.svg" alt="" width="24" height="24">Banco de Talentos</a><a href="admin-usuarios.html" class="sidebar__link sidebar__link--active" aria-current="page"><img src="../assets/admin-figma/LucideIconsLockKeyhole.svg" alt="" width="24" height="24">Usuários</a><span class="sidebar__link admin-tags-unavailable" aria-disabled="true" title="Gestão de Tags ainda não está disponível neste protótipo"><img src="../assets/admin-figma/LucideIconsTag.svg" alt="" width="24" height="24">Gestão de Tags</span></nav><div class="sidebar__footer"><a href="login.html" class="sidebar__logout">Sair</a></div></aside>
+    <main class="painel__main admin-users__main">
+      <div class="painel__header admin-users__header">
+        <div><h1 class="painel__title">Gestão de Usuários</h1><p class="painel__subtitle">Administradores com acesso ao painel de gestão</p></div>
+        <a href="admin-usuario-cadastro.html" class="btn btn--primary" id="user-create"><img src="../assets/admin-figma/LucideIconsPlus.svg" alt="" width="16" height="16">Novo Administrador</a>
+      </div>
+      <form class="admin-users__filters" id="user-filters" role="search">
+        <label class="sr-only" for="user-search">Buscar por nome ou CPF</label>
+        <div class="admin-users__search"><input id="user-search" class="painel-filter__search" type="search" placeholder="Buscar por nome ou CPF" autocomplete="off"><img class="admin-users__search-icon" src="../assets/admin-figma/LucideIconsSearch.svg" alt="" width="24" height="24"><button class="admin-users__search-clear" id="user-search-clear" type="button" aria-label="Limpar busca" hidden><img src="../assets/admin-figma/RequestClose.svg" alt="" width="24" height="24"></button></div>
+        <label class="sr-only" for="user-status">Status</label>
+        <select id="user-status" class="painel-filter__select"><option value="">Todos os status</option><option>Ativo</option><option>Inativo</option></select>
+      </form>
+      <p class="sr-only" id="user-result-count" role="status" aria-live="polite"></p>
+      <section class="admin-users__table-wrap" aria-labelledby="users-table-title">
+        <h2 class="sr-only" id="users-table-title">Administradores cadastrados</h2>
+        <table class="admin-users__table">
+          <colgroup><col><col><col><col></colgroup>
+          <thead><tr><th scope="col">Nome<img src="../assets/admin-figma/TablerIconsSortDescending.svg" alt="" width="16" height="16"></th><th scope="col">CPF</th><th scope="col">Status</th><th scope="col">Ações</th></tr></thead>
+          <tbody id="user-table-body"></tbody>
+        </table>
+      </section>
+      <section class="admin-users__empty" id="user-empty" aria-labelledby="user-empty-title" hidden><div class="admin-users__empty-icon" aria-hidden="true"><img src="../assets/admin-figma/EmptyResultsSearch.svg" alt="" width="24" height="24"></div><div><h2 id="user-empty-title">Nenhum resultado encontrado</h2><p>Tente ajustar os filtros ou limpar o termo de busca.</p></div><button id="user-clear-filters" type="button">Limpar filtros</button></section>
+    </main>
+  </div>
+  <dialog class="admin-users__dialog" id="user-reset-dialog" aria-labelledby="user-reset-title" aria-describedby="user-reset-description"><header><h2 id="user-reset-title">Redefinir senha do usuário?</h2><button type="button" class="admin-users__dialog-close" data-close-user-dialog aria-label="Fechar"><img src="../assets/admin-figma/RequestClose.svg" alt="" width="20" height="20"></button></header><p id="user-reset-description">Uma nova senha temporária será gerada e enviada para o e-mail de <strong data-user-name></strong>. O acesso atual será invalidado imediatamente.</p><footer><button type="button" class="admin-users__button admin-users__button--secondary" data-close-user-dialog>Cancelar</button><button type="button" class="admin-users__button admin-users__button--primary" id="user-reset-submit">Redefinir senha</button></footer></dialog>
+  <dialog class="admin-users__dialog" id="user-deactivate-dialog" aria-labelledby="user-deactivate-title" aria-describedby="user-deactivate-description"><header><h2 id="user-deactivate-title">Inativar usuário?</h2><button type="button" class="admin-users__dialog-close" data-close-user-dialog aria-label="Fechar"><img src="../assets/admin-figma/RequestClose.svg" alt="" width="20" height="20"></button></header><p id="user-deactivate-description"><strong data-user-name></strong> perderá o acesso à plataforma imediatamente. Os dados e histórico serão mantidos. Você poderá reativar o usuário a qualquer momento.</p><footer><button type="button" class="admin-users__button admin-users__button--secondary" data-close-user-dialog>Cancelar</button><button type="button" class="admin-users__button admin-users__button--danger" id="user-deactivate-submit">Inativar usuário</button></footer></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="../js/admin-usuarios.js" defer></script><script src="../js/admin-shell.js" defer></script><script src="../js/profile-navigation.js" defer></script>
+</body>
+</html>

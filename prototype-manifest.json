@@ -1,0 +1,378 @@
+{
+  "contractVersion": 1,
+  "applicationId": "sctec-public-program",
+  "prototypeId": "sctec-portal-talentos-independent",
+  "prototypeVersion": "1.0.0",
+  "entryUrl": "http://127.0.0.1:4185/viewer.html",
+  "messagingProtocolVersion": 1,
+  "capabilities": [],
+  "screens": [
+    {
+      "id": "sctec-login",
+      "route": "/sctec/talent-login",
+      "label": "Entrar no Portal de Talentos"
+    },
+    {
+      "id": "sctec-student-companies",
+      "route": "/sctec/student/companies",
+      "label": "Buscar empresas"
+    },
+    {
+      "id": "sctec-student-profile",
+      "route": "/sctec/student/profile",
+      "label": "Meu perfil de aluno"
+    },
+    {
+      "id": "sctec-talent-public-profile",
+      "route": "/sctec/talent/public-profile",
+      "label": "Perfil público do talento"
+    },
+    {
+      "id": "sctec-student-company-profile",
+      "route": "/sctec/student/company-profile",
+      "label": "Perfil público da empresa"
+    },
+    {
+      "id": "sctec-company-candidates",
+      "route": "/sctec/company/candidates",
+      "label": "Buscar talentos"
+    },
+    {
+      "id": "sctec-company-profile",
+      "route": "/sctec/company/profile",
+      "label": "Perfil da empresa"
+    },
+    {
+      "id": "sctec-acate-companies",
+      "route": "/sctec/acate/companies",
+      "label": "Consulta de empresas associadas"
+    },
+    {
+      "id": "sctec-acate-company-profile",
+      "route": "/sctec/acate/company-profile",
+      "label": "Visualizar empresa associada"
+    },
+    {
+      "id": "sctec-acate-company-edit",
+      "route": "/sctec/acate/company-edit",
+      "label": "Editar empresa associada"
+    },
+    {
+      "id": "sctec-admin-students",
+      "route": "/sctec/admin/students",
+      "label": "Banco de talentos"
+    },
+    {
+      "id": "sctec-admin-student-profile",
+      "route": "/sctec/admin/student-profile",
+      "label": "Editar perfil do aluno"
+    },
+    {
+      "id": "sctec-admin-student-create",
+      "route": "/sctec/admin/student-create",
+      "label": "Cadastrar aluno"
+    },
+    {
+      "id": "sctec-admin-companies",
+      "route": "/sctec/admin/companies",
+      "label": "Gestão de empresas"
+    },
+    {
+      "id": "sctec-admin-company-create",
+      "route": "/sctec/admin/company-create",
+      "label": "Cadastrar empresa"
+    },
+    {
+      "id": "sctec-admin-company-edit",
+      "route": "/sctec/admin/company-edit",
+      "label": "Editar empresa"
+    },
+    {
+      "id": "sctec-admin-users",
+      "route": "/sctec/admin/users",
+      "label": "Gestão de usuários"
+    },
+    {
+      "id": "sctec-admin-user-create",
+      "route": "/sctec/admin/user-create",
+      "label": "Cadastrar administrador"
+    },
+    {
+      "id": "sctec-admin-tags",
+      "route": "/sctec/admin/tags",
+      "label": "Gestão de tags"
+    }
+  ],
+  "profiles": [],
+  "journeys": [
+    {
+      "id": "sctec-student-company-discovery",
+      "name": "Aluno · buscar empresas",
+      "description": "Fluxo demonstrativo: login, busca de empresas e visualização de perfil público.",
+      "steps": [
+        {
+          "id": "sctec-student-company-login",
+          "title": "Entrar",
+          "screenId": "sctec-login",
+          "route": "/sctec/talent-login"
+        },
+        {
+          "id": "sctec-student-company-search",
+          "title": "Buscar empresas",
+          "screenId": "sctec-student-companies",
+          "route": "/sctec/student/companies"
+        },
+        {
+          "id": "sctec-student-company-view",
+          "title": "Ver empresa",
+          "screenId": "sctec-student-company-profile",
+          "route": "/sctec/student/company-profile"
+        }
+      ]
+    },
+    {
+      "id": "sctec-student-profile-management",
+      "name": "Aluno · gerenciar perfil",
+      "description": "Fluxo demonstrativo: login, edição do perfil e visualização pública.",
+      "steps": [
+        {
+          "id": "sctec-student-profile-login",
+          "title": "Entrar",
+          "screenId": "sctec-login",
+          "route": "/sctec/talent-login"
+        },
+        {
+          "id": "sctec-student-profile-edit",
+          "title": "Meu perfil",
+          "screenId": "sctec-student-profile",
+          "route": "/sctec/student/profile"
+        },
+        {
+          "id": "sctec-student-profile-preview",
+          "title": "Visualizar perfil",
+          "screenId": "sctec-talent-public-profile",
+          "route": "/sctec/talent/public-profile"
+        }
+      ]
+    },
+    {
+      "id": "sctec-company-talent-search",
+      "name": "Empresa · buscar talentos",
+      "description": "Fluxo demonstrativo: login, lista de candidatos e perfil público do talento.",
+      "steps": [
+        {
+          "id": "sctec-company-search-login",
+          "title": "Entrar",
+          "screenId": "sctec-login",
+          "route": "/sctec/talent-login"
+        },
+        {
+          "id": "sctec-company-search-candidates",
+          "title": "Buscar talentos",
+          "screenId": "sctec-company-candidates",
+          "route": "/sctec/company/candidates"
+        },
+        {
+          "id": "sctec-company-search-profile",
+          "title": "Ver talento",
+          "screenId": "sctec-talent-public-profile",
+          "route": "/sctec/talent/public-profile"
+        }
+      ]
+    },
+    {
+      "id": "sctec-company-profile-management",
+      "name": "Empresa · perfil",
+      "description": "Fluxo demonstrativo: login e visualização do perfil da empresa.",
+      "steps": [
+        {
+          "id": "sctec-company-profile-login",
+          "title": "Entrar",
+          "screenId": "sctec-login",
+          "route": "/sctec/talent-login"
+        },
+        {
+          "id": "sctec-company-profile-view",
+          "title": "Perfil da empresa",
+          "screenId": "sctec-company-profile",
+          "route": "/sctec/company/profile"
+        }
+      ]
+    },
+    {
+      "id": "sctec-acate-company-consultation",
+      "name": "ACATE · consultar empresas associadas",
+      "description": "Fluxo demonstrativo: login, consulta, visualização e edição local de uma empresa associada à ACATE.",
+      "steps": [
+        {
+          "id": "sctec-acate-company-login",
+          "title": "Entrar",
+          "screenId": "sctec-login",
+          "route": "/sctec/talent-login"
+        },
+        {
+          "id": "sctec-acate-company-list",
+          "title": "Consultar empresas",
+          "screenId": "sctec-acate-companies",
+          "route": "/sctec/acate/companies"
+        },
+        {
+          "id": "sctec-acate-company-view",
+          "title": "Visualizar empresa",
+          "screenId": "sctec-acate-company-profile",
+          "route": "/sctec/acate/company-profile"
+        },
+        {
+          "id": "sctec-acate-company-edit-form",
+          "title": "Editar empresa",
+          "screenId": "sctec-acate-company-edit",
+          "route": "/sctec/acate/company-edit"
+        }
+      ]
+    },
+    {
+      "id": "sctec-admin-student-review",
+      "name": "Administração · consultar alunos",
+      "description": "Fluxo demonstrativo: banco de talentos e edição de um perfil.",
+      "steps": [
+        {
+          "id": "sctec-admin-student-login",
+          "title": "Entrar",
+          "screenId": "sctec-login",
+          "route": "/sctec/talent-login"
+        },
+        {
+          "id": "sctec-admin-student-list",
+          "title": "Banco de talentos",
+          "screenId": "sctec-admin-students",
+          "route": "/sctec/admin/students"
+        },
+        {
+          "id": "sctec-admin-student-view",
+          "title": "Editar aluno",
+          "screenId": "sctec-admin-student-profile",
+          "route": "/sctec/admin/student-profile"
+        }
+      ]
+    },
+    {
+      "id": "sctec-admin-student-registration",
+      "name": "Administração · cadastrar aluno",
+      "description": "Fluxo demonstrativo: banco de talentos e formulário de cadastro.",
+      "steps": [
+        {
+          "id": "sctec-admin-registration-login",
+          "title": "Entrar",
+          "screenId": "sctec-login",
+          "route": "/sctec/talent-login"
+        },
+        {
+          "id": "sctec-admin-registration-list",
+          "title": "Banco de talentos",
+          "screenId": "sctec-admin-students",
+          "route": "/sctec/admin/students"
+        },
+        {
+          "id": "sctec-admin-registration-form",
+          "title": "Cadastrar aluno",
+          "screenId": "sctec-admin-student-create",
+          "route": "/sctec/admin/student-create"
+        }
+      ]
+    },
+    {
+      "id": "sctec-admin-company-review",
+      "name": "Administração · gerir empresas",
+      "description": "Fluxo demonstrativo: lista de empresas e formulário de edição.",
+      "steps": [
+        {
+          "id": "sctec-admin-company-review-login",
+          "title": "Entrar",
+          "screenId": "sctec-login",
+          "route": "/sctec/talent-login"
+        },
+        {
+          "id": "sctec-admin-company-review-list",
+          "title": "Gestão de empresas",
+          "screenId": "sctec-admin-companies",
+          "route": "/sctec/admin/companies"
+        },
+        {
+          "id": "sctec-admin-company-review-edit",
+          "title": "Editar empresa",
+          "screenId": "sctec-admin-company-edit",
+          "route": "/sctec/admin/company-edit"
+        }
+      ]
+    },
+    {
+      "id": "sctec-admin-company-registration",
+      "name": "Administração · cadastrar empresa",
+      "description": "Fluxo demonstrativo: lista de empresas e formulário de cadastro.",
+      "steps": [
+        {
+          "id": "sctec-admin-company-registration-login",
+          "title": "Entrar",
+          "screenId": "sctec-login",
+          "route": "/sctec/talent-login"
+        },
+        {
+          "id": "sctec-admin-company-registration-list",
+          "title": "Gestão de empresas",
+          "screenId": "sctec-admin-companies",
+          "route": "/sctec/admin/companies"
+        },
+        {
+          "id": "sctec-admin-company-registration-form",
+          "title": "Cadastrar empresa",
+          "screenId": "sctec-admin-company-create",
+          "route": "/sctec/admin/company-create"
+        }
+      ]
+    },
+    {
+      "id": "sctec-admin-user-management",
+      "name": "Administração · gerir usuários",
+      "description": "Fluxo demonstrativo: lista de usuários e formulário de novo administrador.",
+      "steps": [
+        {
+          "id": "sctec-admin-user-login",
+          "title": "Entrar",
+          "screenId": "sctec-login",
+          "route": "/sctec/talent-login"
+        },
+        {
+          "id": "sctec-admin-user-list",
+          "title": "Gestão de usuários",
+          "screenId": "sctec-admin-users",
+          "route": "/sctec/admin/users"
+        },
+        {
+          "id": "sctec-admin-user-form",
+          "title": "Novo administrador",
+          "screenId": "sctec-admin-user-create",
+          "route": "/sctec/admin/user-create"
+        }
+      ]
+    },
+    {
+      "id": "sctec-admin-tag-management",
+      "name": "Administração · gerir tags",
+      "description": "Fluxo demonstrativo: consulta, inclusão e remoção local de tags de competência.",
+      "steps": [
+        {
+          "id": "sctec-admin-tag-login",
+          "title": "Entrar",
+          "screenId": "sctec-login",
+          "route": "/sctec/talent-login"
+        },
+        {
+          "id": "sctec-admin-tag-list",
+          "title": "Gestão de tags",
+          "screenId": "sctec-admin-tags",
+          "route": "/sctec/admin/tags"
+        }
+      ]
+    }
+  ]
+}

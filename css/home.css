@@ -1,0 +1,424 @@
+/* ============================================
+   Home Page - SCTEC Institucional
+   ============================================ */
+
+/* === HERO HOME === */
+.hero-home {
+  position: relative;
+  min-height: 680px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--color-bg-white);
+}
+
+.hero-home__bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(122,185,52,0.04) 100%);
+  pointer-events: none;
+}
+
+.hero-home__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 823px;
+  padding: var(--spacing-80) var(--spacing-24);
+}
+
+.hero-home__title {
+  font-family: var(--font-header);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.27;
+  letter-spacing: -1.2px;
+  color: var(--color-text-default);
+  margin-bottom: var(--spacing-32);
+}
+
+.hero-home__subtitle {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 29px;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-40);
+}
+
+.hero-home__actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-16);
+}
+
+/* === BANNER === */
+.banner {
+  position: relative;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.banner__carousel {
+  width: 100%;
+}
+
+.banner__slide {
+  display: none;
+  padding: var(--spacing-80) 0;
+}
+
+.banner__slide--active {
+  display: block;
+}
+
+.banner__content {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-24);
+  align-items: flex-start;
+}
+
+.banner__title {
+  font-family: var(--font-header);
+  font-size: var(--header-h2-size);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text-invert);
+}
+
+.banner__text {
+  font-size: var(--body-large);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.banner__nav {
+  position: absolute;
+  bottom: var(--spacing-32);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--spacing-16);
+}
+
+.banner__nav-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.banner__nav-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* === ABOUT === */
+.about {
+  padding: var(--spacing-80) 0;
+}
+
+.about__header {
+  margin-bottom: var(--spacing-48);
+}
+
+.about__title {
+  font-family: var(--font-header);
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.267;
+  letter-spacing: -1.92px;
+  margin-bottom: var(--spacing-8);
+}
+
+.about__subtitle {
+  font-size: 18px;
+  line-height: 29px;
+  color: var(--color-text-secondary);
+  max-width: 771px;
+}
+
+.about__cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-24);
+}
+
+.about__row {
+  display: flex;
+  gap: var(--spacing-24);
+}
+
+/* Hero cards coloridos */
+.about-card-hero {
+  border-radius: 32px;
+  padding: var(--spacing-24) var(--spacing-40);
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 1.2px 30px rgba(69, 42, 124, 0.1);
+  backdrop-filter: blur(35px);
+  -webkit-backdrop-filter: blur(35px);
+  color: var(--color-text-invert);
+  overflow: hidden;
+  position: relative;
+}
+
+.about-card-hero--red {
+  background: linear-gradient(78deg, #DD2636 2.5%, #EF3576 100%);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-40);
+  min-height: 302px;
+}
+
+.about-card-hero--teal {
+  background: linear-gradient(-77deg, #06B66D 5%, #00B0FB 100%);
+  flex: 1;
+  min-height: 436px;
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-40);
+}
+
+.about-card-hero--glass {
+  background: linear-gradient(88deg, rgba(255,255,255,0.2) 11%, rgba(255,255,255,0.035) 113%);
+  width: 246px;
+  min-height: 436px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.about-card-hero__image {
+  width: 294px;
+  height: 254px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.about-card-hero__screen {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.about-card-hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-12);
+}
+
+.about-card-hero__title {
+  font-family: var(--font-header);
+  font-size: 31.3px;
+  font-weight: 700;
+  line-height: 48px;
+}
+
+.about-card-hero__text {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.59;
+  letter-spacing: -0.6px;
+  opacity: 0.95;
+}
+
+.about-card-hero--teal .about-card-hero__text {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: -0.72px;
+  max-width: 677px;
+}
+
+.about-card-hero__arrow {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 1024px) {
+  .about__row {
+    flex-direction: column;
+  }
+  .about-card-hero--glass {
+    width: 100%;
+    min-height: 120px;
+  }
+  .about-card-hero--red {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about__title {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-card-hero__image {
+    display: none;
+  }
+  .about__title {
+    font-size: 32px;
+  }
+}
+
+/* === TRILHAS (CTA SECTION) === */
+.trilhas {
+  padding: var(--spacing-80) 0;
+  background: #303030 url('') center/cover no-repeat;
+  position: relative;
+}
+
+.trilhas::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(48, 48, 48, 0.5);
+  pointer-events: none;
+}
+
+.trilhas > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.trilhas__header {
+  text-align: center;
+  margin-bottom: var(--spacing-40);
+}
+
+.trilhas__title {
+  font-family: var(--font-header);
+  font-size: var(--header-h2-size);
+  font-weight: 700;
+  line-height: var(--header-h2-line-height);
+  color: var(--color-text-invert);
+  margin-bottom: var(--spacing-8);
+}
+
+.trilhas__subtitle {
+  font-size: 18px;
+  line-height: 29px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.trilhas__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-24);
+  align-items: flex-end;
+}
+
+.trilha-card {
+  background: var(--color-bg-white);
+  border: 1px solid #bfbfbf;
+  border-radius: 24px;
+  padding: var(--spacing-32);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-24);
+  box-shadow: 0px 2.9px 4.3px rgba(13, 10, 44, 0.06);
+  transition: transform var(--transition-default);
+}
+
+.trilha-card:hover {
+  transform: translateY(-4px);
+}
+
+.trilha-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-8);
+}
+
+.trilha-card__title {
+  font-family: var(--font-header);
+  font-size: 31.3px;
+  font-weight: 700;
+  line-height: 48px;
+  color: var(--color-text-default);
+}
+
+.trilha-card__icon-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(86deg, rgba(255,255,255,0.2) 11%, rgba(255,255,255,0.035) 113%);
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-primary);
+  background: #e8f5e0;
+}
+
+.trilha-card__description {
+  font-size: 18px;
+  line-height: 29px;
+  color: var(--color-text-secondary);
+  min-height: 145px;
+}
+
+.trilha-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-8);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-8);
+  background: #f0f0f0;
+  padding: var(--spacing-8);
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--color-text-tertiary);
+}
+
+.tag svg {
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+@media (max-width: 1024px) {
+  .trilhas__grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .trilha-card__description {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-home__title {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+  .hero-home__subtitle {
+    font-size: 16px;
+  }
+  .banner {
+    min-height: 400px;
+  }
+  .banner__title {
+    font-size: 28px;
+  }
+}

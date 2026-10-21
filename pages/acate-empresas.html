@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta de Empresas - ACATE | SCTEC</title>
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/painel.css">
+  <link rel="stylesheet" href="../css/admin-empresas.css">
+  <link rel="stylesheet" href="../css/acate-shell.css">
+  <link rel="stylesheet" href="../css/acate-empresas.css">
+</head>
+<body class="acate-page acate-companies-page">
+  <nav class="navbar navbar--painel acate-header">
+    <div class="navbar__inner">
+      <a href="acate-empresas.html" class="navbar__brand acate-header__brand" aria-label="SCTEC Portal de Talentos — Consulta de Empresas"><strong>SCTEC</strong><span>Portal de Talentos</span></a>
+      <div class="navbar-painel__right">
+        <span class="acate-header__identity">ACATE</span>
+        <button class="navbar-painel__avatar" id="avatar-toggle" type="button" aria-label="Abrir menu ACATE" aria-expanded="false" aria-controls="avatar-menu">AC</button>
+        <div class="avatar-menu" id="avatar-menu" aria-hidden="true" hidden>
+          <div class="avatar-menu__header"><strong>ACATE</strong><span>Consulta de empresas associadas</span></div>
+          <a href="acate-empresas.html" class="avatar-menu__link"><img src="../assets/admin-figma/LucideIconsBuilding.svg" alt="" width="18" height="18">Consulta de Empresas</a>
+          <div class="avatar-menu__divider"></div>
+          <a href="login.html" class="avatar-menu__link avatar-menu__link--logout"><img src="../assets/admin-figma/LucideIconsLogOut.svg" alt="" width="18" height="18">Sair</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="painel">
+    <aside class="sidebar acate-sidebar">
+      <div class="sidebar__header"><div class="sidebar__company">ACATE</div></div>
+      <nav class="sidebar__nav" aria-label="Navegação ACATE">
+        <a href="acate-empresas.html" class="sidebar__link sidebar__link--active" aria-current="page"><img src="../assets/admin-figma/LucideIconsBuilding.svg" alt="" width="24" height="24">Consulta de Empresas</a>
+      </nav>
+      <div class="sidebar__footer"><a href="login.html" class="sidebar__logout"><img src="../assets/admin-figma/LucideIconsLogOut.svg" alt="" width="24" height="24">Sair</a></div>
+    </aside>
+
+    <main class="painel__main acate-companies">
+      <h1>Consulta de Empresas</h1>
+      <form class="acate-companies__filters" id="acate-company-filters" role="search">
+        <label class="acate-search" for="acate-company-search"><span class="sr-only">Buscar por nome, CNPJ ou responsável</span><input id="acate-company-search" type="search" placeholder="Buscar por nome, CNPJ ou responsável..." autocomplete="off"><img src="../assets/admin-figma/LucideIconsSearch.svg" alt="" width="24" height="24"></label>
+        <div class="acate-filter" data-filter="status">
+          <button class="acate-filter__trigger" id="acate-status-trigger" type="button" aria-expanded="false" aria-controls="acate-status-options"><span>Todos os status</span><img src="../assets/admin-figma/TablerIconsChevronDown.svg" alt="" width="24" height="24"></button>
+          <div class="acate-filter__panel" id="acate-status-options" role="listbox" aria-label="Filtrar por status" hidden>
+            <button type="button" role="option" aria-selected="false" data-status="Aprovada">Aprovada</button>
+            <button type="button" role="option" aria-selected="false" data-status="Inativada">Inativada</button>
+            <button type="button" role="option" aria-selected="false" data-status="Recusada">Recusada</button>
+            <button type="button" role="option" aria-selected="false" data-status="Solicitação">Solicitação</button>
+            <button type="button" role="option" aria-selected="false" data-status="Solicitação após recusa">Solicitação após recusa</button>
+            <button class="acate-filter__clear" type="button" data-clear-status>Limpar</button>
+          </div>
+        </div>
+        <div class="acate-filter" data-filter="size">
+          <button class="acate-filter__trigger" id="acate-size-trigger" type="button" aria-expanded="false" aria-controls="acate-size-options"><span>Todos os portes</span><img src="../assets/admin-figma/TablerIconsChevronDown.svg" alt="" width="24" height="24"></button>
+          <div class="acate-filter__panel acate-filter__panel--checks" id="acate-size-options" role="group" aria-label="Filtrar por porte" hidden>
+            <label><input type="checkbox" value="Microempresa" data-size><span>Microempresa</span></label>
+            <label><input type="checkbox" value="Pequena" data-size><span>Pequena</span></label>
+            <label><input type="checkbox" value="Média" data-size><span>Média</span></label>
+            <label><input type="checkbox" value="Grande" data-size><span>Grande</span></label>
+            <button class="acate-filter__clear" type="button" data-clear-sizes disabled>Limpar</button>
+          </div>
+        </div>
+      </form>
+
+      <p class="acate-companies__count" id="acate-company-count" aria-live="polite"></p>
+      <section class="acate-companies__table-wrap" aria-labelledby="acate-table-title">
+        <h2 class="sr-only" id="acate-table-title">Empresas associadas à ACATE</h2>
+        <table class="acate-companies__table">
+          <colgroup><col><col><col><col><col></colgroup>
+          <thead><tr><th scope="col">Empresa<img src="../assets/admin-figma/TablerIconsSortDescending.svg" alt="" width="16" height="16"></th><th scope="col">CNPJ</th><th scope="col">Responsável</th><th scope="col">Status<img src="../assets/admin-figma/TablerIconsSortDescending.svg" alt="" width="16" height="16"></th><th scope="col">Ações</th></tr></thead>
+          <tbody id="acate-company-body"></tbody>
+        </table>
+      </section>
+      <section class="acate-companies__empty" id="acate-company-empty" aria-labelledby="acate-empty-title" hidden>
+        <div class="acate-companies__empty-icon"><img src="../assets/admin-figma/LucideIconsSearch.svg" alt="" width="24" height="24"></div>
+        <div><h2 id="acate-empty-title">Nenhum resultado encontrado</h2><p>Tente ajustar os filtros ou limpar o termo de busca.</p></div>
+        <button type="button" id="acate-clear-filters">Limpar Filtros</button>
+      </section>
+      <nav class="acate-companies__pagination" id="acate-company-pagination" aria-label="Paginação de empresas"></nav>
+    </main>
+  </div>
+
+  <dialog class="acate-request-dialog" id="acate-request-dialog" aria-labelledby="acate-request-title" aria-describedby="acate-request-count">
+    <header class="acate-request__header"><div><h2 id="acate-request-title"></h2><p id="acate-request-cnpj"></p></div><button type="button" class="acate-modal__close" data-close-request aria-label="Fechar solicitação"><img src="../assets/admin-figma/RequestClose.svg" alt="" width="20" height="20"></button></header>
+    <div class="acate-request__content">
+      <p class="acate-request__count" id="acate-request-count">1 candidato aguarda aprovação:</p>
+      <section class="acate-request__candidate" aria-labelledby="acate-request-person"><div><h3 id="acate-request-person"></h3><p id="acate-request-role"></p></div><div class="acate-request__contact"><span><img src="../assets/admin-figma/RequestWhatsapp.svg" alt="" width="16" height="16"></span><div><span>WhatsApp</span><strong id="acate-request-phone"></strong></div></div><div class="acate-request__contact"><span><img src="../assets/admin-figma/RequestEmail.svg" alt="" width="16" height="16"></span><div><span>E-mail</span><strong id="acate-request-email"></strong></div></div></section>
+      <label class="acate-request__notes" for="acate-request-notes"><span>Anotações</span><textarea id="acate-request-notes" placeholder="Adicione uma observação sobre essa empresa..."></textarea></label>
+    </div>
+    <footer class="acate-request__footer"><button type="button" class="acate-modal__button acate-modal__button--danger" id="acate-request-reject">Recusar</button><button type="button" class="acate-modal__button acate-modal__button--primary" id="acate-request-approve">Aprovar</button></footer>
+  </dialog>
+
+  <dialog class="acate-decision-dialog" id="acate-decision-dialog" data-mode="approve" aria-labelledby="acate-decision-title" aria-describedby="acate-decision-description acate-decision-simulation">
+    <header><h2 id="acate-decision-title"></h2><button type="button" class="acate-modal__close" data-close-decision aria-label="Fechar confirmação"><img src="../assets/admin-figma/RequestClose.svg" alt="" width="20" height="20"></button></header>
+    <div class="acate-decision__content"><p id="acate-decision-description"></p><p class="sr-only" id="acate-decision-simulation">Simulação: nenhum e-mail será enviado.</p></div>
+    <footer><button type="button" class="acate-modal__button acate-modal__button--secondary" data-close-decision>Cancelar</button><button type="button" class="acate-modal__button" id="acate-decision-confirm"></button></footer>
+  </dialog>
+
+  <dialog class="acate-result-dialog" id="acate-result-dialog" data-mode="approve" aria-labelledby="acate-result-title" aria-describedby="acate-result-description acate-result-simulation">
+    <div class="acate-result__content"><span class="acate-result__icon"><img src="../assets/admin-figma/RegistrationSuccess.svg" alt="" width="32" height="32"></span><div><h2 id="acate-result-title"></h2><p id="acate-result-description"></p><p class="sr-only" id="acate-result-simulation">Simulação: nenhum e-mail foi enviado e nenhum registro real foi alterado.</p></div></div>
+    <footer><button type="button" class="acate-modal__button acate-modal__button--primary" id="acate-result-close">Entendi</button></footer>
+  </dialog>
+
+  <dialog class="company-action-dialog" id="company-reset-dialog" aria-labelledby="company-reset-title" aria-describedby="company-reset-description">
+    <header><h2 id="company-reset-title">Você deseja redefinir a senha do usuário?</h2><button type="button" class="company-dialog__close" data-close-company-action aria-label="Fechar"><img src="../assets/admin-figma/RequestClose.svg" alt="" width="20" height="20"></button></header>
+    <p id="company-reset-description">Uma nova senha temporária será criada e enviada para o e-mail do usuário. O acesso atual será desativado imediatamente.</p>
+    <footer><button type="button" class="company-dialog__button company-dialog__button--secondary" data-close-company-action>Cancelar</button><button type="button" class="company-dialog__button company-dialog__button--primary" id="company-reset-submit">Redefinir senha</button></footer>
+  </dialog>
+  <dialog class="company-action-dialog company-action-dialog--danger" id="company-deactivate-dialog" aria-labelledby="company-deactivate-title" aria-describedby="company-deactivate-description">
+    <header><h2 id="company-deactivate-title">Deseja realmente inativar a empresa?</h2><button type="button" class="company-dialog__close" data-close-company-action aria-label="Fechar"><img src="../assets/admin-figma/RequestClose.svg" alt="" width="20" height="20"></button></header>
+    <p id="company-deactivate-description">A empresa <strong id="company-deactivate-name"></strong> terá seu acesso à plataforma desativado imediatamente. Todos os dados e o histórico permanecerão salvos. Você poderá reativá-la a qualquer momento.</p>
+    <footer><button type="button" class="company-dialog__button company-dialog__button--secondary" data-close-company-action>Cancelar</button><button type="button" class="company-dialog__button company-dialog__button--danger" id="company-deactivate-submit">Inativar Empresa</button></footer>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="../js/acate-shell.js" defer></script>
+  <script src="../js/acate-empresas.js" defer></script>
+  <script src="../js/profile-navigation.js" defer></script>
+</body>
+</html>

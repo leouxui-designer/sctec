@@ -1,0 +1,10 @@
+.company-header{height:80px;padding:0;background:#fff;border-bottom:0;box-shadow:0 1.197px 14.958px rgba(69,42,124,.1)}
+.company-header .navbar__inner{width:100%;max-width:none;height:80px;padding:16px 24px}
+.company-header__brand{display:flex;min-width:0;flex-direction:column;align-items:flex-start;gap:0;color:#171717;line-height:1;text-decoration:none}
+.company-header__brand strong{font-family:var(--font-header);font-size:31px;font-weight:800;line-height:34px;letter-spacing:-.6px}
+.company-header__brand span{font-family:var(--font-body);font-size:13px;font-weight:600;line-height:16px}
+.company-header .navbar-painel__right{gap:8px}
+.company-header .navbar-painel__company-name{color:#454545;font:400 14px/23px var(--font-body)}
+.company-header .navbar-painel__avatar{display:flex;width:48px;height:48px;flex:0 0 48px;align-items:center;justify-content:center;padding:0;border:0;border-radius:50%;color:#466822;background:#7ab934;font:700 14px/20px var(--font-body)}
+.company-header :is(a,button):focus-visible{outline:3px solid #466822;outline-offset:3px}
+@media(max-width:768px){.company-header .navbar__inner{padding-inline:16px}.company-header__brand{min-width:0}.company-header__brand strong{font-size:25px;line-height:28px}.company-header__brand span{font-size:11px;line-height:14px}.company-header .navbar-painel__company-name{display:none}}

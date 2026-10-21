@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.npm-cache/
+test-results/
+playwright-report/
+playwright/.cache/
+.env
+.env.*
+!.env.example
+*.log
+Thumbs.db
+.DS_Store

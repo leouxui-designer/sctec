@@ -1,0 +1,680 @@
+/* Buscar Empresas — alinhamento ao frame Figma 101118:12812. */
+.student-companies-page .navbar--painel {
+  height: 80px;
+  border-bottom: 1px solid #ececec;
+  box-shadow: 0 1px 15px rgba(69, 42, 124, .1);
+}
+
+.student-companies-page .navbar__inner {
+  width: 100%;
+  max-width: none;
+  height: 80px;
+  padding: 16px 24px;
+}
+
+.student-companies-page .student-navbar__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  color: #171717;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.student-companies-page .student-navbar__brand strong {
+  font: 800 31px/34px var(--font-header);
+  letter-spacing: -.6px;
+}
+
+.student-companies-page .student-navbar__brand span {
+  font: 600 13px/16px var(--font-body);
+}
+
+.student-companies-page .navbar-painel__right { gap: 16px; }
+.student-companies-page .navbar-painel__company-name { color: #454545; font-size: 14px; line-height: 23px; }
+
+.student-companies-page .navbar-painel__avatar {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  background: #f1f7e9;
+  color: #466822;
+  font-weight: 700;
+}
+
+.student-companies-page .sidebar {
+  width: 256px;
+  padding: 0;
+  border-right: 1px solid #d4d4d4;
+}
+
+.student-companies-page .sidebar__header {
+  min-height: 73px;
+  margin: 0;
+  padding: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+.student-companies-page .sidebar__company { margin: 0; font: 700 16px/24px var(--font-header); }
+.student-companies-page .sidebar__plan { color: #fff; font-size: 12px; line-height: 16px; letter-spacing: .12px; }
+.student-companies-page .sidebar__nav { gap: 4px; padding: 16px 8px; }
+
+.student-companies-page .sidebar__link {
+  min-height: 48px;
+  gap: 8px;
+  padding: 12px 8px;
+  border-radius: 6px;
+  color: #b4b7b8;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.student-companies-page .sidebar__link svg { width: 24px; height: 24px; }
+.student-companies-page .sidebar__link--active { background: #2b382b; color: #7ab934; }
+.student-companies-page .sidebar__footer { padding: 8px 16px 24px; }
+.student-companies-page .sidebar__logout { min-height: 48px; }
+
+.student-companies-page .painel__main {
+  margin-left: 256px;
+  padding: 0;
+  background: #f8f9fb;
+}
+
+.student-companies-page .painel__header { display: none; }
+
+.student-companies-page .search-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  margin: 0;
+  padding: 20px 32px;
+  background: #fff;
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.1);
+}
+
+.student-companies__title {
+  margin: 0;
+  color: #171717;
+  font: 700 30px/30px var(--font-body);
+  letter-spacing: -.75px;
+}
+
+.student-companies__filters-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  overflow: visible;
+}
+
+.student-companies-page .search-panel__main {
+  flex: 0 0 300px;
+  width: 300px;
+  min-height: 42px;
+  margin: 0;
+  padding: 8px 12px;
+  border: 1px solid #d4d4d4;
+  border-radius: 999px;
+  background: #fff;
+}
+
+.student-companies-page .search-panel__icon { width: 20px; height: 20px; color: #737373; }
+.student-companies-page .search-panel__input { font-size: 14px; line-height: 14px; }
+.student-companies-page .search-panel__input::placeholder { color: #737373; }
+
+.student-companies-page .painel-filters {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 12px;
+  margin: 0;
+  flex-wrap: nowrap;
+}
+
+.student-companies-page .student-select {
+  position: relative;
+  min-width: 150px;
+  height: 42px;
+  flex: 0 0 auto;
+}
+
+.student-companies-page .student-select__native { display: none; }
+
+.student-companies-page .student-select__trigger {
+  display: flex;
+  width: 100%;
+  height: 42px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid #d4d4d4;
+  border-radius: 999px;
+  color: #171717;
+  font: 400 14px/14px var(--font-body);
+  background: #fff;
+  cursor: pointer;
+  transition: border-color .16s ease, background-color .16s ease, box-shadow .16s ease;
+}
+
+.student-companies-page .student-select__trigger > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.student-companies-page .student-select__trigger img {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  transition: transform .16s ease;
+}
+
+.student-companies-page .student-select__trigger:hover,
+.student-companies-page .student-select__trigger[aria-expanded="true"] {
+  border-color: #669e2e;
+  background: #fbfdf9;
+}
+
+.student-companies-page .student-select__trigger[aria-expanded="true"] img { transform: rotate(180deg); }
+
+.student-companies-page .student-select__menu {
+  position: absolute;
+  z-index: 80;
+  top: calc(100% + 6px);
+  left: 0;
+  display: flex;
+  width: max-content;
+  min-width: 100%;
+  max-width: min(280px, calc(100vw - 32px));
+  flex-direction: column;
+  gap: 2px;
+  padding: 4px;
+  border: 1px solid #e4e4e7;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .12);
+}
+
+.student-companies-page .student-select__menu[hidden] { display: none; }
+
+.student-companies-page .student-select__option {
+  display: flex;
+  min-width: 100%;
+  min-height: 36px;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 6px;
+  color: #171717;
+  background: #fff;
+  font: 400 14px/20px var(--font-body);
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.student-companies-page .student-select__option svg {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  opacity: 0;
+}
+
+.student-companies-page .student-select__option:hover,
+.student-companies-page .student-select__option:focus-visible { outline: none; background: #f1f7e9; }
+
+.student-companies-page .student-select__option[aria-selected="true"] {
+  color: #466822;
+  background: #f8fbf4;
+  font-weight: 500;
+}
+
+.student-companies-page .student-select__option[aria-selected="true"] svg { opacity: 1; }
+
+.student-companies-page .student-select__trigger:focus-visible,
+.student-companies-page .search-panel__main:focus-within {
+  outline: none;
+  border-color: #7ab934;
+  box-shadow: 0 0 0 2px rgba(122,185,52,.28);
+}
+
+.student-companies-page .student-select[data-select-id="filtro-competencia"] { min-width: 220px; }
+.student-companies-page .student-select[data-select-id="filtro-regiao"],
+.student-companies-page .student-select[data-select-id="filtro-cidade"] { min-width: 150px; }
+.student-companies-page #tech-chips { display: none; }
+
+.student-companies-page .painel-results-count,
+.student-companies-page .empresas-grid,
+.student-companies-page .empty-state,
+.student-companies__pagination {
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+.student-companies-page .painel-results-count {
+  margin-top: 16px;
+  margin-bottom: 12px;
+  color: #737373;
+  font-size: 14px;
+}
+
+.student-companies-page .empresas-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.08);
+}
+
+.student-companies-page .empresa-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  grid-template-areas:
+    "logo title"
+    "logo tags"
+    "logo description"
+    "logo metadata";
+  align-content: center;
+  align-items: start;
+  column-gap: 12px;
+  row-gap: 8px;
+  min-height: 189px;
+  padding: 16px 24px;
+  border: 0;
+  border-bottom: 1px solid #d4d4d4;
+  border-radius: 0;
+  background: #fff;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color .16s ease, box-shadow .16s ease;
+}
+
+.student-companies-page .empresa-card:hover,
+.student-companies-page .empresa-card:focus-visible {
+  background: #fbfdf8;
+  outline: none;
+}
+
+.student-companies-page .empresa-card::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 3px;
+  background: #7ab934;
+  content: "";
+  opacity: 0;
+  transition: opacity .16s ease;
+}
+
+.student-companies-page .empresa-card:hover::before,
+.student-companies-page .empresa-card:focus-visible::before { opacity: 1; }
+
+.student-companies-page .empresa-card__header {
+  display: contents;
+}
+
+.student-companies-page .empresa-card__logo {
+  grid-area: logo;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: #f8f9fb;
+  color: #466822;
+  font-size: 15px;
+}
+
+.student-companies-page .empresa-card__logo--image {
+  overflow: hidden;
+  padding: 0;
+}
+
+.student-companies-page .empresa-card__logo--image img {
+  display: block;
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+}
+
+.student-companies-page .empresa-card__header > div:last-child {
+  grid-area: title;
+  min-width: 0;
+}
+
+.student-companies-page .empresa-card__name {
+  color: #171717;
+  font: 700 18px/28px var(--font-header);
+}
+
+.student-companies-page .empresa-card__segmento {
+  margin-top: 0;
+  color: #171717;
+  font: 500 14px/19px var(--font-body);
+}
+
+.student-companies-page .empresa-card__desc {
+  grid-area: description;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  color: #454545;
+  font: 400 12px/19.5px var(--font-body);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.student-companies-page .empresa-card__tags {
+  grid-area: tags;
+  gap: 8px;
+  margin: 0;
+}
+
+.student-companies-page .tech-tag {
+  padding: 2px 10px;
+  border-radius: 26px;
+  background: #ececec;
+  color: #404040;
+  font: 500 14px/20px var(--font-body);
+}
+
+.student-companies-page .empresa-card__footer { display: none; }
+
+.student-companies-page .empresa-card__meta {
+  grid-area: metadata;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  color: #737373;
+  font: 400 12px/18px var(--font-body);
+}
+
+.student-companies-page .empresa-card__meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.student-companies-page .empresa-card__meta svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.student-companies-page .empty-state {
+  margin-top: 16px;
+}
+
+.student-companies__pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px 0 32px;
+}
+
+.student-companies__pagination button {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 1px solid #d4d4d4;
+  border-radius: 10px;
+  background: #fff;
+  color: #171717;
+  font: 400 14px/16px var(--font-body);
+  cursor: pointer;
+}
+
+.student-companies__pagination button.is-active {
+  border-color: transparent;
+  background: linear-gradient(110deg,#2ca942 16%,#55b13a 55%,#52b934 87%);
+  color: #fff;
+  font-weight: 600;
+}
+
+.student-companies__pagination button:disabled { cursor: default; opacity: .45; }
+.student-companies__pagination button:focus-visible { outline: 3px solid rgba(122,185,52,.3); outline-offset: 2px; }
+
+.student-company-modal[hidden] { display: none; }
+
+.student-company-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2200;
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px;
+}
+
+.student-company-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(23, 23, 23, .48);
+  cursor: default;
+}
+
+.student-company-modal__dialog {
+  position: relative;
+  display: flex;
+  width: min(720px, calc(100vw - 24px));
+  max-height: calc(100vh - 16px);
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, .22);
+  animation: student-company-modal-in .18s ease-out;
+}
+
+@keyframes student-company-modal-in {
+  from { opacity: 0; transform: translateX(24px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.student-company-modal__header {
+  display: flex;
+  min-height: 153px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px 16px;
+  border-bottom: 1px solid #d4d4d4;
+  background: #fff;
+}
+
+.student-company-modal__identity { display: flex; min-width: 0; gap: 20px; }
+
+.student-company-modal__logo {
+  width: 74px;
+  height: 74px;
+  flex: 0 0 74px;
+  border-radius: 10px;
+  object-fit: cover;
+  background: #f8f9fb;
+}
+
+.student-company-modal__heading { min-width: 0; }
+.student-company-modal__heading h2 { margin: 2px 0 4px; color: #171717; font: 700 20px/24px var(--font-header); }
+.student-company-modal__heading > p { margin: 0; color: #171717; font: 500 14px/19px var(--font-body); }
+
+.student-company-modal__meta {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 10px;
+  color: #737373;
+  font: 400 14px/20px var(--font-body);
+}
+
+.student-company-modal__meta > span { display: inline-flex; align-items: center; gap: 4px; }
+.student-company-modal__meta svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; }
+
+.student-company-modal__socials { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.student-company-modal__socials a {
+  display: inline-flex;
+  height: 36px;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  border: 1px solid #d4d4d4;
+  border-radius: 999px;
+  color: #171717;
+  background: #fff;
+  font: 500 14px/20px var(--font-body);
+  text-decoration: none;
+}
+.student-company-modal__socials a:hover { border-color: #7ab934; background: #f8fbf4; }
+.student-company-modal__socials a span { font-weight: 700; }
+
+.student-company-modal__close {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  place-items: center;
+  border: 0;
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+}
+.student-company-modal__close:hover { background: #f5f5f5; }
+
+.student-company-modal__scroll {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 16px 16px 32px;
+  background: #f8f9fb;
+}
+
+.student-company-modal__section {
+  padding: 20px;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.1);
+}
+
+.student-company-modal__section h3 { margin: 0 0 16px; color: #171717; font: 700 18px/20px var(--font-header); letter-spacing: -.45px; }
+.student-company-modal__section > p,
+.student-company-modal__copy { color: #171717; font: 400 14px/20px var(--font-body); }
+.student-company-modal__section > p { margin: 0 0 20px; }
+.student-company-modal__copy p { margin: 0 0 2px; }
+.student-company-modal__copy p:not(:first-child) { margin-top: 20px; }
+.student-company-modal__copy ul { margin: 0; padding-left: 20px; }
+.student-company-modal__benefits { list-style: none; padding-left: 0 !important; }
+.student-company-modal__benefits li::before { content: '✓ '; font-weight: 700; }
+
+.student-company-modal__skills { display: flex; flex-wrap: wrap; gap: 8px; }
+.student-company-modal__skills span {
+  padding: 2px 10px;
+  border-radius: 26px;
+  color: #404040;
+  background: #ececec;
+  font: 500 14px/20px var(--font-body);
+}
+
+.student-company-modal__portals { display: flex; flex-direction: column; gap: 16px; }
+.student-company-modal__portal {
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+  gap: 10px;
+  padding: 16px;
+  border-radius: 12px;
+  color: #171717;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.08);
+  text-decoration: none;
+}
+.student-company-modal__portal:hover { box-shadow: 0 0 0 2px rgba(122,185,52,.24); }
+.student-company-modal__portal-icon { color: #63a832; font-size: 24px; }
+.student-company-modal__portal > span:last-child { display: flex; min-width: 0; flex-direction: column; }
+.student-company-modal__portal strong { font: 600 16px/24px var(--font-body); }
+.student-company-modal__portal small { overflow: hidden; color: #466822; font: 400 14px/20px var(--font-body); text-overflow: ellipsis; white-space: nowrap; }
+
+.student-company-modal :is(button, a):focus-visible,
+.student-company-modal__dialog:focus-visible { outline: 3px solid rgba(122,185,52,.38); outline-offset: 2px; }
+
+@media (min-width: 769px) and (max-width: 1180px) {
+  .student-companies__filters-row,
+  .student-companies-page .painel-filters { flex-wrap: wrap; }
+}
+
+@media (max-width: 768px) {
+  .student-companies-page .navbar__inner { padding: 16px; }
+  .student-companies-page .navbar-painel__company-name { display: none; }
+  .student-companies-page .sidebar {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: auto;
+    padding: 12px 16px;
+    border-right: 0;
+  }
+  .student-companies-page .painel__main { margin-left: 0; }
+  .student-companies-page .search-panel { padding: 20px 16px; }
+  .student-companies__filters-row { overflow-x: visible; flex-direction: column; }
+  .student-companies-page .search-panel__main { flex-basis: auto; width: 100%; }
+  .student-companies-page .painel-filters { display: grid; width: 100%; grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .student-companies-page .student-select,
+  .student-companies-page .student-select[data-select-id="filtro-competencia"],
+  .student-companies-page .student-select[data-select-id="filtro-regiao"],
+  .student-companies-page .student-select[data-select-id="filtro-cidade"] { min-width: 0; width: 100%; }
+  .student-companies-page .student-select__menu { width: 100%; max-width: none; }
+  .student-companies-page .painel-results-count,
+  .student-companies-page .empresas-grid,
+  .student-companies-page .empty-state,
+  .student-companies__pagination { margin-left: 16px; margin-right: 16px; }
+  .student-companies-page .empresas-grid { padding: 0; border-radius: 18px; }
+  .student-companies-page .empresa-card { min-height: 0; padding: 16px 12px; }
+  .student-companies-page .empresa-card__desc { max-width: none; }
+  .student-company-modal { padding: 0; }
+  .student-company-modal__dialog { width: 100%; max-height: 100vh; border-radius: 0; }
+  .student-company-modal__header { min-height: auto; padding: 16px; }
+  .student-company-modal__identity { gap: 12px; }
+  .student-company-modal__logo { width: 56px; height: 56px; flex-basis: 56px; }
+  .student-company-modal__meta { flex-wrap: wrap; }
+  .student-company-modal__socials { margin-left: -68px; }
+  .student-company-modal__scroll { padding: 12px 12px 24px; }
+  .student-company-modal__section { padding: 16px; border-radius: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .student-company-modal__dialog { animation: none; }
+}
+.student-companies-page .student-companies__chips { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 12px; }
+.student-companies-page .student-companies__chips[hidden] { display: none; }
+.student-companies-page .student-companies__chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 26px; color: #404040; background: #f0f0f0; font: 500 14px/20px var(--font-body); }
+.student-companies-page .student-companies__chip button { display: grid; width: 20px; height: 20px; place-items: center; border-radius: 50%; color: #454545; cursor: pointer; }
+.student-companies-page .student-companies__chip button:hover { background: #d4d4d4; }
+.student-companies-page .student-companies__clear { min-height: 32px; padding: 0 8px; color: #669e2e; font: 500 14px/20px var(--font-body); cursor: pointer; }
+.student-companies-page .student-companies__chips :is(button):focus-visible { outline: 2px solid #466822; outline-offset: 2px; }
+
+@media (max-width: 768px) {
+  .student-companies-page .student-companies__title { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+}

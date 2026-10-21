@@ -1,0 +1,35 @@
+/* Desktop: o painel de filtros é transparente e o layout original permanece. */
+.filters-trigger { display: none; }
+.filters-sheet, .filters-sheet__body { display: contents; }
+.filters-sheet__header, .filters-sheet__footer, .filters-sheet__backdrop { display: none; }
+
+@media (max-width: 768px) {
+  .filters-trigger { position: relative; display: grid; width: 42px; height: 42px; flex: 0 0 42px; place-items: center; border: 1px solid #d4d4d4; border-radius: 50%; color: #737373; background: #fff; cursor: pointer; }
+  .filters-trigger svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2; }
+  .filters-trigger:focus-visible, .filters-sheet button:focus-visible { outline: 3px solid #466822; outline-offset: 2px; }
+  .filters-trigger__badge { position: absolute; top: -4px; right: -4px; display: grid; min-width: 18px; height: 18px; padding: 0 4px; place-items: center; border-radius: 9px; color: #fff; background: #55a02b; font: 600 11px/18px var(--font-body); }
+  .filters-trigger__badge[hidden] { display: none; }
+
+  body .student-companies__searchbar { display: flex; width: 100%; align-items: center; gap: 8px; }
+  body .student-companies__searchbar .search-panel__main { flex: 1 1 auto; min-width: 0; width: auto; }
+  body .company-search__controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  body .company-search__query { flex: 1 1 0; min-width: 0; width: auto; grid-column: auto; }
+  body .company-search__filters { z-index: auto; }
+
+  .filters-sheet { position: fixed; right: 0; bottom: 0; left: 0; z-index: 2500; display: none; max-height: 88dvh; flex-direction: column; border-radius: 20px 20px 0 0; background: #fff; box-shadow: 0 -8px 30px rgba(0,0,0,.25); }
+  .filters-sheet--open { display: flex; }
+  .filters-sheet__backdrop { position: fixed; inset: 0; z-index: 2400; background: rgba(0,0,0,.55); }
+  .filters-sheet__backdrop--open { display: block; }
+  body.filters-sheet-open { overflow: hidden; }
+  .filters-sheet__header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-bottom: 1px solid #e5e5e5; }
+  .filters-sheet__header h2 { margin: 0; font: 700 18px/26px var(--font-header); }
+  .filters-sheet__close { display: grid; width: 32px; height: 32px; place-items: center; border-radius: 8px; cursor: pointer; }
+  .filters-sheet__close svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: 2; }
+  .filters-sheet__body { display: flex; flex-direction: column; gap: 12px; padding: 16px 20px; overflow-y: auto; }
+  .filters-sheet__body > *, .filters-sheet__body .painel-filters { width: 100%; }
+  body .filters-sheet__body .painel-filters { display: flex; flex-direction: column; gap: 12px; }
+  body .filters-sheet__body .company-search__switch { grid-column: auto; }
+  .filters-sheet__footer { display: flex; gap: 12px; padding: 12px 20px calc(16px + env(safe-area-inset-bottom)); border-top: 1px solid #e5e5e5; }
+  .filters-sheet__footer button { flex: 1; min-height: 44px; border: 1px solid #d4d4d4; border-radius: 10px; color: #466822; background: #fff; font: 500 14px/20px var(--font-body); cursor: pointer; }
+  .filters-sheet__footer .filters-sheet__apply { border-color: transparent; color: #fff; background: linear-gradient(151deg,#2ca942 16%,#55b13a 55%,#52b934 87%); }
+}

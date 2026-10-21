@@ -1,0 +1,67 @@
+"use strict";
+const test = require("node:test");
+const assert = require("node:assert/strict");
+const path = require("node:path");
+const { spawn } = require("node:child_process");
+
+test("Gestão de Empresas: reset de senha e inativação confirmada", { skip: !process.env.SCTEC_PLAYWRIGHT_PATH, timeout: 60000 }, async () => {
+  const { chromium } = require(process.env.SCTEC_PLAYWRIGHT_PATH);
+  const port = 4205;
+  const server = spawn(process.execPath, ["server.cjs"], { cwd: path.resolve(__dirname, ".."), env: { ...process.env, PORT: String(port) } });
+  let browser;
+  try {
+    for (let i = 0; i < 50; i += 1) { try { if ((await fetch(`http://127.0.0.1:${port}`)).ok) break; } catch {} await new Promise(resolve => setTimeout(resolve, 100)); }
+    browser = await chromium.launch({ headless: true, executablePath: process.env.SCTEC_CHROME_PATH });
+    const page = await browser.newPage({ viewport: { width: 1440, height: 960 } });
+    const errors = [];
+    page.on("pageerror", error => errors.push(error.message));
+    await page.goto(`http://127.0.0.1:${port}/viewer.html#/sctec/admin/companies`);
+    const f = page.frameLocator("#sctec-content");
+    const row = f.locator('[data-company-row="inovatech"]');
+    await row.waitFor();
+    const reset = row.locator('[data-company-reset="inovatech"]');
+    await reset.click();
+    assert.equal(await f.locator("#company-reset-dialog").isVisible(), true);
+    const resetBox = await f.locator("#company-reset-dialog").boundingBox();
+    assert.ok(Math.abs(resetBox.x + resetBox.width / 2 - 720) < 2);
+    assert.ok(Math.abs(resetBox.y + resetBox.height / 2 - 480) < 2);
+    assert.equal(await f.locator("#company-reset-dialog button", { hasText: "Cancelar" }).count(), 1);
+    assert.match(await f.locator("#company-reset-description").innerText(), /e-mail do usuário/);
+    await f.locator("#company-reset-description").click();
+    assert.equal(await f.locator("#company-reset-dialog").isVisible(), true);
+    await f.locator("#company-reset-dialog").click({ position: { x: 1, y: 1 } });
+    assert.equal(await f.locator("#company-reset-dialog").isVisible(), false);
+    await reset.click();
+    await f.locator("#company-reset-dialog [data-close-action]").first().click();
+    assert.equal(await f.locator("#company-reset-dialog").isVisible(), false);
+    await reset.click();
+    await f.locator("#company-reset-submit").click();
+    assert.match(await f.locator("#toast").innerText(), /Redefinição simulada/);
+    const toggle = row.locator('[data-company-toggle="inovatech"]');
+    assert.equal(await toggle.isChecked(), true);
+    await toggle.click();
+    assert.equal(await f.locator("#company-deactivate-dialog").isVisible(), true);
+    const deactivateBox = await f.locator("#company-deactivate-dialog").boundingBox();
+    assert.ok(Math.abs(deactivateBox.x + deactivateBox.width / 2 - 720) < 2);
+    assert.ok(Math.abs(deactivateBox.y + deactivateBox.height / 2 - 480) < 2);
+    assert.equal(await f.locator("#company-deactivate-dialog button", { hasText: "Cancelar" }).count(), 1);
+    assert.equal(await toggle.isChecked(), true);
+    await f.locator("#company-deactivate-dialog [data-close-action]").first().click();
+    assert.equal(await toggle.isChecked(), true);
+    await toggle.click();
+    await f.locator("#company-deactivate-submit").click();
+    assert.equal(await f.locator('[data-company-row="inovatech"] .admin-company__status').innerText(), "Inativa");
+    assert.equal(await f.locator('[data-company-row="inovatech"] [data-company-toggle]').isChecked(), false);
+    await f.locator("#company-status").selectOption("Inativada");
+    assert.equal(await f.locator('[data-company-row="inovatech"] .admin-company__status').innerText(), "Inativa");
+    await f.locator("#company-status").selectOption("");
+    await f.locator('[data-company-row="inovatech"] [data-company-toggle]').check();
+    assert.equal(await f.locator('[data-company-row="inovatech"] .admin-company__status').innerText(), "Ativa");
+    await page.setViewportSize({ width: 390, height: 844 });
+    await f.locator('[data-company-row="inovatech"] [data-company-toggle]').click();
+    assert.ok((await f.locator("#company-deactivate-dialog").boundingBox()).width <= 358);
+    await f.locator("#company-deactivate-dialog").press("Escape");
+    assert.equal(await f.locator('[data-company-row="inovatech"] [data-company-toggle]').isChecked(), true);
+    assert.deepEqual(errors, []);
+  } finally { await browser?.close(); server.kill(); }
+});

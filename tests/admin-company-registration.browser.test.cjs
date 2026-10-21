@@ -1,0 +1,85 @@
+'use strict';
+const test=require('node:test');
+const assert=require('node:assert/strict');
+const path=require('node:path');
+const {spawn}=require('node:child_process');
+test('Cadastro empresa: estados, validação, notas fixas, overlays, navegação e mobile',{skip:!process.env.SCTEC_PLAYWRIGHT_PATH,timeout:60000},async()=>{
+ const {chromium}=require(process.env.SCTEC_PLAYWRIGHT_PATH);
+ const base='http://127.0.0.1:4203';
+ const server=spawn(process.execPath,['server.cjs'],{cwd:path.resolve(__dirname,'..'),env:{...process.env,PORT:'4203'}});
+ let browser;
+ try{
+  for(let i=0;i<50;i++){try{if((await fetch(base)).ok)break;}catch{}await new Promise(r=>setTimeout(r,100));}
+  browser=await chromium.launch({headless:true,executablePath:process.env.SCTEC_CHROME_PATH});
+  const page=await browser.newPage({viewport:{width:1440,height:960}});
+  const errors=[],csp=[];
+  page.on('pageerror',e=>errors.push(e.message));
+  await page.addInitScript(()=>document.addEventListener('securitypolicyviolation',e=>{if(location.pathname.endsWith('/admin-empresa-cadastro.html'))console.warn('CSP_TEST:'+e.blockedURI);}));
+  page.on('console',m=>{if(m.text().startsWith('CSP_TEST:'))csp.push(m.text());});
+  await page.goto(base+'/viewer.html#/sctec/admin/company-create');
+  const f=page.frameLocator('#sctec-content');
+  await f.locator('#company-name').waitFor();
+  assert.equal(await f.locator('#company-name').inputValue(),'');
+  assert.equal(await f.locator('[aria-invalid=true]').count(),0);
+  const notes=f.locator('.registration-notes');
+  const before=await notes.boundingBox();
+  await page.screenshot({path:'docs/company-registration-before-scroll.png'});
+  await f.locator('body').evaluate(()=>window.scrollTo(0,650));
+  const after=await notes.boundingBox();
+  assert.ok(Math.abs(before.y-after.y)<1,'Notas devem permanecer estacionárias no viewer');
+  assert.ok(await f.locator('body').evaluate(()=>scrollY>500));
+  await page.screenshot({path:'docs/company-registration-after-scroll.png'});
+  const interactive=await f.locator('#company-registration input:not([type=file]),#company-registration select,#company-registration button[type=submit]').all();
+  for(const item of interactive){const b=await item.boundingBox();assert.ok(b.x+b.width<=before.x,'Coluna do formulário não pode cobrir notas');}
+  await f.locator('#company-registration button[type=submit]').click();
+  assert.equal(await f.locator('#company-registration [aria-invalid=true]').count(),11);
+  assert.ok(await f.locator('#company-name').evaluate(e=>e===document.activeElement));
+  await page.screenshot({path:'docs/company-registration-errors.png'});
+  await f.locator('#company-name').fill('Nova Empresa');
+  assert.equal(await f.locator('#company-name').getAttribute('aria-invalid'),'false');
+  await f.locator('#company-cnpj').fill('12.345.678/0001-90');
+  assert.equal(await f.locator('#company-cnpj-error').innerText(),'Este CNPJ já está cadastrado no sistema');
+  const values={'company-legal-name':'Nova Empresa Ltda','company-cnpj':'22.444.666/0001-88','responsible-name':'Maria Silva','responsible-role':'RH','responsible-email':'novo@demonstracao.test','responsible-phone':'(48) 99999-4567'};
+  for(const [id,value] of Object.entries(values))await f.locator('#'+id).fill(value);
+  for(const id of ['company-segment','company-size','company-city','company-acate'])await f.locator('#'+id).selectOption({index:1});
+  assert.equal(await f.locator('#company-registration [aria-invalid=true]').count(),0);
+  await f.locator('#company-notes').fill('Observação interna');
+  await f.locator('#add-responsible').click();
+  assert.ok(await f.locator('#responsible-dialog').isVisible());
+  await f.locator('#additional-name').press('Escape');
+  assert.equal(await f.locator('#responsible-dialog').isVisible(),false);
+  await f.locator('#add-responsible').click();
+  for(const [id,value] of Object.entries({'additional-name':'Joana Silva','additional-role':'Gestora','additional-email':'joana@demonstracao.test','additional-phone':'48999998888'}))await f.locator('#'+id).fill(value);
+  await f.locator('#responsible-dialog-form button[type=submit]').click();
+  assert.match(await f.locator('#extra-responsibles').innerText(),/Joana Silva/);
+  await f.locator('#logo-upload').setInputFiles({name:'invalido.gif',mimeType:'image/gif',buffer:Buffer.from('gif')});
+  assert.equal(await f.locator('#logo-error').isVisible(),true);
+  await f.locator('#logo-upload').setInputFiles({name:'logo.png',mimeType:'image/png',buffer:Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+a8WQAAAAASUVORK5CYII=','base64')});
+  assert.equal(await f.locator('#logo-error').isVisible(),false);
+  await f.locator('#add-channel').click();
+  await f.locator('#channel-type').selectOption({label:'LinkedIn'});
+  await f.locator('#channel-link').fill('https://linkedin.com/company/nova');
+  await f.locator('#channel-dialog-form button[type=submit]').click();
+  assert.match(await f.locator('#company-channels').innerText(),/LinkedIn/);
+  await f.locator('body').evaluate(()=>scrollTo(0,0));
+  await f.locator('#registration-toast-close').click();
+  await page.screenshot({path:'docs/company-registration-partial.png'});
+  await f.locator('#company-registration button[type=submit]').click();
+  assert.equal(await f.locator('#success-dialog').isVisible(),true);
+  await f.locator('#success-return').click();
+  await page.waitForURL('**#/sctec/admin/companies');
+  await page.goto(base+'/pages/admin-empresa-cadastro.html');
+  await page.setViewportSize({width:390,height:844});
+  assert.equal(await page.locator('.registration-notes').evaluate(e=>getComputedStyle(e).position),'static');
+  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+  await page.locator('#company-notes').fill('Nota no celular');
+  await page.evaluate(()=>scrollTo(0,0));
+  await page.screenshot({path:'docs/company-registration-mobile.png',fullPage:true});
+  await page.getByRole('link',{name:'Cancelar',exact:true}).click();
+  await page.locator('#confirm-leave').click();
+  await page.waitForURL('**/pages/admin-empresas.html');
+  assert.deepEqual(errors,[]);assert.deepEqual(csp,[]);
+ }finally{await browser?.close();server.kill();}
+});
+
+

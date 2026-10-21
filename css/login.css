@@ -1,0 +1,277 @@
+/* ============================================
+   Login - Portal de Vagas
+   ============================================ */
+
+.login-page {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-light);
+  padding: var(--spacing-48) var(--spacing-24);
+}
+
+.login-card {
+  background: var(--color-bg-white);
+  border-radius: 20px;
+  padding: var(--spacing-48);
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.login-card__header {
+  text-align: center;
+  margin-bottom: var(--spacing-32);
+}
+
+.login-card__brand {
+  font-family: var(--font-header);
+  font-weight: 800;
+  font-size: 28px;
+  color: var(--color-text-default);
+  margin-bottom: var(--spacing-8);
+}
+
+.login-card__title {
+  font-family: var(--font-header);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-text-default);
+  margin-bottom: var(--spacing-8);
+}
+
+.login-card__subtitle {
+  font-size: var(--body-small);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-top: var(--spacing-8);
+}
+
+.login-card__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-20);
+}
+
+.login-card__form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+.login-card__form .form-group__label {
+  font-size: var(--body-small);
+  font-weight: 500;
+  color: var(--color-text-tertiary);
+}
+
+.login-card__form .form-group__input {
+  width: 100%;
+  padding: var(--spacing-12) var(--spacing-16);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  font-size: var(--body-default);
+  color: var(--color-text-default);
+  background: var(--color-bg-white);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.login-card__form .form-group__input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(122, 185, 52, 0.1);
+  outline: none;
+}
+
+.login-card__form .form-group__input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.login-card__options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--body-small);
+}
+
+.login-card__remember {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
+  cursor: pointer;
+  color: var(--color-text-tertiary);
+}
+
+.login-card__remember input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-primary);
+}
+
+.login-card__forgot {
+  color: var(--color-primary);
+  font-weight: 500;
+  font-size: var(--body-small);
+}
+
+.login-card__forgot:hover {
+  text-decoration: underline;
+}
+
+.login-card__submit {
+  width: 100%;
+  margin-top: var(--spacing-8);
+}
+
+.login-card__divider {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-16);
+  margin: var(--spacing-24) 0;
+  color: var(--color-text-muted);
+  font-size: var(--body-xs);
+}
+
+.login-card__divider::before,
+.login-card__divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.login-card__signup {
+  text-align: center;
+  padding: var(--spacing-24);
+  background: var(--color-bg-light);
+  border-radius: 12px;
+}
+
+.login-card__signup-text {
+  font-size: var(--body-small);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-12);
+  line-height: 1.6;
+}
+
+.login-card__signup-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-8);
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: var(--body-small);
+  transition: opacity var(--transition-fast);
+}
+
+.login-card__signup-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.login-card__role-tabs {
+  display: flex;
+  background: var(--color-bg-light);
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: var(--spacing-24);
+}
+
+.login-card__role-tab {
+  flex: 1;
+  padding: var(--spacing-12) var(--spacing-16);
+  border-radius: 8px;
+  font-size: var(--body-small);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.login-card__role-tab--active {
+  background: var(--color-bg-white);
+  color: var(--color-text-default);
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.login-card__role-tab:hover:not(.login-card__role-tab--active) {
+  color: var(--color-text-tertiary);
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: var(--spacing-32) var(--spacing-24);
+  }
+}
+
+
+/* === MODAL (login page) === */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal--open {
+  display: flex;
+}
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.modal__content {
+  position: relative;
+  background: var(--color-bg-white);
+  border-radius: 16px;
+  padding: var(--spacing-32);
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+  margin: var(--spacing-24);
+}
+
+.modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-16);
+}
+
+.modal__title {
+  font-family: var(--font-header);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.modal__content:focus {
+  outline: none;
+}
+
+.modal__content .btn:focus-visible,
+.modal__overlay:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.modal__content .btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.profile-option__status {
+  margin-left: 8px;
+  font-size: 11px;
+  font-weight: 500;
+  opacity: 0.8;
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestão de Empresas - Admin | SCTEC</title>
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/painel.css">
+  <link rel="stylesheet" href="../css/admin-empresas.css">
+  <link rel="stylesheet" href="../css/admin-empresa-requests.css">
+</head>
+<body class="admin-companies-page admin-page" style="padding-top: 80px;">
+
+  <!-- Navbar Admin -->
+  <nav class="navbar navbar--painel navbar--admin">
+    <div class="navbar__inner">
+      <a href="../index.html" class="navbar__brand"><strong>SCTEC</strong><span>Portal de Talentos</span></a>
+      <div class="navbar-painel__right">
+        <div class="admin-identity"><strong>ADMINISTRADOR</strong><span>Equipe SCTEC</span></div>
+        <button class="navbar-painel__avatar" id="avatar-toggle" type="button" aria-label="Abrir menu do administrador" aria-expanded="false" aria-controls="avatar-menu">CN</button>
+        <div class="avatar-menu" id="avatar-menu" hidden>
+          <div class="avatar-menu__header"><strong>Administrador</strong><span>Equipe SCTEC</span></div>
+          <a href="admin-alunos.html" class="avatar-menu__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Banco de Talentos</a>
+          <a href="admin-empresas.html" class="avatar-menu__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Gestão de Empresas</a>
+          <a href="admin-usuarios.html" class="avatar-menu__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>Usuários</a>
+          <div class="avatar-menu__divider"></div>
+          <a href="login.html" class="avatar-menu__link avatar-menu__link--logout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Sair</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="painel">
+    <!-- Sidebar -->
+    <aside class="sidebar sidebar--admin">
+      <div class="sidebar__header">
+        <div class="sidebar__company">Administrador</div>
+        <div class="sidebar__plan">Equipe SCTEC</div>
+      </div>
+      <nav class="sidebar__nav">
+<a href="admin-empresas.html" class="sidebar__link sidebar__link--active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Gestão de Empresas</a>
+<a href="admin-alunos.html" class="sidebar__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>Banco de Talentos</a>
+<a href="admin-usuarios.html" class="sidebar__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>Usuários</a>
+<span class="sidebar__link admin-tags-unavailable" aria-disabled="true" title="Gestão de Tags ainda não está disponível neste protótipo"><img src="../assets/admin-figma/LucideIconsTag.svg" alt="" width="24" height="24">Gestão de Tags</span>
+</nav>
+      <div class="sidebar__footer">
+        <a href="login.html" class="sidebar__logout"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Sair</a>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="painel__main admin-companies__main">
+      <div class="painel__header admin-companies__header">
+        <div>
+          <h1 class="painel__title">Gestão de Empresas</h1>
+          <p class="painel__subtitle">Gerencie empresas parceiras, aprove cadastros e cadastre novas empresas</p>
+        </div>
+        <a href="admin-empresa-cadastro.html" class="btn btn--primary">+ Cadastrar Empresa</a>
+      </div>
+
+      <!-- Filtros -->
+      <form class="admin-companies__filters" id="company-filters" role="search">
+        <label class="sr-only" for="company-search">Buscar empresa</label>
+        <div class="admin-companies__search"><input id="company-search" class="painel-filter__search" type="search" placeholder="Buscar por nome, CNPJ ou responsável..." autocomplete="off"><span class="admin-companies__search-placeholder" aria-hidden="true">Buscar por nome, CNPJ ou responsável...</span><img class="admin-companies__search-icon" src="../assets/admin-figma/LucideIconsSearch.svg" alt="" width="24" height="24"><button class="admin-companies__search-clear" id="company-search-clear" type="button" aria-label="Limpar busca" hidden><img src="../assets/admin-figma/RequestClose.svg" alt="" width="24" height="24"></button></div>
+        <label class="sr-only" for="company-status">Status</label>
+        <select id="company-status" class="painel-filter__select">
+          <option value="">Todos os status</option>
+          <option value="Aprovada">Ativa</option>
+          <option value="Recusada">Recusada</option>
+          <option value="Inativada">Inativa</option>
+          <option value="Solicitação">Solicitação</option>
+          <option value="Ressolicitação">Ressolicitação</option>
+        </select>
+        <label class="sr-only" for="company-size">Porte da empresa</label>
+        <select id="company-size" class="painel-filter__select">
+          <option value="">Todos os portes</option>
+          <option value="Microempresa">Microempresa</option>
+          <option value="Pequena">Pequena</option>
+          <option value="Média">Média</option>
+          <option value="Grande">Grande</option>
+        </select>
+        <label class="admin-companies__acate"><span class="toggle"><input id="company-acate" type="checkbox" role="switch"><span class="toggle__slider"></span></span><span>Apenas empresas ACATE</span></label>
+      </form>
+      <p class="admin-companies__result-count" id="company-result-count" aria-live="polite"></p>
+
+      <section class="panel-table admin-companies__table-wrap" aria-labelledby="companies-table-title">
+        <h2 class="sr-only" id="companies-table-title">Empresas cadastradas</h2>
+        <table class="admin-companies__table">
+          <thead>
+            <tr>
+              <th scope="col">Empresa <img src="../assets/admin-figma/TablerIconsSortDescending.svg" alt="" width="16" height="16"></th>
+              <th scope="col">CNPJ</th>
+              <th scope="col">Responsável</th>
+              <th scope="col">ACATE <img src="../assets/admin-figma/TablerIconsSortDescending.svg" alt="" width="16" height="16"></th>
+              <th scope="col">Status <img src="../assets/admin-figma/TablerIconsSortDescending.svg" alt="" width="16" height="16"></th>
+              <th scope="col">Ações</th>
+            </tr>
+          </thead>
+          <tbody id="company-table-body"></tbody>
+        </table>
+      </section>
+      <section class="admin-companies__empty" id="company-empty" aria-labelledby="company-empty-title" hidden>
+        <div class="admin-companies__empty-icon" aria-hidden="true"><img src="../assets/admin-figma/EmptyResultsSearch.svg" alt="" width="24" height="24"></div>
+        <div class="admin-companies__empty-details" role="status" aria-live="polite">
+          <h2 id="company-empty-title">Nenhum resultado encontrado</h2>
+          <p>Tente ajustar os filtros ou limpar o termo de busca.</p>
+        </div>
+        <button class="admin-companies__empty-clear" id="company-clear-filters" type="button">Limpar Filtros</button>
+      </section>
+      <nav class="pagination admin-companies__pagination" id="company-pagination" aria-label="Paginação de empresas"></nav>
+    </main>
+  </div>
+
+  <dialog class="company-review" id="company-review" aria-labelledby="company-review-title" aria-describedby="company-review-description" aria-modal="true">
+    <header class="company-review__header">
+      <div><h2 id="company-review-title" tabindex="-1"></h2><p id="company-review-cnpj"></p></div>
+      <button type="button" class="company-dialog__close" data-close-review aria-label="Fechar revisão de solicitações"><img src="../assets/admin-figma/RequestClose.svg" alt="" width="20" height="20"></button>
+    </header>
+    <div class="company-review__body">
+      <p id="company-review-description" class="company-review__description"></p>
+      <fieldset class="company-review__requests" id="company-review-requests"><legend class="sr-only">Selecione o responsável pela empresa</legend><div id="company-request-cards"></div></fieldset>
+      <section class="company-review__association" aria-labelledby="company-review-acate-title">
+        <h3 id="company-review-acate-title">Empresa associada à ACATE?</h3>
+        <p id="company-review-acate-help">Confirme com o responsável se a empresa é associada à ACATE (Associação Catarinense de Tecnologia) antes de aprovar.</p>
+        <label class="company-review__switch"><span class="toggle"><input type="checkbox" role="switch" id="company-review-acate" aria-labelledby="company-review-acate-title" aria-describedby="company-review-acate-help"><span class="toggle__slider"></span></span><span id="company-review-acate-value">Não</span></label>
+      </section>
+      <label class="company-review__notes" for="company-review-notes">Anotações<textarea id="company-review-notes" placeholder="Adicione uma observação sobre essa empresa..."></textarea></label>
+    </div>
+    <footer class="company-review__footer">
+      <button type="button" class="company-dialog__button company-dialog__button--destructive" id="company-review-reject">Recusar</button>
+      <button type="button" class="company-dialog__button company-dialog__button--primary" id="company-review-approve">Aprovar</button>
+    </footer>
+  </dialog>
+  <dialog class="company-confirm" id="company-confirm" aria-labelledby="company-confirm-title" aria-describedby="company-confirm-description" aria-modal="true">
+    <header class="company-confirm__header"><h2 id="company-confirm-title"></h2><button type="button" class="company-dialog__close" data-cancel-decision aria-label="Fechar confirmação"><img src="../assets/admin-figma/RequestClose.svg" alt="" width="20" height="20"></button></header>
+    <p class="company-confirm__description" id="company-confirm-description"></p>
+    <footer class="company-confirm__footer"><button type="button" class="company-dialog__button company-dialog__button--secondary" id="company-confirm-cancel" data-cancel-decision>Cancelar</button><button type="button" class="company-dialog__button company-dialog__button--primary" id="company-confirm-submit"></button></footer>
+  </dialog>
+  <dialog class="company-action-dialog" id="company-reset-dialog" aria-labelledby="company-reset-title" aria-describedby="company-reset-description">
+    <header><h2 id="company-reset-title">Você deseja redefinir a senha do usuário?</h2><button type="button" class="company-dialog__close" data-close-action aria-label="Fechar"><img src="../assets/admin-figma/RequestClose.svg" alt="" width="20" height="20"></button></header>
+    <p id="company-reset-description">Uma nova senha temporária será criada e enviada para o e-mail do usuário. O acesso atual será desativado imediatamente.</p>
+    <footer><button type="button" class="company-dialog__button company-dialog__button--secondary" data-close-action>Cancelar</button><button type="button" class="company-dialog__button company-dialog__button--primary" id="company-reset-submit">Redefinir senha</button></footer>
+  </dialog>
+  <dialog class="company-action-dialog company-action-dialog--danger" id="company-deactivate-dialog" aria-labelledby="company-deactivate-title" aria-describedby="company-deactivate-description">
+    <header><h2 id="company-deactivate-title">Deseja realmente inativar a empresa?</h2><button type="button" class="company-dialog__close" data-close-action aria-label="Fechar"><img src="../assets/admin-figma/RequestClose.svg" alt="" width="20" height="20"></button></header>
+    <p id="company-deactivate-description">A empresa <strong id="company-deactivate-name"></strong> terá seu acesso à plataforma desativado imediatamente. Todos os dados e o histórico permanecerão salvos. Você poderá reativá-la a qualquer momento.</p>
+    <footer><button type="button" class="company-dialog__button company-dialog__button--secondary" data-close-action>Cancelar</button><button type="button" class="company-dialog__button company-dialog__button--danger" id="company-deactivate-submit">Inativar Empresa</button></footer>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="../js/main.js"></script>
+  <script src="../js/admin-empresa-requests.js"></script>
+  <script src="../js/admin-empresas.js"></script>
+  <script src="../js/admin-shell.js" defer></script>
+  <script src="../js/profile-navigation.js" defer></script>
+</body>
+</html>
+

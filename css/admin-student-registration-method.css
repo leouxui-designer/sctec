@@ -1,0 +1,54 @@
+.student-registration-method {
+  position: fixed;
+  inset: 0;
+  width: min(420px, calc(100vw - 32px));
+  max-width: none;
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #d4d4d4;
+  border-radius: 14px;
+  color: #171717;
+  background: #fff;
+  box-shadow: 0 10px 30px #0002;
+}
+.student-registration-method::backdrop { background: #0006; }
+.student-registration-method header { display:flex; align-items:flex-start; gap:12px; padding:16px 16px 0; }
+.student-registration-method h2 { flex:1; font-family:var(--font-header); font-size:16px; line-height:24px; letter-spacing:-.4px; }
+.student-registration-method header button { display:flex; align-items:center; justify-content:center; flex:0 0 36px; width:36px; height:36px; border-radius:10px; }
+.student-registration-method__options { display:grid; grid-template-columns:1fr 1fr; gap:12px; padding:8px 16px 16px; }
+.student-registration-method__card { display:flex; flex-direction:column; align-items:center; justify-content:flex-start; gap:12px; min-height:188px; padding:20px; overflow:hidden; border:1px solid #d4d4d4; border-radius:14px; color:#171717; background:#fff; text-align:center; text-decoration:none; cursor:pointer; transition:border-color 180ms ease,background-color 180ms ease; }
+.student-registration-method__card:hover { border-color:#669e2e; background:#fbfdf9; }
+.student-registration-method__card:focus-visible { outline:3px solid #7ab934; outline-offset:3px; }
+.student-registration-method__icon { display:flex; align-items:center; justify-content:center; width:52px; height:52px; border-radius:12px; background:#f8f9fb; }
+.student-registration-method__icon img { width:16px; height:16px; }
+.student-registration-method__card strong { font-size:16px; line-height:16px; }
+.student-registration-method__card > span:last-child { color:#737373; font-size:14px; line-height:20px; }
+.student-registration-method__notice { margin:-4px 16px 16px; padding:10px 12px; border-radius:10px; color:#665000; background:#fff8d8; font-size:14px; line-height:20px; }
+@media(max-width:460px) { .student-registration-method__options { grid-template-columns:1fr; } .student-registration-method__card { min-height:156px; } }
+
+.student-registration-method [hidden],.student-import-results[hidden],.student-import-results [hidden]{display:none!important}
+.student-registration-method--import{width:min(400px,calc(100vw - 32px))}
+.student-import-panel{display:flex;flex-direction:column;gap:16px;padding:8px 16px 0}
+.student-import-steps{display:flex;align-items:center;width:100%;height:28px;color:#737373;font-size:14px;font-weight:500;line-height:20px}
+.student-import-steps span{display:flex;align-items:center;gap:8px;white-space:nowrap}
+.student-import-steps b{display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#f8f9fb;color:#737373;font-family:Inter,var(--font-body);font-size:12px}
+.student-import-steps i{flex:1;height:2px;margin:0 10px;border-radius:1px;background:#d4d4d4}
+.student-import-steps .is-current{color:#171717}.student-import-steps .is-current b,.student-import-steps .is-complete b{color:#fff;background:#669e2e}.student-import-steps .is-complete{color:#669e2e}.student-import-steps i.is-complete{background:#669e2e}
+.student-import-action{display:flex;align-items:center;gap:16px;width:100%;padding:20px;border:1px solid #d4d4d4;border-radius:14px;color:#171717;background:#fff;text-align:left;transition:border-color 180ms ease,background-color 180ms ease,box-shadow 180ms ease}
+.student-import-action>span:first-child{display:flex;align-items:center;justify-content:center;flex:0 0 52px;height:52px;border-radius:12px;background:#f8f9fb;transition:background-color 180ms ease}
+.student-import-action>span:last-child{display:flex;flex-direction:column;gap:6px}.student-import-action strong{font-size:16px;line-height:16px}.student-import-action small{color:#737373;font-size:14px;line-height:20px}
+/* Cartão de download: aparência de ação disponível (hover verde sutil), mas o modelo oficial não existe; o clique só explica isso (ver admin-student-registration-method.js). */
+.student-import-action{cursor:pointer}.student-import-action:hover{border-color:#669e2e;background:#fbfdf9;box-shadow:0 1px 3px #669e2e1f}.student-import-action:hover>span:first-child{background:#f1f8ea}.student-import-action:active{background:#f4f9ee}.student-import-action:focus-visible{outline:3px solid #7ab934;outline-offset:3px}
+.student-import-message{margin:-6px 0 0;padding:9px 11px;border-radius:10px;font-size:12px;line-height:18px}.student-import-message--error{color:#9f1f20;background:#fff0f0}.student-import-message--info{color:#4a5d31;background:#f1f8ea}
+.student-import-message:empty{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.student-import-panel footer{display:flex;justify-content:flex-end;gap:16px;min-height:60px;margin-inline:-16px;padding:16px}
+.student-import-button{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:0 10px;border-radius:10px;font-size:14px;font-weight:500;line-height:20px;cursor:pointer}
+.student-import-button--secondary{border:1px solid #d4d4d4;color:#669e2e;background:#fff}.student-import-button--primary{border:0;color:#fff;background:var(--color-primary-gradient)}.student-import-button:disabled{opacity:.5;cursor:not-allowed}
+.student-import-dropzone{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:136px;padding:24px;border:2px dashed #d4d4d4;border-radius:14px;cursor:pointer;transition:border-color 180ms ease,background-color 180ms ease}.student-import-dropzone:hover,.student-import-dropzone.is-dragging{border-color:#669e2e;background:#fbfdf9}.student-import-dropzone input{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.student-import-dropzone strong{font-size:14px}.student-import-dropzone span{color:#737373;font-size:12px}.student-import-dropzone:focus-within{outline:3px solid #7ab934;outline-offset:3px}
+.student-import-file{display:flex;align-items:center;gap:12px;min-height:136px;padding:24px;border:1.5px solid #d4d4d4;border-radius:14px;background:#fff}.student-import-file>div{display:flex;flex:1;min-width:0;flex-direction:column;align-items:flex-start;gap:12px}.student-import-file strong{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px;line-height:20px}.student-import-file span{color:#737373;font-size:12px;line-height:16px;letter-spacing:.12px}.student-import-file button{display:flex;align-items:center;justify-content:center;flex:0 0 32px;width:32px;height:32px;padding:0;border-radius:10px;color:#669e2e;background:#fff;transition:color 180ms ease,background-color 180ms ease}.student-import-file button:hover{color:#c52223;background:#fff0f0}.student-import-file button img{width:16px;height:16px}
+.student-import-processed{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:136px;padding:20px;border:1px solid #d4d4d4;border-radius:14px;text-align:center}.student-import-processed>span{color:#737373;font-size:12px}.student-import-processed p{margin:0;color:#737373;font-size:12px;line-height:18px}
+.student-registration-method :is(button,a,input):focus-visible,.student-import-results :is(button,a):focus-visible{outline:3px solid #7ab934;outline-offset:3px}
+
+/* Tela de resultados (tabela editável, validação e confirmação simulada): css/admin-student-import-results.css */
+@media(max-width:600px){.student-import-steps{font-size:12px}.student-import-steps i{margin-inline:6px}.student-import-panel footer{flex-direction:column-reverse}.student-import-button{width:100%}.student-import-file{padding:20px}}

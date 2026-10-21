@@ -1,0 +1,114 @@
+/* Registration-only styling; shared administrator shell remains untouched. */
+.company-registration-page [hidden] { display:none !important; }
+.company-registration-page .sr-only { position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+.registration-main { padding:32px 40px; color:#171717; }
+.registration-back { height:32px; display:flex; align-items:center; }
+.registration-back a { display:inline-flex; align-items:center; gap:6px; padding:0 10px; color:#466822; font-size:14px; font-weight:500; }
+.registration-back img { width:16px; height:16px; }
+.registration-main>.painel__header { margin:24px 0 4px; }
+.registration-main>.painel__header .painel__title { font-family:var(--font-body); font-size:30px; line-height:30px; letter-spacing:-.75px; }
+.registration-subtitle { font-size:16px; line-height:24px; color:#737373; margin-bottom:24px; }
+.registration-form { padding-right:368px; }
+.registration-form .perfil-section { padding:20px; margin-bottom:24px; border:0; border-radius:22px; box-shadow:0 1px 2px #0000001a; }
+.registration-form .perfil-section__header { margin-bottom:16px; }
+.registration-form .perfil-section__title { font-family:var(--font-body); font-size:18px; font-weight:700; line-height:18px; letter-spacing:0; }
+.registration-form .perfil-section__header p { font-size:14px; line-height:20px; color:#737373; margin-top:8px; }
+.registration-form .perfil-form__grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px 24px; }
+.company-registration-page .form-group { display:flex; flex-direction:column; gap:6px; margin:0; min-width:0; }
+.company-registration-page .form-group__label { font-size:14px; font-weight:500; line-height:20px; color:#171717; }
+.registration-required { color:#c92a2b; margin-left:2px; }
+.company-registration-page .form-group__input { display:block; width:100%; min-width:0; height:42px; padding:8px 12px; border:1px solid #d4d4d4; border-radius:10px; background:#fff; color:#171717; font-family:var(--font-body); font-size:14px; line-height:20px; }
+.company-registration-page .form-group__input::placeholder { color:#737373; opacity:1; }
+.company-registration-page select.form-group__input { appearance:none; background:#fff url('../assets/admin-figma/TablerIconsChevronDown.svg') no-repeat right 12px center / 24px; padding-right:42px; }
+.company-registration-page select:has(option[value=""]:checked) { color:#737373; }
+.company-registration-page textarea.form-group__input { resize:vertical; min-height:200px; height:200px; padding:10px; }
+.registration-form textarea.registration-about { height:392px; }
+.registration-error { font-size:12px; line-height:16px; color:#c92a2b; margin:0; }
+.company-registration-page [aria-invalid=true] { border-color:#e62c2d; box-shadow:0 0 0 2px #e62c2d26; }
+.company-registration-page :is(input,select,textarea,button,a):focus-visible { outline:3px solid #466822; outline-offset:3px; }
+.registration-logo .perfil-section__title { font-size:16px; line-height:16px; }
+.registration-logo__row { display:flex; align-items:center; gap:12px; }
+#logo-preview { width:176px; height:176px; flex:0 0 176px; border-radius:10px; overflow:hidden; background:#f8f9fb; }
+#logo-preview img { width:176px; height:176px; object-fit:contain; }
+.registration-logo__actions { display:flex; flex-direction:column; align-items:center; gap:16px; }
+.registration-logo__actions p { font-size:12px; line-height:16px; color:#737373; }
+.registration-logo__actions .btn { min-width:172px; }
+.registration-contacts .perfil-section__header,.registration-channels .perfil-section__header { display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:32px; }
+.registration-add { color:#466822; background:#f8f9fb; font-size:14px; line-height:20px; padding:6px 10px; border-radius:10px; flex-shrink:0; }
+.registration-notes { position:fixed; width:344px; top:min(250px,26.05vh); right:40px; max-height:calc(100dvh - min(250px,26.05vh) - 24px); overflow:auto; z-index:90; }
+.registration-form .registration-notes { margin:0; }
+.registration-notes textarea { width:100%; }
+.registration-skills .perfil-section__header p { margin-top:8px; }
+.registration-search { position:relative; }
+.registration-search input { padding-right:44px !important; }
+.registration-search img { position:absolute; width:24px; height:24px; right:12px; top:9px; pointer-events:none; }
+.registration-tags { display:flex; flex-wrap:wrap; align-content:flex-start; gap:8px; margin:24px 0; min-height:224px; }
+.registration-tag { border:1px solid #d4d4d4; border-radius:999px; padding:2px 8px; font-size:12px; line-height:16px; background:#fff; }
+.registration-tag[aria-pressed=true] { background:#f1f7e9; border-color:#669e2e; color:#466822; }
+.registration-support { font-size:14px; line-height:20px; color:#737373; }
+.registration-support button { color:#466822; font-size:14px; margin-left:8px; }
+.registration-extra-items:not(:empty) { display:flex; flex-direction:column; gap:8px; margin-top:16px; }
+.registration-extra-item { padding:12px; border:1px solid #d4d4d4; border-radius:10px; font-size:14px; overflow-wrap:anywhere; }
+.registration-form .perfil-actions { display:flex; justify-content:flex-end; gap:16px; min-height:60px; padding:12px 16px; }
+.company-registration-page .btn { display:inline-flex; align-items:center; justify-content:center; min-height:36px; height:36px; padding:0 10px; border-radius:10px; font-size:14px; line-height:20px; font-weight:500; white-space:nowrap; }
+.company-registration-page .btn--ghost { border:1px solid #d4d4d4; color:#466822; background:#fff; }
+.company-registration-page .btn--primary { color:#fff; background:#247f35; }
+.company-registration-page .btn--primary:disabled { opacity:.45; cursor:not-allowed; }
+.registration-toast { position:fixed; top:96px; right:24px; bottom:auto; left:auto; transform:none; width:310px; max-width:calc(100vw - 32px); display:flex; align-items:center; gap:12px; border:1px solid #e62c2d; background:#fff; color:#171717; border-radius:8px; padding:14px 16px; box-shadow:0 4px 14px #0002; z-index:2200; opacity:1; visibility:visible; }
+.registration-toast strong { display:block; font-size:14px; line-height:20px; font-weight:500; }
+.registration-toast p { font-size:12px; line-height:16px; color:#737373; margin-top:4px; }
+.registration-toast button { flex:0 0 20px; width:20px; height:24px; color:#737373; }
+.registration-toast--success { border-color:#247f35; }
+.registration-dialog { width:400px; max-width:calc(100vw - 32px); max-height:calc(100dvh - 32px); overflow:auto; margin:auto; padding:0; background:#fff; color:#171717; border:1px solid #d4d4d4; border-radius:14px; }
+.registration-dialog::backdrop { background:#0006; }
+.registration-dialog header { display:flex; justify-content:space-between; gap:12px; padding:16px 16px 0; }
+.registration-dialog header h2 { font-family:var(--font-header); font-size:16px; line-height:24px; letter-spacing:-.4px; }
+.registration-dialog header button { width:36px; height:36px; flex:0 0 36px; display:flex; align-items:center; justify-content:center; }
+.registration-dialog header img { width:20px; height:20px; }
+.registration-dialog__body { display:flex; flex-direction:column; gap:16px; padding:16px; }
+.registration-dialog__body>p { font-size:16px; line-height:24px; color:#737373; }
+.registration-dialog footer { display:flex; justify-content:flex-end; gap:16px; padding:16px; }
+@media(max-width:1200px) {
+ .registration-form { padding-right:0; }
+ .registration-notes { position:static; width:auto; max-height:none; overflow:visible; }
+ .registration-form .registration-notes { margin-bottom:24px; }
+}
+@media(max-width:600px) {
+ .registration-main { padding:24px 16px; }
+ .registration-main>.painel__header .painel__title { font-size:26px; }
+ .registration-subtitle { font-size:14px; }
+ .registration-form .perfil-form__grid { grid-template-columns:1fr; }
+ .registration-logo__row { flex-direction:column; align-items:flex-start; }
+ .registration-contacts .perfil-section__header,.registration-channels .perfil-section__header { align-items:flex-start; flex-direction:column; }
+ .registration-form .perfil-actions { flex-direction:column; padding:0 0 24px; }
+ .registration-tags { min-height:0; }
+ .registration-toast { right:16px; }
+}
+.registration-toast { pointer-events:auto; }
+/* Confirmed registration interaction states, scoped to this page. */
+.registration-logo__actions { flex-flow:row wrap; justify-content:center; max-width:260px; }
+.registration-logo__actions p { flex-basis:100%; text-align:center; }
+.registration-logo__actions #logo-remove { min-width:0; }
+.registration-counter { color:#737373; font-size:12px; line-height:16px; text-align:right; }
+#channel-dialog .registration-dialog__body { padding:8px 16px; gap:12px; }
+#channel-dialog footer { min-height:82px; align-items:flex-end; }
+#channel-dialog:has(#channel-name-group:not([hidden])) footer { min-height:60px; }
+.company-registration-page button:disabled { opacity:.5; cursor:not-allowed; }
+.registration-extra-item a { display:block; color:#466822; text-decoration:underline; overflow-wrap:anywhere; }
+.registration-leave { width:308px; }
+.registration-leave .registration-dialog__body { padding:8px 16px 32px; }
+.registration-leave footer { gap:16px; }
+.registration-success { width:475px; }
+.registration-success header { flex-direction:column; align-items:center; text-align:center; padding:16px; gap:4px; }
+.registration-success__icon { width:52px; height:52px; border-radius:12px; background:#f8f9fb; display:flex; align-items:center; justify-content:center; margin-bottom:12px; }
+.registration-success header .registration-success__icon img { width:32px; height:32px; }
+.registration-success header p { font-size:14px; line-height:20px; color:#737373; }
+.registration-success #success-simulation { font-size:12px; line-height:16px; margin-top:8px; color:#466822; }
+.registration-success footer { justify-content:center; padding:16px 28px 28px; }
+@media(max-width:520px) {
+ .registration-success footer { flex-direction:column; padding:16px; gap:12px; }
+ .registration-success footer .btn { white-space:normal; height:auto; min-height:36px; }
+ .registration-leave footer { gap:8px; }
+}
+.registration-leave footer,
+#channel-dialog:has(#channel-name-group:not([hidden])) footer { padding:11px 16px; min-height:58px; }

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualizar Empresa - ACATE | SCTEC</title>
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/painel.css">
+  <link rel="stylesheet" href="../css/acate-shell.css">
+  <link rel="stylesheet" href="../css/acate-empresa-perfil.css">
+</head>
+<body class="acate-page acate-company-profile-page">
+  <nav class="navbar navbar--painel acate-header">
+    <div class="navbar__inner">
+      <a href="acate-empresas.html" class="navbar__brand acate-header__brand" aria-label="SCTEC Portal de Talentos — Consulta de Empresas"><strong>SCTEC</strong><span>Portal de Talentos</span></a>
+      <div class="navbar-painel__right">
+        <span class="acate-header__identity">ACATE</span>
+        <button class="navbar-painel__avatar" id="avatar-toggle" type="button" aria-label="Abrir menu ACATE" aria-expanded="false" aria-controls="avatar-menu">AC</button>
+        <div class="avatar-menu" id="avatar-menu" aria-hidden="true" hidden>
+          <div class="avatar-menu__header"><strong>ACATE</strong><span>Consulta de empresas associadas</span></div>
+          <a href="acate-empresas.html" class="avatar-menu__link"><img src="../assets/admin-figma/LucideIconsBuilding.svg" alt="" width="18" height="18">Consulta de Empresas</a>
+          <div class="avatar-menu__divider"></div>
+          <a href="login.html" class="avatar-menu__link avatar-menu__link--logout"><img src="../assets/admin-figma/LucideIconsLogOut.svg" alt="" width="18" height="18">Sair</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="painel">
+    <aside class="sidebar acate-sidebar">
+      <div class="sidebar__header"><div class="sidebar__company">ACATE</div></div>
+      <nav class="sidebar__nav" aria-label="Navegação ACATE"><a href="acate-empresas.html" class="sidebar__link sidebar__link--active"><img src="../assets/admin-figma/LucideIconsBuilding.svg" alt="" width="24" height="24">Consulta de Empresas</a></nav>
+      <div class="sidebar__footer"><a href="login.html" class="sidebar__logout"><img src="../assets/admin-figma/LucideIconsLogOut.svg" alt="" width="24" height="24">Sair</a></div>
+    </aside>
+
+    <main class="painel__main acate-profile">
+      <a class="acate-profile__back" href="acate-empresas.html"><img src="../assets/admin-figma/TablerIconsArrowBackUp.svg" alt="" width="16" height="16">Voltar para Consulta de Empresas</a>
+      <header class="acate-profile__title"><h1>Visualizar Empresa</h1><p>Consulte os dados da empresa associada à ACATE.</p></header>
+
+      <div class="acate-profile__layout">
+        <div class="acate-profile__primary">
+          <section class="acate-profile__card acate-profile__logo" aria-labelledby="acate-logo-title">
+            <div><h2 id="acate-logo-title">Logo</h2><div class="acate-profile__logo-box"><img src="../assets/admin-figma/LucideIconsBuilding.svg" alt="" width="48" height="48"><span id="detail-initials"></span></div></div>
+            <div><strong id="detail-logo-name"></strong><span>Empresa associada à ACATE</span></div>
+          </section>
+
+          <section class="acate-profile__card" aria-labelledby="acate-company-data-title">
+            <h2 id="acate-company-data-title">Dados da empresa</h2>
+            <dl class="acate-profile__fields">
+              <div><dt>Nome fantasia</dt><dd id="detail-name"></dd></div>
+              <div><dt>Razão social</dt><dd id="detail-legal-name"></dd></div>
+              <div><dt>CNPJ</dt><dd id="detail-cnpj"></dd></div>
+              <div><dt>Segmento de atuação</dt><dd id="detail-segment"></dd></div>
+              <div><dt>Porte</dt><dd id="detail-size"></dd></div>
+              <div><dt>Cidade</dt><dd id="detail-city"></dd></div>
+              <div><dt>Empresa associada à ACATE?</dt><dd>Sim</dd></div>
+            </dl>
+          </section>
+
+          <section class="acate-profile__card" aria-labelledby="acate-contact-title">
+            <h2 id="acate-contact-title">Contato do responsável</h2>
+            <dl class="acate-profile__fields">
+              <div><dt>Nome do responsável</dt><dd id="detail-owner"></dd></div>
+              <div><dt>Cargo</dt><dd id="detail-role"></dd></div>
+              <div><dt>E-mail corporativo</dt><dd id="detail-email"></dd></div>
+              <div><dt>Telefone/WhatsApp</dt><dd id="detail-phone"></dd></div>
+            </dl>
+          </section>
+
+          <section class="acate-profile__card" aria-labelledby="acate-about-title"><h2 id="acate-about-title">Sobre a empresa</h2><p class="acate-profile__about" id="detail-about"></p></section>
+          <section class="acate-profile__card" aria-labelledby="acate-skills-title"><h2 id="acate-skills-title">Competências Técnicas que buscamos</h2><p class="acate-profile__hint">Competências informadas pela empresa em seu perfil.</p><div class="acate-profile__chips" id="detail-skills"></div></section>
+          <section class="acate-profile__card" aria-labelledby="acate-channels-title"><h2 id="acate-channels-title">Onde acompanhar nossas vagas</h2><p class="acate-profile__hint">Canais informados pela empresa para divulgação de oportunidades.</p><div class="acate-profile__channels" id="detail-channels"></div></section>
+        </div>
+
+        <aside class="acate-profile__side acate-profile__card" aria-labelledby="acate-partnership-title">
+          <h2 id="acate-partnership-title">Informações da parceria</h2>
+          <dl><div><dt>Status</dt><dd><span class="acate-profile__status" id="detail-status"></span></dd></div><div><dt>Vínculo ACATE</dt><dd>Associada</dd></div><div><dt>Acesso</dt><dd>Consulta somente leitura</dd></div></dl>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/acate-shell.js" defer></script>
+  <script src="../js/acate-empresa-perfil.js" defer></script>
+  <script src="../js/profile-navigation.js" defer></script>
+</body>
+</html>

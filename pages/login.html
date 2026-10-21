@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal de Talentos - Login | SCTEC</title>
+  <meta name="description" content="Acesse o Portal de Talentos do SCTEC. Para empresas, alunos e administradores.">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+
+  <!-- ===========================
+       LOGIN
+       =========================== -->
+  <section class="login-page">
+    <div class="login-card">
+      <!-- Header -->
+      <div class="login-card__header">
+        <div style="font-family: var(--font-header); font-weight: 800; font-size: 24px; margin-bottom: 4px;">Portal de Talentos</div>
+        <p class="login-card__subtitle">Conectando empresas e talentos tech.</p>
+      </div>
+
+      <!-- Form -->
+      <form class="login-card__form" id="login-form">
+        <div class="form-group">
+          <label class="form-group__label">E-mail</label>
+          <input type="email" class="form-group__input" placeholder="seu@email.com.br">
+        </div>
+        <div class="form-group">
+          <label class="form-group__label">Senha</label>
+          <input type="password" class="form-group__input" placeholder="••••••••">
+        </div>
+
+        <div class="login-card__options">
+          <label class="login-card__remember">
+            <input type="checkbox"> Lembrar de mim
+          </label>
+          <a href="#" class="login-card__forgot">Esqueci minha senha</a>
+        </div>
+
+        <button type="submit" class="btn btn--primary login-card__submit">Entrar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Modal de seleção de perfil (apenas para testes) -->
+  <div class="modal" id="modal-perfil" role="dialog" aria-modal="true" aria-labelledby="modal-perfil-title" aria-describedby="modal-perfil-description" aria-hidden="true">
+    <div class="modal__overlay" data-close-profile-modal></div>
+    <div class="modal__content" tabindex="-1" style="max-width: 400px; text-align: center;">
+      <div class="modal__header" style="justify-content: center; border-bottom: 1px solid rgba(0,0,0,0.06); padding-bottom: 16px;">
+        <h2 class="modal__title" id="modal-perfil-title" style="font-size: 18px;">Selecione um perfil</h2>
+      </div>
+      <p id="modal-perfil-description" style="font-size: 13px; color: var(--color-text-muted); margin-bottom: 20px;">Essa modal é apenas para fins de navegação entre diferentes perfis, não será desenvolvida.</p>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <a href="#/sctec/admin/students" data-profile-route="#/sctec/admin/students" class="btn btn--secondary" style="width: 100%; justify-content: center;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          Administrador
+        </a>
+        <a href="#/sctec/acate/companies" data-profile-route="#/sctec/acate/companies" class="btn btn--outline" style="width: 100%; justify-content: center;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-4h6v4M8 10h.01M12 10h.01M16 10h.01"/></svg>
+          ACATE
+        </a>
+        <a href="#/sctec/company/candidates" data-profile-route="#/sctec/company/candidates" class="btn btn--primary" style="width: 100%; justify-content: center;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+          Empresa
+        </a>
+        <a href="#/sctec/student/companies" data-profile-route="#/sctec/student/companies" class="btn btn--outline" style="width: 100%; justify-content: center; border-color: rgba(0,0,0,0.15); color: var(--color-text-secondary);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Aluno
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="../js/login.js"></script>
+
+  <div class="toast" id="toast"></div>
+</body>
+</html>

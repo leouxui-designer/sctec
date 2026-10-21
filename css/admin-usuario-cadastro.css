@@ -1,0 +1,21 @@
+/*
+  Cadastrar Administrador: área de ações do formulário.
+  Padrão do CardFooter do Figma (mesmo das demais telas admin): botões de 36 px, padding 10, raio 10,
+  gap 16, alinhados à direita; "Cancelar" contornado e botão primário verde ("Cadastrar e Enviar Credenciais").
+*/
+.admin-user-form__actions { display: flex; align-items: center; justify-content: flex-end; gap: 16px; margin-top: 24px; }
+.admin-user-form__button { display: inline-flex; align-items: center; justify-content: center; height: 36px; padding: 0 10px; border: 1px solid transparent; border-radius: 10px; font-family: var(--font-body); font-size: 14px; font-weight: 500; line-height: 20px; white-space: nowrap; text-decoration: none; cursor: pointer; transition: background-color 150ms ease, filter 150ms ease, box-shadow 150ms ease; }
+.admin-user-form__button--secondary { color: #669e2e; border-color: #d4d4d4; background: #fff; }
+.admin-user-form__button--secondary:hover { background: #f6faf1; }
+.admin-user-form__button--primary { color: #fff; background: var(--color-primary-gradient); }
+.admin-user-form__button--primary:hover { filter: brightness(.95); box-shadow: 0 2px 6px #2ca94233; }
+.admin-user-form__button:disabled { opacity: .5; cursor: not-allowed; }
+.admin-user-form__button:focus-visible { outline: 3px solid #7ab934; outline-offset: 3px; }
+
+@media (max-width: 600px) {
+  .admin-user-form__actions { flex-direction: column-reverse; align-items: stretch; }
+  .admin-user-form__button { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .admin-user-form__button { transition: none; }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastrar Estudante - Admin | SCTEC</title>
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/painel.css">
+  <link rel="stylesheet" href="../css/admin-student-registration.css">
+</head>
+<body class="admin-page student-registration-page" style="padding-top:80px">
+  <nav class="navbar navbar--painel navbar--admin"><div class="navbar__inner"><a href="../index.html" class="navbar__brand"><strong>SCTEC</strong><span>Portal de Talentos</span></a><div class="navbar-painel__right"><div class="admin-identity"><strong>ADMINISTRADOR</strong><span>Equipe SCTEC</span></div><button class="navbar-painel__avatar" id="avatar-toggle" type="button" aria-label="Abrir menu do administrador" aria-expanded="false" aria-controls="avatar-menu">CN</button><div class="avatar-menu" id="avatar-menu" hidden><div class="avatar-menu__header"><strong>Administrador</strong><span>Equipe SCTEC</span></div><a href="admin-alunos.html" class="avatar-menu__link">Banco de Talentos</a><a href="admin-empresas.html" class="avatar-menu__link">Gestão de Empresas</a><a href="admin-usuarios.html" class="avatar-menu__link">Usuários</a><div class="avatar-menu__divider"></div><a href="login.html" class="avatar-menu__link avatar-menu__link--logout">Sair</a></div></div></div></nav>
+  <div class="painel">
+    <aside class="sidebar sidebar--admin"><div class="sidebar__header"><div class="sidebar__company">Administrador</div><div class="sidebar__plan">Equipe SCTEC</div></div><nav class="sidebar__nav" aria-label="Administração"><a href="admin-empresas.html" class="sidebar__link"><img src="../assets/admin-figma/LucideIconsBuilding.svg" alt="" width="24" height="24">Gestão de Empresas</a><a href="admin-alunos.html" class="sidebar__link sidebar__link--active"><img src="../assets/admin-figma/LucideIconsUsersRound.svg" alt="" width="24" height="24">Banco de Talentos</a><a href="admin-usuarios.html" class="sidebar__link"><img src="../assets/admin-figma/LucideIconsLockKeyhole.svg" alt="" width="24" height="24">Usuários</a><span class="sidebar__link admin-tags-unavailable" aria-disabled="true"><img src="../assets/admin-figma/LucideIconsTag.svg" alt="" width="24" height="24">Gestão de Tags</span></nav><div class="sidebar__footer"><a href="login.html" class="sidebar__logout">Sair</a></div></aside>
+    <main class="painel__main student-registration__main">
+      <a class="student-registration__back" href="admin-alunos.html"><img src="../assets/admin-figma/RegistrationBack.svg" alt="" width="16" height="16">Voltar para Banco de Talentos</a>
+      <h1>Cadastrar Novo Estudante</h1>
+      <form id="student-registration-form" class="student-registration__form" novalidate>
+        <section class="student-registration__section" aria-labelledby="personal-title">
+          <h2 id="personal-title">Dados pessoais</h2>
+          <div class="student-registration__grid">
+            <div class="student-field"><label for="student-name">Nome completo <span>*</span></label><input id="student-name" name="name" type="text" placeholder="Nome do Estudante" autocomplete="name" required aria-describedby="student-name-error"><p id="student-name-error" class="student-field__error" hidden></p></div>
+            <div class="student-field"><label for="student-cpf">CPF <span>*</span></label><input id="student-cpf" name="cpf" type="text" inputmode="numeric" maxlength="14" placeholder="000.000.000-00" required aria-describedby="student-cpf-error"><p id="student-cpf-error" class="student-field__error" hidden></p></div>
+            <div class="student-field"><label for="student-birth">Data de nascimento <span>*</span></label><input id="student-birth" name="birth" type="date" required aria-describedby="student-birth-error"><p id="student-birth-error" class="student-field__error" hidden></p></div>
+            <div class="student-field"><label for="student-email">E-mail <span>*</span></label><input id="student-email" name="email" type="email" placeholder="email@exemplo.com" autocomplete="email" required aria-describedby="student-email-error"><p id="student-email-error" class="student-field__error" hidden></p></div>
+          </div>
+        </section>
+        <section class="student-registration__section" aria-labelledby="class-title">
+          <h2 id="class-title">Ciclo e Turma</h2>
+          <div class="student-registration__grid">
+            <div class="student-field"><label for="student-cycle">Ciclo <span>*</span></label><input id="student-cycle" name="cycle" type="text" placeholder="Ex: Ciclo 1" required aria-describedby="student-cycle-error"><p id="student-cycle-error" class="student-field__error" hidden></p></div>
+            <div class="student-field"><label for="student-class">Turma <span>*</span></label><input id="student-class" name="class" type="text" placeholder="Ex: Turma 1" required aria-describedby="student-class-error"><p id="student-class-error" class="student-field__error" hidden></p></div>
+          </div>
+        </section>
+        <section class="student-registration__section student-registration__courses" aria-labelledby="courses-title" aria-describedby="courses-help courses-error">
+          <h2 id="courses-title">Trilha e cursos concluídos no SCTEC<span aria-hidden="true">*</span></h2><p id="courses-help">Selecione a trilha e marque os cursos que o estudante concluiu no programa SCTEC.</p>
+          <fieldset><legend>Desenvolvimento de Software</legend><label><input type="checkbox" name="course" value="Desenvolvedor Back-End Node">Desenvolvedor Back-End Node</label><label><input type="checkbox" name="course" value="Desenvolvedor Back-End Spring">Desenvolvedor Back-End Spring</label><label><input type="checkbox" name="course" value="Desenvolvedor Back-End .NET">Desenvolvedor Back-End .NET</label><label><input type="checkbox" name="course" value="Desenvolvedor Front-End React">Desenvolvedor Front-End React</label><label><input type="checkbox" name="course" value="Desenvolvedor Front-End Angular">Desenvolvedor Front-End Angular</label><label><input type="checkbox" name="course" value="Desenvolvedor Front-End Vue">Desenvolvedor Front-End Vue</label><label><input type="checkbox" name="course" value="Desenvolvedor Mobile React Native">Desenvolvedor Mobile React Native</label></fieldset>
+          <fieldset><legend>Análise de Dados</legend><label><input type="checkbox" name="course" value="Análise de Dados com Python">Análise de Dados com Python</label><label><input type="checkbox" name="course" value="Visualização de Dados e Business Intelligence">Visualização de Dados e Business Intelligence</label></fieldset>
+          <fieldset><legend>Inteligência Artificial</legend><label><input type="checkbox" name="course" value="Desenvolvimento de IA para Análise Preditiva">Desenvolvimento de IA para Análise Preditiva</label><label><input type="checkbox" name="course" value="Machine Learning e Visão Computacional">Machine Learning e Visão Computacional</label></fieldset>
+          <p id="courses-error" class="student-field__error" role="alert" hidden></p>
+        </section>
+        <div class="student-registration__actions"><a href="admin-alunos.html" class="student-registration__cancel">Cancelar</a><button type="submit" class="student-registration__submit">Cadastrar Estudante</button></div>
+      </form>
+    </main>
+  </div>
+  <dialog class="student-registration__success" id="student-registration-success" aria-labelledby="student-success-title" aria-describedby="student-success-description"><div class="student-registration__success-icon"><img src="../assets/admin-figma/RegistrationSuccess.svg" alt="" width="32" height="32"></div><h2 id="student-success-title">Cadastro validado com sucesso!</h2><p id="student-success-description">Simulação concluída. Nenhuma conta foi criada e nenhum e-mail foi enviado.</p><button type="button" id="student-success-return">Voltar para Banco de Talentos</button></dialog>
+  <div class="toast" id="toast" role="alert" aria-live="assertive"></div>
+  <script src="../js/admin-student-registration.js" defer></script><script src="../js/admin-shell.js" defer></script><script src="../js/profile-navigation.js" defer></script>
+</body>
+</html>

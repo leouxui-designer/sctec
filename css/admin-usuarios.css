@@ -1,0 +1,105 @@
+/*
+  Gestão de Usuários (Figma 101118:10975). Mesmo padrão visual do Banco de Talentos:
+  título 58 px, cartão de filtros (radius 22), tabela de 4 colunas (3 iguais + Ações de 177 px),
+  cabeçalho 42 px e linhas de 65 px. O shell (header e sidebar) vem de painel.css e admin-shell.js.
+*/
+.admin-users-page { color: #171717; }
+.admin-users-page [hidden] { display: none !important; }
+.admin-users-page .sr-only { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }
+.admin-users-page :is(a, button, input, select):focus-visible { outline: 3px solid #7ab934; outline-offset: 3px; }
+
+.admin-users__main { min-height: calc(100vh - 80px); padding: 32px 40px; background: #f8f9fb; }
+
+/* Título e ação principal */
+.admin-users__header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
+.admin-users__header .painel__title { font-family: var(--font-body); font-size: 30px; font-weight: 700; line-height: 30px; letter-spacing: -.75px; }
+.admin-users__header .painel__subtitle { margin: 4px 0 0; color: #737373; font-size: 16px; line-height: 24px; }
+.admin-users__header .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 36px; min-height: 36px; padding: 0 10px; border-radius: 10px; font-size: 14px; font-weight: 500; line-height: 20px; white-space: nowrap; transition: filter 150ms ease, box-shadow 150ms ease; }
+.admin-users__header .btn:hover { filter: brightness(.95); box-shadow: 0 2px 6px #2ca94233; }
+.admin-users__header .btn img { width: 16px; height: 16px; }
+
+/* Filtros */
+.admin-users__filters { display: grid; grid-template-columns: minmax(0, 1fr) 267px; align-items: center; gap: 16px; margin-bottom: 24px; padding: 20px; border-radius: 22px; background: #fff; box-shadow: 0 1px 2px -1px #0000001a, 0 1px 3px #0000001a; }
+.admin-users__filters .painel-filter__search, .admin-users__filters .painel-filter__select { width: 100%; height: 42px; min-height: 42px; box-sizing: border-box; border: 1px solid #d4d4d4; border-radius: 10px; background-color: #fff; font-family: var(--font-body); font-size: 14px; line-height: 14px; transition: border-color 150ms ease; }
+.admin-users__filters .painel-filter__search:hover, .admin-users__filters .painel-filter__select:hover { border-color: #a3a3a3; }
+.admin-users__filters .painel-filter__select { padding: 8px 38px 8px 12px; color: #737373; background-image: url('../assets/admin-figma/TablerIconsChevronDown.svg'); background-position: right 12px center; background-repeat: no-repeat; background-size: 24px; appearance: none; cursor: pointer; }
+.admin-users__filters .painel-filter__select.is-filled { color: #171717; }
+.admin-users__search { position: relative; min-width: 0; }
+.admin-users__search input { padding: 8px 44px 8px 12px; color: #171717; }
+.admin-users__search input::placeholder { color: #737373; opacity: 1; }
+.admin-users__search input::-webkit-search-cancel-button { appearance: none; }
+.admin-users__search-icon, .admin-users__search-clear { position: absolute; top: 50%; right: 12px; width: 24px; height: 24px; transform: translateY(-50%); }
+.admin-users__search-icon { pointer-events: none; }
+.admin-users__search-clear { display: flex; align-items: center; justify-content: center; padding: 0; border: 0; border-radius: 4px; background: transparent; cursor: pointer; }
+.admin-users__search-clear img { width: 24px; height: 24px; pointer-events: none; }
+
+/* Tabela */
+.admin-users__table-wrap { overflow-x: auto; border: 1px solid #d4d4d4; border-radius: 10px; background: #fff; }
+.admin-users__table { width: 100%; min-width: 760px; table-layout: fixed; border-collapse: collapse; }
+.admin-users__table col:nth-child(4) { width: 177px; }
+.admin-users__table th, .admin-users__table td { border-bottom: 1px solid #d4d4d4; text-align: left; vertical-align: middle; }
+.admin-users__table tbody tr:last-child td { border-bottom: 0; }
+.admin-users__table th { height: 42px; padding: 0 24px; background: #f8f9fb; color: #171717; font-size: 12px; font-weight: 700; line-height: 16px; text-transform: uppercase; white-space: nowrap; }
+.admin-users__table th img { display: inline-block; width: 16px; height: 16px; margin-left: 4px; vertical-align: middle; }
+.admin-users__table td { height: 65px; padding: 0 24px; box-sizing: border-box; font-size: 14px; line-height: 20px; }
+.admin-users__table tbody tr { transition: background-color 150ms ease; }
+.admin-users__table tbody tr:hover { background: #fbfdf9; }
+.admin-user__name { display: block; margin-bottom: 4px; font-size: 14px; font-weight: 700; line-height: 14px; }
+.admin-user__email { display: block; color: #737373; font-size: 14px; line-height: 19.25px; overflow-wrap: anywhere; }
+.admin-user__status { display: inline-flex; align-items: center; min-height: 24px; padding: 2px 10px; border-radius: 26px; font-size: 14px; font-weight: 500; line-height: 20px; white-space: nowrap; }
+.admin-user__status--active { color: #008236; background: #00a63e0d; }
+.admin-user__status--inactive { color: #404040; background: #0000000a; }
+.admin-users__table .action-group { display: flex; align-items: center; gap: 4px; }
+.admin-users__table .action-icon { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; padding: 0; border: 0; border-radius: 10px; color: #171717; background: transparent; cursor: pointer; }
+.admin-users__table .action-icon:hover { background: #f1f1f1; }
+.admin-users__table .action-icon img { width: 20px; height: 20px; }
+.admin-users-page .toggle { width: 40px; height: 22px; }
+.admin-users-page .toggle input { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+.admin-users-page .toggle__slider { background: #f0f0f0; }
+.admin-users-page .toggle__slider::before { width: 18px; height: 18px; left: 2px; bottom: 2px; }
+.admin-users-page .toggle input:checked + .toggle__slider { background: #669e2e; }
+.admin-users-page .toggle input:checked + .toggle__slider::before { transform: translateX(18px); }
+.admin-users-page .toggle:has(input:focus-visible) { outline: 3px solid #7ab934; outline-offset: 3px; border-radius: 11px; }
+
+/* Estado vazio (busca ou filtro sem resultado) */
+.admin-users__empty { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; min-height: 300px; padding: 48px 24px; border-radius: 14px; background: #fff; text-align: center; }
+.admin-users__empty-icon { display: flex; align-items: center; justify-content: center; width: 64px; height: 64px; border-radius: 50%; background: #7ab9341a; }
+.admin-users__empty h2 { margin-bottom: 8px; font-size: 18px; }
+.admin-users__empty p { color: #737373; font-size: 14px; }
+.admin-users__empty button { height: 36px; padding: 0 10px; border-radius: 10px; color: #fff; background: var(--color-primary-gradient); font-size: 14px; font-weight: 500; cursor: pointer; }
+
+/* Diálogos de confirmação (Figma 101239:16938 e 101239:17060: 308 px de largura) */
+.admin-users__dialog { position: fixed; inset: 0; width: min(308px, calc(100vw - 32px)); max-width: none; max-height: calc(100vh - 32px); margin: auto; padding: 0; overflow: auto; border: 1px solid #d4d4d4; border-radius: 14px; color: #171717; background: #fff; box-shadow: 0 10px 30px #0002; }
+.admin-users__dialog::backdrop { background: #0006; }
+.admin-users__dialog header { display: flex; align-items: flex-start; gap: 12px; padding: 16px 16px 0; }
+.admin-users__dialog h2 { flex: 1; font-family: var(--font-header); font-size: 16px; line-height: 24px; letter-spacing: -.4px; }
+.admin-users__dialog-close { display: flex; align-items: center; justify-content: center; flex: 0 0 36px; width: 36px; height: 36px; margin: -6px -6px 0 0; border-radius: 10px; cursor: pointer; }
+.admin-users__dialog-close:hover { background: #f1f1f1; }
+.admin-users__dialog > p { margin: 0; padding: 8px 16px 32px; color: #737373; font-size: 16px; line-height: 24px; }
+.admin-users__dialog > p strong { color: inherit; font-weight: 400; }
+.admin-users__dialog footer { display: flex; align-items: center; justify-content: flex-end; gap: 16px; min-height: 60px; padding: 16px; }
+.admin-users__button { min-height: 36px; padding: 0 10px; border: 1px solid transparent; border-radius: 10px; font-size: 14px; font-weight: 500; cursor: pointer; transition: background-color 150ms ease, filter 150ms ease; }
+.admin-users__button--secondary { color: #669e2e; border-color: #d4d4d4; background: #fff; }
+.admin-users__button--secondary:hover { background: #f6faf1; }
+.admin-users__button--primary { color: #fff; background: linear-gradient(119deg, #2ca942 16%, #55b13a 55%, #52b934 87%); }
+.admin-users__button--primary:hover { filter: brightness(.95); }
+.admin-users__button--danger { min-height: 32px; color: #e62c2d; border-color: #e62c2d; background: #fff; }
+.admin-users__button--danger:hover { background: #fff0f0; }
+
+@media (max-width: 900px) {
+  .admin-users__filters { grid-template-columns: 1fr 1fr; }
+  .admin-users__search { grid-column: 1 / -1; }
+}
+@media (max-width: 600px) {
+  .admin-users__main { padding: 24px 16px; }
+  .admin-users__header { flex-direction: column; }
+  .admin-users__header .painel__title { font-size: 26px; }
+  .admin-users__header .painel__subtitle { font-size: 14px; line-height: 20px; }
+  .admin-users__header .btn { width: 100%; }
+  .admin-users__filters { grid-template-columns: 1fr; gap: 10px; }
+  .admin-users__search { grid-column: auto; }
+  .admin-users__dialog footer { gap: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .admin-users__header .btn, .admin-users__filters .painel-filter__search, .admin-users__filters .painel-filter__select, .admin-users__table tbody tr, .admin-users__button { transition: none; }
+}
