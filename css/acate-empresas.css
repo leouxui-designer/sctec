@@ -25,9 +25,10 @@
 .acate-companies__count { margin: 0 0 12px; color: #6b7280; font-size: 14px; line-height: 16px; }
 .acate-companies__count strong { font-weight: 700; }
 .acate-companies__table-wrap { overflow-x: auto; border: 1px solid #d4d4d4; border-radius: 10px; background: #fff; }
-.acate-companies__table { width: 100%; min-width: 1000px; table-layout: fixed; border-collapse: collapse; }
+.acate-companies__table { width: 100%; min-width: 1000px; table-layout: auto; border-collapse: collapse; }
+.acate-companies__table td:last-child, .acate-companies__table th:last-child { padding-left: 16px; padding-right: 16px; white-space: nowrap; }
 .acate-companies__table col:nth-child(-n+4) { width: 225.5px; }
-.acate-companies__table col:nth-child(5) { width: 200px; }
+.acate-companies__table col:nth-child(5) { width: 1%; }
 .acate-companies__table th, .acate-companies__table td { border-bottom: 1px solid #d4d4d4; text-align: left; vertical-align: middle; }
 .acate-companies__table tbody tr:last-child td { border-bottom: 0; }
 .acate-companies__table th { height: 42px; padding: 0 24px; background: #f8f9fb; color: #171717; font-size: 12px; font-weight: 700; line-height: 16px; text-transform: uppercase; white-space: nowrap; }

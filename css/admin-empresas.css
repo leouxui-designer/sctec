@@ -255,13 +255,16 @@
 .admin-companies-page .toggle { width:40px; height:22px; }
 .admin-companies-page .toggle input:focus-visible + .toggle__slider { outline:3px solid #7ab934; outline-offset:3px; }
 .admin-companies__result-count { line-height:16px; color:#6b7280; }
-.admin-companies__table { min-width:1102px; }
-.admin-companies__table th:nth-child(1) { width:14.70%; }
-.admin-companies__table th:nth-child(2) { width:14.52%; }
-.admin-companies__table th:nth-child(3) { width:16.06%; }
-.admin-companies__table th:nth-child(4) { width:12.07%; }
-.admin-companies__table th:nth-child(5) { width:24.50%; }
-.admin-companies__table th:nth-child(6) { width:18.15%; }
+.admin-companies__table { min-width:1102px; table-layout:auto; }
+.admin-companies__table th:nth-child(1) { width:15.99%; }
+.admin-companies__table th:nth-child(2) { width:15.79%; }
+.admin-companies__table th:nth-child(3) { width:17.47%; }
+.admin-companies__table th:nth-child(4) { width:13.13%; }
+.admin-companies__table th:nth-child(5) { width:26.62%; }
+.admin-companies__table th:nth-child(6) { width:11%; }
+.admin-companies__table td:last-child .action-group { flex-wrap:nowrap; white-space:nowrap; }
+.admin-companies__table td:last-child { padding-left:16px; padding-right:16px; }
+.admin-companies__table td:last-child .toggle { flex:0 0 40px; }
 .admin-companies__table th { font-size:12px; line-height:16px; text-transform:uppercase; }
 .admin-companies__table td { padding:10px 24px; height:65px; font-size:14px; line-height:20px; overflow-wrap:normal; }
 .admin-company__name { font-size:14px; line-height:14px; margin-bottom:4px; }
@@ -291,7 +294,7 @@
 
 .admin-companies__table th img { display:inline-block; vertical-align:middle; width:16px; height:16px; }
 .admin-companies__search input::placeholder { color:transparent; }
-.admin-companies__search-placeholder { position:absolute; left:12px; top:50%; transform:translateY(-50%); right:44px; font-size:14px; line-height:14px; color:#737373; pointer-events:none; }
+.admin-companies__search-placeholder { position:absolute; left:12px; top:50%; transform:translateY(-50%); right:44px; font-size:14px; line-height:14px; color:#737373; pointer-events:none; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .admin-companies__search input:not(:placeholder-shown) ~ .admin-companies__search-placeholder { display:none; }
 
 .admin-companies__filters .admin-companies__search .painel-filter__search::placeholder { color:transparent; }
